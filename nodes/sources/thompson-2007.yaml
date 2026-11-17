@@ -1,0 +1,15 @@
+id: source.thompson-2007
+type: source
+name: { zh: 国际版 PANAS 短表（I-PANAS-SF）, en: Development and validation of an internationally reliable short-form of the PANAS }
+summary: 从 PANAS 中挑出 10 项、去除跨文化歧义较大的词，形成 I-PANAS-SF，并在多国样本中检验信效度。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Thompson, E. R."]
+  year: 2007
+  title: Development and validation of an internationally reliable short-form of the Positive and Negative Affect Schedule (PANAS)
+  venue: Journal of Cross-Cultural Psychology
+  volume: 38
+  issue: 2
+  pages: 227-242
+  doi: 10.1177/0022022106297301

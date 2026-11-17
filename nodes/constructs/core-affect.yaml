@@ -1,0 +1,11 @@
+id: construct.core-affect
+type: construct
+name: { zh: 核心情感, en: Core affect }
+summary: 在任意时刻都存在的基础情感状态，通常用愉悦度和唤醒度两个维度描述。产品里“此刻的心情”默认落在这个空间里。
+status: reviewed
+claims:
+  - statement: 多种情绪词可以排布在愉悦度 × 唤醒度构成的近似环形空间中。
+    evidence:
+      - { source: source.russell-1980, stance: supports, level: single-study }
+caveats:
+  - 维度模型适合快速测量，但会丢失具体情绪（如愤怒和恐惧都是低愉悦高唤醒）的区别。产品需要区分时应配合离散情绪标签。

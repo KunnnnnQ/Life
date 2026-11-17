@@ -1,0 +1,17 @@
+id: construct.co-rumination
+type: construct
+name: { zh: 共同反刍, en: Co-rumination }
+summary: 两个人反复、过度地讨论问题和负面感受，反复揣测原因和后果，而不转向解决或别的话题。
+status: reviewed
+relations:
+  - type: related_to
+    target: construct.emotion-regulation
+    note: 可以看作人际层面的不良调节模式。
+claims:
+  - statement: 共同反刍同时与更高的友谊质量和更多的抑郁、焦虑症状相关。
+    evidence:
+      - { source: source.rose-2002, stance: supports, level: single-study, note: 样本为中小学生，相关研究。用于成年陌生人之间是外推。 }
+product_use:
+  detect_in: mechanic.stranger-chat
+  signals: [同一负面话题反复出现, 双方都在加深对坏结果的推测, 对话中没有新信息或转向]
+  response: 轻轻引入新话题或换个角度的问题，不打断、不评判。

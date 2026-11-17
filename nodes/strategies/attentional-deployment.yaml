@@ -1,0 +1,14 @@
+id: strategy.attentional-deployment
+type: strategy
+name: { zh: 注意部署, en: Attentional deployment }
+summary: 把注意力引向或引离情境的某些方面，从而影响情绪。包括分心和专注等子策略。
+status: reviewed
+relations:
+  - type: part_of
+    target: construct.emotion-regulation
+    evidence:
+      - { source: source.gross-1998, stance: supports, level: theory }
+claims:
+  - statement: 作为一个整体，注意部署对情绪结果的平均效应接近零，因为其下的分心与专注效应方向相反。
+    evidence:
+      - { source: source.webb-2012, stance: supports, level: meta-analysis, note: 具体效应量以原文表格为准。 }

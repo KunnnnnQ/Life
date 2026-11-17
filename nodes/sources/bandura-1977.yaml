@@ -1,0 +1,15 @@
+id: source.bandura-1977
+type: source
+name: { zh: 自我效能理论, en: "Self-efficacy: Toward a unifying theory of behavioral change" }
+summary: 提出自我效能的四个来源：亲身成功经验、替代性经验（看到他人成功）、言语说服和生理情绪状态。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Bandura, A."]
+  year: 1977
+  title: "Self-efficacy: Toward a unifying theory of behavioral change"
+  venue: Psychological Review
+  volume: 84
+  issue: 2
+  pages: 191-215
+  doi: 10.1037/0033-295X.84.2.191

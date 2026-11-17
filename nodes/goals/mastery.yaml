@@ -1,0 +1,13 @@
+id: goal.mastery
+type: goal
+name: { zh: 体验成就感 / 爽一下, en: Mastery }
+summary: 用户希望在安全的虚构情境中体验掌控、胜任和逆转。
+status: draft
+relations:
+  - { type: targets, target: construct.dominance, note: 产品定义的目标方向。 }
+  - { type: targets, target: construct.valence }
+product_use:
+  ui_label: 体验成就感
+  target_shift: { valence: up, dominance: up, arousal: any }
+  default_measure: instrument.affective-slider
+  note: 滑块不测支配感。若要评估这个目标，研究阶段需加测 SAM 的支配感维度。

@@ -1,0 +1,24 @@
+id: mechanic.slow-exploration
+type: mechanic
+name: { zh: 慢速探索, en: Slow exploration }
+summary: 在一个安静、低冲突的世界里慢慢走动、观察细节、完成简单任务。没有失败条件。
+status: draft
+relations:
+  - type: implements
+    target: strategy.distraction
+    evidence:
+      - { source: source.webb-2012, stance: supports, level: hypothesis, note: 元分析支持的是实验室分心任务；此机制是否产生相同效果未经检验。 }
+  - type: serves
+    target: goal.calm-down
+    evidence:
+      - { source: source.sheppes-2011, stance: supports, level: hypothesis, note: 高强度情绪下分心更容易被选择，故作为高唤醒用户的首选候选。 }
+      - { source: source.rupp-2017, stance: supports, level: hypothesis, note: 最接近的类比证据。被测的是休闲游戏而非叙事探索，但都属于“低压力、有轻度任务”的体验，且优于纯放松。 }
+      - { source: source.collins-2019, stance: mixed, level: hypothesis, note: 有任务的游戏会提高精力唤醒。若用户想要的是“静下来”而非“恢复精神”，任务密度应更低。 }
+product_use:
+  beats: [进入场景, 感官细节, 小任务, 小任务, 安静收尾]
+  minutes: { min: 3, max: 20 }
+  choices: 0-2，选择只影响风景不影响结局
+  arousal_curve: flat-low
+  task_density: 低。小任务是为了保持投入，不是为了制造挑战。
+  personalization: 仅使用用户声明的喜好（场景、季节、意象），不使用个人经历。
+  avoid_when: [用户明确说想要刺激感]

@@ -1,0 +1,14 @@
+id: strategy.cognitive-change
+type: strategy
+name: { zh: 认知改变, en: Cognitive change }
+summary: 改变对情境或自身应对能力的评价，从而改变情绪意义。
+status: reviewed
+relations:
+  - type: part_of
+    target: construct.emotion-regulation
+    evidence:
+      - { source: source.gross-1998, stance: supports, level: theory }
+claims:
+  - statement: 认知改变族策略对情绪结果的平均效应在过程模型各族中最大，为小到中等。
+    evidence:
+      - { source: source.webb-2012, stance: supports, level: meta-analysis, note: 具体效应量以原文表格为准。 }

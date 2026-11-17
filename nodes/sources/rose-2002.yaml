@@ -1,0 +1,15 @@
+id: source.rose-2002
+type: source
+name: { zh: 友谊中的共同反刍, en: Co-rumination in the friendships of girls and boys }
+summary: 提出“共同反刍”概念：朋友间反复讨论问题和负面感受。它与更高的友谊质量相关，也与更多的抑郁、焦虑症状相关。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Rose, A. J."]
+  year: 2002
+  title: Co-rumination in the friendships of girls and boys
+  venue: Child Development
+  volume: 73
+  issue: 6
+  pages: 1830-1843
+  doi: 10.1111/1467-8624.00509

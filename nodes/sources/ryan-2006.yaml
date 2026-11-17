@@ -1,0 +1,15 @@
+id: source.ryan-2006
+type: source
+name: { zh: 电子游戏的动机吸引力：自我决定理论视角, en: "The motivational pull of video games: A self-determination theory approach" }
+summary: 四项研究。前三项发现游戏中感到的胜任感和自主感与享受程度、以及玩前到玩后的幸福感变化相关。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Ryan, R. M.", "Rigby, C. S.", "Przybylski, A."]
+  year: 2006
+  title: "The motivational pull of video games: A self-determination theory approach"
+  venue: Motivation and Emotion
+  volume: 30
+  issue: 4
+  pages: 347-363
+  doi: 10.1007/s11031-006-9051-8

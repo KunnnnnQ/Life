@@ -1,0 +1,15 @@
+id: source.gross-john-2003
+type: source
+name: { zh: ERQ 原始研究：重评与抑制的个体差异, en: Individual differences in two emotion regulation processes }
+summary: 编制情绪调节问卷（ERQ），并在多个样本中考察习惯性认知重评与表达抑制和情绪、人际关系、幸福感的关联。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Gross, J. J.", "John, O. P."]
+  year: 2003
+  title: "Individual differences in two emotion regulation processes: Implications for affect, relationships, and well-being"
+  venue: Journal of Personality and Social Psychology
+  volume: 85
+  issue: 2
+  pages: 348-362
+  doi: 10.1037/0022-3514.85.2.348

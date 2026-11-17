@@ -1,0 +1,25 @@
+id: instrument.b-mmr
+type: instrument
+name: { zh: 音乐情绪调节简表（B-MMR）, en: Brief Music in Mood Regulation Scale }
+summary: 21 项量表，测量七类音乐情绪调节策略的使用习惯，每类 3 项。
+status: draft
+relations:
+  - { type: measures, target: construct.music-mood-regulation, evidence: [{ source: source.saarikallio-2012, stance: supports, level: validation-study }] }
+instrument:
+  items: 21
+  response_format: Likert 式评分（点数待对照原文核实）
+  subscales:
+    - { name: 娱乐, items: 3 }
+    - { name: 复苏, items: 3 }
+    - { name: 强烈感受, items: 3 }
+    - { name: 转移注意, items: 3 }
+    - { name: 宣泄, items: 3 }
+    - { name: 心理整理, items: 3 }
+    - { name: 慰藉, items: 3 }
+  license:
+    status: unknown
+    commercial_use: unknown
+  items_in_repo: false
+product_use:
+  role: profile-optional
+  when: 音乐模块上线后

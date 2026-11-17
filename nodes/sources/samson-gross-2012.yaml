@@ -1,0 +1,15 @@
+id: source.samson-gross-2012
+type: source
+name: { zh: 幽默作为情绪调节, en: "Humour as emotion regulation: The differential consequences of negative versus positive humour" }
+summary: 实验比较面对负面图片时使用善意幽默和刻薄幽默的效果，善意幽默在降低负面情绪、提升正面情绪上更有效。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Samson, A. C.", "Gross, J. J."]
+  year: 2012
+  title: "Humour as emotion regulation: The differential consequences of negative versus positive humour"
+  venue: Cognition and Emotion
+  volume: 26
+  issue: 2
+  pages: 375-384
+  doi: 10.1080/02699931.2011.585069

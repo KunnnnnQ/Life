@@ -1,0 +1,20 @@
+id: construct.adverse-childhood-experiences
+type: construct
+name: { zh: 童年不良经历（ACE）, en: Adverse childhood experiences }
+summary: 18 岁前经历的虐待、忽视和家庭功能失调等事件。与产品中“成长经历权重”的设想直接相关，这里记录它能用和不能用的边界。
+status: reviewed
+claims:
+  - statement: 在人群层面，ACE 类别数与成年后多种健康风险呈剂量反应关系。
+    evidence:
+      - { source: source.felitti-1998, stance: supports, level: single-study, note: 回顾性自报，样本为美国一家医疗机构的成年会员。 }
+  - statement: ACE 分数用于预测具体某个人的健康结局时准确度很低。
+    evidence:
+      - { source: source.baldwin-2021, stance: supports, level: replicated, note: 两个纵向队列中结论一致。 }
+caveats:
+  - 群体层面的关联不能用来推断某个用户“受了多大影响”。
+product_use:
+  allowed: 仅在用户主动提供并授权时，作为故事内容的可选素材或需要回避的主题。
+  forbidden:
+    - 计算个体心理风险分数或“创伤权重”
+    - 未经用户同意在故事中引用相关经历
+  default: 不采集

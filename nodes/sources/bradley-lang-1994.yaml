@@ -1,0 +1,15 @@
+id: source.bradley-lang-1994
+type: source
+name: { zh: SAM 自评小人量表原始验证, en: "Measuring emotion: The Self-Assessment Manikin and the semantic differential" }
+summary: 提出并验证 SAM 图画式自评工具，用三个图形维度测量愉悦度、唤醒度和支配感，并与语义差异量表比较。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Bradley, M. M.", "Lang, P. J."]
+  year: 1994
+  title: "Measuring emotion: The self-assessment manikin and the semantic differential"
+  venue: Journal of Behavior Therapy and Experimental Psychiatry
+  volume: 25
+  issue: 1
+  pages: 49-59
+  doi: 10.1016/0005-7916(94)90063-9

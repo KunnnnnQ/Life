@@ -1,0 +1,10 @@
+id: construct.arousal
+type: construct
+name: { zh: 唤醒度, en: Arousal }
+summary: 情感状态的激活程度，从平静、困倦到兴奋、紧张。
+status: reviewed
+relations:
+  - type: part_of
+    target: construct.core-affect
+    evidence:
+      - { source: source.russell-1980, stance: supports, level: theory }

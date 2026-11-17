@@ -1,0 +1,15 @@
+id: source.green-brock-2000
+type: source
+name: { zh: 叙事传输与说服, en: The role of transportation in the persuasiveness of public narratives }
+summary: 提出并测量“叙事传输”：读者越沉浸于故事，越容易接受与故事一致的信念。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Green, M. C.", "Brock, T. C."]
+  year: 2000
+  title: The role of transportation in the persuasiveness of public narratives
+  venue: Journal of Personality and Social Psychology
+  volume: 79
+  issue: 5
+  pages: 701-721
+  doi: 10.1037/0022-3514.79.5.701

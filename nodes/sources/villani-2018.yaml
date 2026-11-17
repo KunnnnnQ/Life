@@ -1,0 +1,15 @@
+id: source.villani-2018
+type: source
+name: { zh: 电子游戏与情绪调节系统综述, en: "Videogames for emotion regulation: A systematic review" }
+summary: 按 PRISMA 检索并纳入 23 项研究，认为电子游戏为情绪调节提供了机会，但其干预效果的证据仍然有限。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Villani, D.", "Carissoli, C.", "Triberti, S.", "Marchetti, A.", "Gilli, G.", "Riva, G."]
+  year: 2018
+  title: "Videogames for emotion regulation: A systematic review"
+  venue: Games for Health Journal
+  volume: 7
+  issue: 2
+  pages: 85-99
+  doi: 10.1089/g4h.2017.0108

@@ -1,0 +1,16 @@
+id: source.betella-verschure-2016
+type: source
+name: { zh: 情绪滑块（Affective Slider）, en: "The Affective Slider: A digital self-assessment scale for the measurement of human emotions" }
+summary: 提出用两个连续滑块测量愉悦度与唤醒度的数字化自评工具，并与 SAM 做比较验证。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Betella, A.", "Verschure, P. F. M. J."]
+  year: 2016
+  title: "The Affective Slider: A digital self-assessment scale for the measurement of human emotions"
+  venue: PLOS ONE
+  volume: 11
+  issue: 2
+  pages: e0148037
+  doi: 10.1371/journal.pone.0148037
+  open_access: true

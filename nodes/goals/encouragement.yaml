@@ -1,0 +1,12 @@
+id: goal.encouragement
+type: goal
+name: { zh: 获得鼓励, en: Encouragement }
+summary: 用户感到失落或自我怀疑，希望获得支持和继续下去的力量。
+status: draft
+relations:
+  - { type: targets, target: construct.valence, note: 产品定义的目标方向。 }
+product_use:
+  ui_label: 获得鼓励
+  target_shift: { valence: up, arousal: any }
+  default_measure: instrument.affective-slider
+  note: 有的用户需要的是被理解而不是被鼓励。体验开头应先确认感受，再推进。

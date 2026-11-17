@@ -1,0 +1,18 @@
+id: goal.mood-shift
+type: goal
+name: { zh: 换个心情, en: Mood shift }
+summary: 用户没有明确方向，只想离开当前状态，体验些不一样的东西。常见于无聊或心烦。
+status: draft
+relations:
+  - { type: targets, target: construct.valence, note: 产品定义的目标方向。 }
+claims:
+  - statement: 处于无聊状态的人自由选择时更多选刺激性的内容。
+    evidence:
+      - { source: source.bryant-zillmann-1984, stance: supports, level: single-study }
+  - statement: 人们倾向选择能缓解坏情绪的媒介内容；与当前坏情绪语义相近的内容不利于打断它。
+    evidence:
+      - { source: source.zillmann-1988, stance: supports, level: theory }
+product_use:
+  ui_label: 换个心情
+  target_shift: { valence: up, arousal: any }
+  default_measure: instrument.affective-slider

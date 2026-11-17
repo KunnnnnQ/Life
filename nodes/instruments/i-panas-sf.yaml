@@ -1,0 +1,26 @@
+id: instrument.i-panas-sf
+type: instrument
+name: { zh: 国际版 PANAS 短表, en: I-PANAS-SF }
+summary: PANAS 的 10 项跨文化短版，适合在研究阶段做体验前后的正式情绪测量。
+status: reviewed
+relations:
+  - { type: derived_from, target: instrument.panas }
+  - { type: measures, target: construct.positive-affect, evidence: [{ source: source.thompson-2007, stance: supports, level: validation-study }] }
+  - { type: measures, target: construct.negative-affect, evidence: [{ source: source.thompson-2007, stance: supports, level: validation-study }] }
+instrument:
+  items: 10
+  response_format: 5 点评分
+  administration_minutes: 1
+  subscales:
+    - { name: 正性情感, items: 5, measures: construct.positive-affect }
+    - { name: 负性情感, items: 5, measures: construct.negative-affect }
+  languages:
+    - { lang: en, validated: "yes", source: source.thompson-2007 }
+    - { lang: zh, validated: unknown, note: 待补充中文版验证文献。 }
+  license:
+    status: unknown
+    commercial_use: unknown
+  items_in_repo: false
+product_use:
+  role: research-only
+  when: 正式实验中体验前后各一次

@@ -1,0 +1,15 @@
+id: source.sheppes-2011
+type: source
+name: { zh: 情绪调节选择, en: Emotion-regulation choice }
+summary: 实验发现面对高强度负面刺激时，人们更倾向选择分心；面对低强度刺激时更倾向选择重评。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Sheppes, G.", "Scheibe, S.", "Suri, G.", "Gross, J. J."]
+  year: 2011
+  title: Emotion-regulation choice
+  venue: Psychological Science
+  volume: 22
+  issue: 11
+  pages: 1391-1396
+  doi: 10.1177/0956797611418350

@@ -1,0 +1,26 @@
+id: instrument.ders-16
+type: instrument
+name: { zh: 情绪调节困难量表简版（DERS-16）, en: DERS-16 }
+summary: DERS 的 16 项简版，测量情绪调节困难的五个维度（不含觉察）。
+status: reviewed
+relations:
+  - { type: measures, target: construct.emotion-regulation-difficulties, evidence: [{ source: source.bjureberg-2016, stance: supports, level: validation-study }] }
+instrument:
+  items: 16
+  response_format: 5 点评分，从“几乎从不”到“几乎总是”
+  administration_minutes: 3
+  subscales:
+    - { name: 缺乏清晰度, items: 2 }
+    - { name: 目标导向困难, items: 3 }
+    - { name: 冲动控制困难, items: 3 }
+    - { name: 策略有限, items: 5 }
+    - { name: 不接纳, items: 3 }
+  license:
+    status: unknown
+    commercial_use: unknown
+  items_in_repo: false
+product_use:
+  role: research-only
+  note: 不能作为使用产品的前置门槛，也不向用户展示“困难程度”解读。
+caveats:
+  - 临床相关量表。得分高时产品应提供现实支持渠道信息，而不是继续娱乐化生成。

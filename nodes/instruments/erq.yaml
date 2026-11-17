@@ -1,0 +1,27 @@
+id: instrument.erq
+type: instrument
+name: { zh: 情绪调节问卷（ERQ）, en: Emotion Regulation Questionnaire }
+summary: 10 项问卷，测量习惯性认知重评和表达抑制两种调节方式。
+status: reviewed
+relations:
+  - { type: measures, target: construct.habitual-reappraisal, evidence: [{ source: source.gross-john-2003, stance: supports, level: validation-study }] }
+  - { type: measures, target: construct.habitual-suppression, evidence: [{ source: source.gross-john-2003, stance: supports, level: validation-study }] }
+instrument:
+  items: 10
+  response_format: 7 点评分，从“非常不同意”到“非常同意”
+  administration_minutes: 2
+  subscales:
+    - { name: 认知重评, items: 6, measures: construct.habitual-reappraisal }
+    - { name: 表达抑制, items: 4, measures: construct.habitual-suppression }
+  languages:
+    - { lang: en, validated: "yes", source: source.gross-john-2003 }
+    - { lang: zh, validated: unknown, note: 已知有中文修订版，待补充来源节点。 }
+  license:
+    status: free-research
+    commercial_use: unknown
+    note: 原作者实验室公开提供用于研究。商业使用需核实。
+  items_in_repo: false
+product_use:
+  role: profile-optional
+  when: 用户自愿完善长期画像时
+  use_for: 影响叙事机制的偏好排序（例如重评得分高的用户可多推荐 reframe-arc），属于待验证的产品假设。

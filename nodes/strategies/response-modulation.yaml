@@ -1,0 +1,10 @@
+id: strategy.response-modulation
+type: strategy
+name: { zh: 反应调节, en: Response modulation }
+summary: 情绪已经产生后，直接影响其生理、体验或行为反应，例如抑制表情、呼吸放松。
+status: reviewed
+relations:
+  - type: part_of
+    target: construct.emotion-regulation
+    evidence:
+      - { source: source.gross-1998, stance: supports, level: theory }

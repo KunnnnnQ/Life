@@ -1,0 +1,15 @@
+id: source.epley-schroeder-2014
+type: source
+name: { zh: 错误地寻求独处, en: Mistakenly seeking solitude }
+summary: 多个实验（含通勤途中的现场实验）发现，人们预期和陌生人交谈不如独处愉快，但实际交谈后的体验更积极。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Epley, N.", "Schroeder, J."]
+  year: 2014
+  title: Mistakenly seeking solitude
+  venue: "Journal of Experimental Psychology: General"
+  volume: 143
+  issue: 5
+  pages: 1980-1999
+  doi: 10.1037/a0037323

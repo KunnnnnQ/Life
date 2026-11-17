@@ -1,0 +1,15 @@
+id: source.watson-1988
+type: source
+name: { zh: PANAS 原始量表, en: "Development and validation of brief measures of positive and negative affect: The PANAS scales" }
+summary: 编制 PANAS（20 项），把正性情绪与负性情绪作为两个相对独立的维度测量。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Watson, D.", "Clark, L. A.", "Tellegen, A."]
+  year: 1988
+  title: "Development and validation of brief measures of positive and negative affect: The PANAS scales"
+  venue: Journal of Personality and Social Psychology
+  volume: 54
+  issue: 6
+  pages: 1063-1070
+  doi: 10.1037/0022-3514.54.6.1063

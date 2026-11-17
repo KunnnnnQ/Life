@@ -1,0 +1,15 @@
+id: source.felitti-1998
+type: source
+name: { zh: 童年不良经历（ACE）原始研究, en: The Adverse Childhood Experiences (ACE) Study }
+summary: 大样本回顾性研究，发现童年不良经历类别数与成年后多种健康风险在人群层面呈剂量反应关系。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Felitti, V. J.", "Anda, R. F.", "Nordenberg, D.", "Williamson, D. F.", "Spitz, A. M.", "Edwards, V.", "Koss, M. P.", "Marks, J. S."]
+  year: 1998
+  title: "Relationship of childhood abuse and household dysfunction to many of the leading causes of death in adults: The Adverse Childhood Experiences (ACE) Study"
+  venue: American Journal of Preventive Medicine
+  volume: 14
+  issue: 4
+  pages: 245-258
+  doi: 10.1016/S0749-3797(98)00017-8

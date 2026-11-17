@@ -1,0 +1,39 @@
+id: mechanic.stranger-chat
+type: mechanic
+name: { zh: 陌生人对话, en: Stranger chat }
+summary: 按本次目标把两个用户随机配对文字聊天，AI 只负责开场话题、安全把关和收尾，不参与闲聊。
+status: draft
+relations:
+  - type: implements
+    target: strategy.situation-selection
+    evidence:
+      - { source: source.epley-schroeder-2014, stance: supports, level: hypothesis, note: 选择和陌生人交谈而不是独处。原研究为线下面对面交谈。 }
+  - type: serves
+    target: goal.connection
+    evidence:
+      - { source: source.epley-schroeder-2014, stance: supports, level: hypothesis }
+      - { source: source.sandstrom-dunn-2014, stance: supports, level: hypothesis }
+      - { source: source.rose-2002, stance: mixed, level: hypothesis, note: 两个情绪低落的人互相倾诉，可能陷入共同反刍，加重负面情绪。 }
+  - type: related_to
+    target: construct.co-rumination
+    note: AI 需要识别并轻柔打断共同反刍。
+    evidence:
+      - { source: source.rose-2002, stance: supports, level: hypothesis, note: 原研究对象是中小学生朋友，不是成年陌生人。 }
+product_use:
+  matching: 按本次目标配对（想说说话 ↔ 愿意听；闲聊 ↔ 闲聊），不按年龄、性别、外貌。
+  opening:
+    method: AI 提供一组逐步加深的开场问题，双方可跳过。
+    evidence: source.aron-1997
+  minutes: { min: 5, max: 20 }
+  ai_role: [开场话题, 安全把关, 识别共同反刍并引入新话题, 结束时的收尾]
+  ai_never: [假装成真人, 在双方未同意时读取对话, 随意插话或评价任何一方]
+  consent: 匹配前双方都要同意 AI 读取对话内容，任何一方拒绝则 AI 只做关键词级别的安全检测。
+  fallback: 无人可匹配时可以和 AI 聊，但必须明确告知对方是 AI。
+  cold_start: 只在固定时段开放（如每晚 21:00–23:00），集中在线人数。
+  safety:
+    - 仅限成年用户
+    - 一键举报和拉黑，结束后可选择永不再匹配
+    - 检测到自伤或危机信号时，暂停对话并提供现实支持渠道
+    - 禁止交换联系方式和外链（可后续放开）
+  compliance: 涉及实名、内容审核、即时通讯相关备案。上线前需法律审查。
+  avoid_when: [当前负面情绪强度很高且用户选择“想说说话”时，优先引导到愿意倾听的一方，而不是同样低落的人]

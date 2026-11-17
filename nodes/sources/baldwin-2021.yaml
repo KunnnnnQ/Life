@@ -1,0 +1,15 @@
+id: source.baldwin-2021
+type: source
+name: { zh: ACE 分数的群体预测与个体预测, en: Population vs individual prediction of poor health from ACE screening }
+summary: 在两个纵向队列中发现，ACE 分数在人群层面与不良健康结局相关，但用于预测具体个体时准确度很低。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Baldwin, J. R.", "Caspi, A.", "Meehan, A. J.", "Ambler, A.", "Arseneault, L.", "Fisher, H. L.", "Harrington, H.", "Matthews, T.", "Odgers, C. L.", "Poulton, R.", "Ramrakha, S.", "Moffitt, T. E.", "Danese, A."]
+  year: 2021
+  title: Population vs individual prediction of poor health from results of adverse childhood experiences screening
+  venue: JAMA Pediatrics
+  volume: 175
+  issue: 4
+  pages: 385-393
+  doi: 10.1001/jamapediatrics.2020.5602

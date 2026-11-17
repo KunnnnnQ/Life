@@ -1,0 +1,15 @@
+id: source.bryant-zillmann-1984
+type: source
+name: { zh: 用电视缓解无聊与压力, en: Using television to alleviate boredom and stress }
+summary: 实验先让被试处于无聊或紧张状态，再让其自由选看节目。无聊者更多选择刺激性节目；紧张者对刺激和放松节目的选择数量相近。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Bryant, J.", "Zillmann, D."]
+  year: 1984
+  title: "Using television to alleviate boredom and stress: Selective exposure as a function of induced excitational states"
+  venue: Journal of Broadcasting
+  volume: 28
+  issue: 1
+  pages: 1-20
+  doi: 10.1080/08838158409386511

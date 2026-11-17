@@ -1,0 +1,18 @@
+id: strategy.distraction
+type: strategy
+name: { zh: 分心, en: Distraction }
+summary: 把注意力从引发情绪的事物转移到无关的事物上。
+status: reviewed
+relations:
+  - type: part_of
+    target: strategy.attentional-deployment
+  - type: targets
+    target: construct.core-affect
+    evidence:
+      - { source: source.webb-2012, stance: supports, level: meta-analysis, note: 分心对情绪结果有小的正向效应。 }
+claims:
+  - statement: 面对高强度负面刺激时，人们更倾向选择分心而不是重评。
+    evidence:
+      - { source: source.sheppes-2011, stance: supports, level: single-study }
+caveats:
+  - 实验室中的分心任务通常只有几秒到几分钟，与产品中的 5 到 20 分钟叙事体验差距很大。

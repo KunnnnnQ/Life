@@ -1,0 +1,24 @@
+id: instrument.sam
+type: instrument
+name: { zh: 自评小人量表（SAM）, en: Self-Assessment Manikin }
+summary: 用图画小人测量愉悦度、唤醒度和支配感的非文字自评工具，几秒即可完成。
+status: reviewed
+relations:
+  - { type: measures, target: construct.valence, evidence: [{ source: source.bradley-lang-1994, stance: supports, level: validation-study }] }
+  - { type: measures, target: construct.arousal, evidence: [{ source: source.bradley-lang-1994, stance: supports, level: validation-study }] }
+  - { type: measures, target: construct.dominance, evidence: [{ source: source.bradley-lang-1994, stance: supports, level: validation-study }] }
+instrument:
+  items: 3
+  response_format: 图画式，每个维度 5 个小人，常用 9 点计分（可在小人之间作答）
+  administration_minutes: 0.5
+  languages:
+    - { lang: 无文字, validated: "yes", note: 图画为主，但指导语仍需翻译。 }
+  license:
+    status: unknown
+    commercial_use: unknown
+    note: 研究用材料由原作者所在机构分发。商业产品使用前需联系核实。
+  items_in_repo: false
+product_use:
+  role: per-session-optional
+  when: 体验前后各一次
+  note: 若许可不明，产品默认改用 instrument.affective-slider。

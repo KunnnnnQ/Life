@@ -1,0 +1,12 @@
+id: construct.positive-affect
+type: construct
+name: { zh: 正性情感, en: Positive affect }
+summary: 感到热情、活跃、警觉的程度。在 PANAS 框架中与负性情感是两个相对独立的维度，而不是一条线的两端。
+status: reviewed
+relations:
+  - type: related_to
+    target: construct.core-affect
+claims:
+  - statement: 正性情感与负性情感可以作为两个相对独立的维度被可靠地测量。
+    evidence:
+      - { source: source.watson-1988, stance: supports, level: validation-study }

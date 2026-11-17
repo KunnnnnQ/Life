@@ -1,0 +1,12 @@
+id: construct.music-mood-regulation
+type: construct
+name: { zh: 音乐情绪调节, en: Music in mood regulation }
+summary: 个体使用音乐来改变、维持或释放情绪的习惯和方式。为未来的音乐模块预留。
+status: draft
+relations:
+  - type: part_of
+    target: construct.emotion-regulation
+claims:
+  - statement: 人们使用音乐调节情绪的方式可以归为娱乐、复苏、强烈感受、转移注意、宣泄、心理整理和慰藉七类策略。
+    evidence:
+      - { source: source.saarikallio-2012, stance: supports, level: validation-study }

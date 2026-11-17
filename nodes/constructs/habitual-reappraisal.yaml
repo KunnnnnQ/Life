@@ -1,0 +1,14 @@
+id: construct.habitual-reappraisal
+type: construct
+name: { zh: 习惯性认知重评, en: Habitual cognitive reappraisal }
+summary: 个体在日常生活中习惯通过改变对情境的理解来调节情绪的程度。是一种稳定的个体差异，区别于某一次具体的重评行为（见 strategy.reappraisal）。
+status: reviewed
+relations:
+  - type: part_of
+    target: construct.emotion-regulation
+  - type: related_to
+    target: strategy.reappraisal
+claims:
+  - statement: 习惯性重评得分较高的人报告更多正性情绪、更少负性情绪和更高的幸福感。
+    evidence:
+      - { source: source.gross-john-2003, stance: supports, level: single-study, note: 相关研究，不能推出因果。 }

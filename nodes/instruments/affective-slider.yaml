@@ -1,0 +1,26 @@
+id: instrument.affective-slider
+type: instrument
+name: { zh: 情绪滑块, en: Affective Slider }
+summary: 两个连续滑块分别测量愉悦度和唤醒度，为数字界面设计，比 SAM 更容易理解。
+status: reviewed
+relations:
+  - { type: measures, target: construct.valence, evidence: [{ source: source.betella-verschure-2016, stance: supports, level: validation-study }] }
+  - { type: measures, target: construct.arousal, evidence: [{ source: source.betella-verschure-2016, stance: supports, level: validation-study }] }
+  - { type: related_to, target: instrument.sam, note: 原文以 SAM 为参照进行比较验证。 }
+instrument:
+  items: 2
+  response_format: 连续滑块，两端为图标，无数字刻度
+  administration_minutes: 0.2
+  languages:
+    - { lang: 无文字, validated: "yes", note: 两端为表情图标。 }
+  license:
+    status: unknown
+    commercial_use: unknown
+    note: 作者公开了实现代码，具体许可证需核对后再写入。
+  items_in_repo: false
+product_use:
+  role: per-session-default
+  when: 体验前后各一次；体验中可选一次
+  output: { valence: "0-1", arousal: "0-1" }
+caveats:
+  - 单次滑块评分噪声较大，只适合看方向和群体趋势，不适合给个人下结论。

@@ -1,0 +1,24 @@
+id: goal.calm-down
+type: goal
+name: { zh: 平静下来, en: Calm down }
+summary: 用户希望降低紧张、焦虑或激动的程度。
+status: draft
+relations:
+  - { type: targets, target: construct.arousal, note: 产品定义的目标方向，不是实证结论。指的是紧张性唤醒，不是精力。 }
+claims:
+  - statement: 疲劳任务后短暂玩休闲游戏，情绪恢复优于引导放松，安静休息反而略降低情绪。
+    evidence:
+      - { source: source.rupp-2017, stance: supports, level: single-study, note: 随机分组的实验室研究，样本较小。 }
+  - statement: 益智类休闲游戏会提高精力唤醒，而正念 app 会降低它；两者的主观恢复体验没有差异。
+    evidence:
+      - { source: source.collins-2019, stance: mixed, level: single-study, note: 实验室部分 n=45。 }
+  - statement: 压力和疲劳越多的人越倾向用游戏来恢复。
+    evidence:
+      - { source: source.reinecke-2009, stance: supports, level: single-study, note: 横断面调查，只说明使用动机，不说明效果。 }
+caveats:
+  - “平静”不应简单等同于唤醒度下降。紧张降低而精力恢复，可能才是用户想要的结果。测量时应分开问“紧张程度”和“精力程度”。
+product_use:
+  ui_label: 平静下来
+  target_shift: { tension: down, energy: any, valence: hold-or-up }
+  default_measure: instrument.affective-slider
+  note: 情绪滑块只有一个唤醒维度，分不出紧张和精力。研究阶段建议额外加一道“紧张程度”题。

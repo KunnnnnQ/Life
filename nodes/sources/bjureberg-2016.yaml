@@ -1,0 +1,15 @@
+id: source.bjureberg-2016
+type: source
+name: { zh: DERS-16 简版验证, en: "Development and validation of a brief version of the DERS: The DERS-16" }
+summary: 从 DERS 中提取 16 项形成简版（不含“觉察”维度），检验其信效度及与原版的一致性。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Bjureberg, J.", "Ljótsson, B.", "Tull, M. T.", "Hedman, E.", "Sahlin, H.", "Lundh, L.-G.", "Bjärehed, J.", "DiLillo, D.", "Messman-Moore, T.", "Gumpert, C. H.", "Gratz, K. L."]
+  year: 2016
+  title: "Development and validation of a brief version of the Difficulties in Emotion Regulation Scale: The DERS-16"
+  venue: Journal of Psychopathology and Behavioral Assessment
+  volume: 38
+  issue: 2
+  pages: 284-296
+  doi: 10.1007/s10862-015-9514-x

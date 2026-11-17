@@ -1,0 +1,15 @@
+id: source.reinecke-2009
+type: source
+name: { zh: 游戏与压力恢复, en: "Games and recovery: The use of video and computer games to recuperate from stress and strain" }
+summary: 1614 人的在线调查，发现工作疲劳和日常烦恼越多的人越倾向用游戏来恢复；社会支持较少的人尤其如此。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Reinecke, L."]
+  year: 2009
+  title: "Games and recovery: The use of video and computer games to recuperate from stress and strain"
+  venue: Journal of Media Psychology
+  volume: 21
+  issue: 3
+  pages: 126-142
+  doi: 10.1027/1864-1105.21.3.126

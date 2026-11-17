@@ -1,0 +1,8 @@
+# Release metadata. Bump `version` only when cutting a release (see CONTRIBUTING.md).
+name: Mood Capsule Knowledge Base
+version: 0.1.0
+released: null          # set to the release date when the version is tagged
+doi: null               # Zenodo DOI for this version, once archived
+license:
+  content: CC-BY-4.0    # everything under nodes/
+  code: MIT             # everything under scripts/ and schema/

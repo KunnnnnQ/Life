@@ -1,0 +1,12 @@
+id: strategy.situation-modification
+type: strategy
+name: { zh: 情境修改, en: Situation modification }
+summary: 改变所处情境的外部特征，从而改变其情绪影响。
+status: reviewed
+relations:
+  - type: part_of
+    target: construct.emotion-regulation
+    evidence:
+      - { source: source.gross-1998, stance: supports, level: theory }
+caveats:
+  - 在虚构故事里“改变情境”并不改变用户的真实情境。叙事机制借用它时只能算类比。

@@ -1,0 +1,14 @@
+id: construct.habitual-suppression
+type: construct
+name: { zh: 习惯性表达抑制, en: Habitual expressive suppression }
+summary: 个体习惯通过压住情绪的外在表达来调节情绪的程度。
+status: reviewed
+relations:
+  - type: part_of
+    target: construct.emotion-regulation
+  - type: related_to
+    target: strategy.expressive-suppression
+claims:
+  - statement: 习惯性抑制得分较高的人报告更少正性情绪、更多负性情绪和较差的人际功能。
+    evidence:
+      - { source: source.gross-john-2003, stance: supports, level: single-study, note: 相关研究，且样本以北美大学生为主；抑制的后果可能存在文化差异。 }

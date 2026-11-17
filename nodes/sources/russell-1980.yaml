@@ -1,0 +1,15 @@
+id: source.russell-1980
+type: source
+name: { zh: 情绪环形模型, en: A circumplex model of affect }
+summary: 提出情绪可以用“愉悦度 × 唤醒度”两个维度构成的环形空间来描述，是核心情感（core affect）维度观的基础文献。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Russell, J. A."]
+  year: 1980
+  title: A circumplex model of affect
+  venue: Journal of Personality and Social Psychology
+  volume: 39
+  issue: 6
+  pages: 1161-1178
+  doi: 10.1037/h0077714

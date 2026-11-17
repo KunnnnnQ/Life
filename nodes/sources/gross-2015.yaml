@@ -1,0 +1,15 @@
+id: source.gross-2015
+type: source
+name: { zh: 情绪调节：现状与展望, en: "Emotion regulation: Current status and future prospects" }
+summary: 回顾过程模型提出后的研究进展，提出扩展过程模型，把策略的识别、选择、执行和监控纳入调节循环。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Gross, J. J."]
+  year: 2015
+  title: "Emotion regulation: Current status and future prospects"
+  venue: Psychological Inquiry
+  volume: 26
+  issue: 1
+  pages: 1-26
+  doi: 10.1080/1047840X.2014.940781

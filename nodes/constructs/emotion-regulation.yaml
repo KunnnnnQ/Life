@@ -1,0 +1,17 @@
+id: construct.emotion-regulation
+type: construct
+name: { zh: 情绪调节, en: Emotion regulation }
+summary: 个体影响自己产生哪些情绪、何时产生、如何体验和表达这些情绪的过程。本产品的核心理论框架。
+status: reviewed
+claims:
+  - statement: 调节策略可以按其在情绪产生过程中起作用的位置分为情境选择、情境修改、注意部署、认知改变和反应调节五族。
+    evidence:
+      - { source: source.gross-1998, stance: supports, level: theory }
+  - statement: 调节是一个包含识别是否需要调节、选择策略、执行策略和监控结果的循环过程。
+    evidence:
+      - { source: source.gross-2015, stance: supports, level: theory }
+  - statement: 电子游戏为情绪调节提供了机会，但以游戏为载体的情绪调节干预，其效果证据仍然有限。
+    evidence:
+      - { source: source.villani-2018, stance: mixed, level: systematic-review }
+caveats:
+  - 过程模型是组织研究的框架，不是每个环节都已被同等程度地验证。

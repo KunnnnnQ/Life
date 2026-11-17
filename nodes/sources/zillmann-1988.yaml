@@ -1,0 +1,15 @@
+id: source.zillmann-1988
+type: source
+name: { zh: 情绪管理理论, en: Mood management through communication choices }
+summary: 提出情绪管理理论：人们会选择能缓解不良情绪、维持良好情绪的媒介内容；与当前坏情绪语义相近的内容不利于打断它。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Zillmann, D."]
+  year: 1988
+  title: Mood management through communication choices
+  venue: American Behavioral Scientist
+  volume: 31
+  issue: 3
+  pages: 327-340
+  doi: 10.1177/000276488031003005

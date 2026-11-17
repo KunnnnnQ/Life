@@ -1,0 +1,16 @@
+id: source.collins-2019
+type: source
+name: { zh: 数字游戏与正念 app 对下班后恢复的比较, en: "Digital games and mindfulness apps: Comparison of effects on post work recovery" }
+summary: 实验室研究（n=45）与现场研究（n=20）。实验室中，益智游戏提高了精力唤醒，正念 app 和对照组降低了它；三组主观恢复体验无差异。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Collins, E.", "Cox, A.", "Wilcock, C.", "Sethu-Jones, G."]
+  year: 2019
+  title: "Digital games and mindfulness apps: Comparison of effects on post work recovery"
+  venue: JMIR Mental Health
+  volume: 6
+  issue: 7
+  pages: e12853
+  doi: 10.2196/12853
+  open_access: true

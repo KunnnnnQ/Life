@@ -1,0 +1,15 @@
+id: source.saarikallio-2012
+type: source
+name: { zh: 音乐情绪调节简表（B-MMR）, en: Development and validation of the Brief Music in Mood Regulation Scale (B-MMR) }
+summary: 编制 21 项音乐情绪调节简表，测量人们使用音乐调节情绪的七类策略。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Saarikallio, S."]
+  year: 2012
+  title: Development and validation of the Brief Music in Mood Regulation Scale (B-MMR)
+  venue: Music Perception
+  volume: 30
+  issue: 1
+  pages: 97-105
+  doi: 10.1525/mp.2012.30.1.97

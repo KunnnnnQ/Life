@@ -1,0 +1,14 @@
+id: source.bhattacharjee-2025
+type: source
+name: { zh: 个性化 LLM 叙事干预的用户感知, en: "Perfectly to a Tee: Understanding user perceptions of personalized LLM-enhanced narrative interventions" }
+summary: 346 名 18 至 25 岁年轻人随机阅读人工撰写或 LLM 个性化的“克服困境”故事。个性化故事在传达要点、促进反思、减弱对消极想法的相信程度上被评价更好。
+status: reviewed
+citation:
+  kind: conference-paper
+  authors: ["Bhattacharjee, A.", "Xu, S. Y.", "Rao, P.", "Zeng, Y.", "Meyerhoff, J.", "Ahmed, S. I.", "Mohr, D. C.", "Liut, M.", "Mariakakis, A.", "Kornfield, R.", "Williams, J. J."]
+  year: 2025
+  title: "Perfectly to a Tee: Understanding user perceptions of personalized LLM-enhanced narrative interventions"
+  venue: Proceedings of the 2025 ACM Designing Interactive Systems Conference (DIS '25)
+  pages: 1387-1416
+  doi: 10.1145/3715336.3735810
+  url: https://arxiv.org/abs/2409.16732

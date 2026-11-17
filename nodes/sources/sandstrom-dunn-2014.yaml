@@ -1,0 +1,15 @@
+id: source.sandstrom-dunn-2014
+type: source
+name: { zh: 弱关系互动与幸福感, en: "Social interactions and well-being: The surprising power of weak ties" }
+summary: 发现与不太熟的人（弱关系）互动更多的人、以及互动更多的那些天，幸福感更高。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Sandstrom, G. M.", "Dunn, E. W."]
+  year: 2014
+  title: "Social interactions and well-being: The surprising power of weak ties"
+  venue: Personality and Social Psychology Bulletin
+  volume: 40
+  issue: 7
+  pages: 910-922
+  doi: 10.1177/0146167214529799

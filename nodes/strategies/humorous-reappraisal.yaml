@@ -1,0 +1,16 @@
+id: strategy.humorous-reappraisal
+type: strategy
+name: { zh: 幽默重评, en: Humorous reappraisal }
+summary: 用幽默的角度重新看待令人不快的情境。分为善意幽默（对处境的善意调侃）和刻薄幽默（嘲讽、贬低）。
+status: reviewed
+relations:
+  - type: part_of
+    target: strategy.cognitive-change
+  - type: targets
+    target: construct.core-affect
+    evidence:
+      - { source: source.samson-gross-2012, stance: supports, level: single-study }
+claims:
+  - statement: 面对负面刺激时，善意幽默比刻薄幽默更能降低负面情绪、提升正面情绪。
+    evidence:
+      - { source: source.samson-gross-2012, stance: supports, level: single-study, note: 实验室研究，刺激为负面图片。 }

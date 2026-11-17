@@ -1,0 +1,25 @@
+id: mechanic.reframe-arc
+type: mechanic
+name: { zh: 重新理解的故事弧, en: Reframe arc }
+summary: 角色遭遇与用户处境相似但不相同的挫折，在故事中逐渐发现新的理解方式。让用户替代性地经历一次重评。
+status: draft
+relations:
+  - type: implements
+    target: strategy.reappraisal
+    evidence:
+      - { source: source.webb-2012, stance: supports, level: hypothesis, note: 研究中的重评由本人进行；看角色重评属于替代性重评，没有直接证据。 }
+      - { source: source.green-brock-2000, stance: supports, level: hypothesis, note: 叙事传输为“读者接受角色的新理解”提供了机制解释，但原研究测的是信念改变，不是情绪调节。 }
+  - type: serves
+    target: goal.encouragement
+    evidence:
+      - { source: source.bhattacharjee-2025, stance: supports, level: hypothesis, note: 最接近的证据：个性化“克服困境”故事被评价为更能减弱对消极想法的相信。但结果多为用户感知评分，未测情绪变化，且是阅读而非互动。 }
+product_use:
+  beats: [确认情绪, 挫折, 卡住, 新视角出现, 小的行动, 开放式结尾]
+  minutes: { min: 5, max: 20 }
+  choices: 2-3，至少一个选择决定角色采取哪种理解
+  arousal_curve: dip-then-rise
+  personalization: 可在用户授权下借用其处境的“结构”（如被否定），但不复述真实事件。
+  plausibility: 故事要贴近但不能失真。过于完美的转折会让用户觉得不可信。
+  avoid_when:
+    - 当前负面情绪强度很高（先用 slow-exploration 或 novelty-detour）
+    - 用户在“禁止话题”里列出了相关主题

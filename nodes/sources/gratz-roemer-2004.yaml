@@ -1,0 +1,15 @@
+id: source.gratz-roemer-2004
+type: source
+name: { zh: DERS 原始量表, en: Difficulties in Emotion Regulation Scale (DERS) }
+summary: 编制 36 项情绪调节困难量表（DERS），提出包含接纳、目标导向、冲动控制、觉察、策略和清晰度在内的多维结构。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Gratz, K. L.", "Roemer, L."]
+  year: 2004
+  title: "Multidimensional assessment of emotion regulation and dysregulation: Development, factor structure, and initial validation of the Difficulties in Emotion Regulation Scale"
+  venue: Journal of Psychopathology and Behavioral Assessment
+  volume: 26
+  issue: 1
+  pages: 41-54
+  doi: 10.1023/B:JOBA.0000007455.08539.94

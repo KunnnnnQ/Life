@@ -1,0 +1,30 @@
+id: mechanic.humor-pep-talk
+type: mechanic
+name: { zh: 幽默励志, en: Humorous pep talk }
+summary: 一个原创角色用夸张但善意的方式，把用户的处境调侃成一件没那么严重、甚至有点好笑的事，最后落到一句真诚的鼓励。
+status: draft
+relations:
+  - type: implements
+    target: strategy.humorous-reappraisal
+    evidence:
+      - { source: source.samson-gross-2012, stance: supports, level: hypothesis, note: 研究中的幽默由被试自己产生；由角色讲给用户听，效果是否相同未经检验。 }
+  - type: serves
+    target: goal.encouragement
+    evidence:
+      - { source: source.samson-gross-2012, stance: supports, level: hypothesis, note: 只支持“善意幽默优于刻薄幽默”，不支持“幽默优于其他鼓励方式”。 }
+product_use:
+  beats: [确认感受, 夸张调侃, 换个角度, 真诚收尾]
+  minutes: { min: 1, max: 5 }
+  choices: 0-1
+  arousal_curve: rise-then-settle
+  humor_style: 只用善意幽默，调侃处境，不调侃用户本人。
+  timing: 必须先确认感受，再进入幽默段落。用户情绪强度很高时不使用。
+  character:
+    source: 只用原创角色。用户选择人设（如损友、毒舌学长、温柔前辈）、画风和声音。
+    forbidden: [真人的脸或声音, 已有影视、动漫、游戏角色的形象或名字]
+  media_stages:
+    - { stage: 1, form: 文字台词 }
+    - { stage: 2, form: 配音和 2D 口型角色 }
+    - { stage: 3, form: 只在高潮生成短视频片段 }
+  compliance: AI 生成的音视频必须加 AI 生成标识。上线前需法律审查肖像、声音与深度合成相关规定。
+  avoid_when: [用户在禁止内容里选了“不要开玩笑”]

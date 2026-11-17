@@ -1,0 +1,10 @@
+id: construct.valence
+type: construct
+name: { zh: 愉悦度, en: Valence (pleasure) }
+summary: 情感状态的好坏程度，从非常不愉快到非常愉快。
+status: reviewed
+relations:
+  - type: part_of
+    target: construct.core-affect
+    evidence:
+      - { source: source.russell-1980, stance: supports, level: theory }

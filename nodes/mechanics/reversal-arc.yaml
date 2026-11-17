@@ -1,0 +1,24 @@
+id: mechanic.reversal-arc
+type: mechanic
+name: { zh: 逆转弧, en: Reversal arc }
+summary: 主角起初被低估或处于劣势，通过观察、判断和选择完成一次漂亮的逆转。
+status: draft
+relations:
+  - type: implements
+    target: strategy.distraction
+    note: 沉浸在高投入的情节里本身带有转移注意的作用。
+    evidence:
+      - { source: source.webb-2012, stance: supports, level: hypothesis }
+  - type: serves
+    target: goal.mastery
+    evidence:
+      - { source: source.ryan-2006, stance: supports, level: hypothesis, note: 游戏中的胜任感和自主感与玩后幸福感提升相关。前提是用户自己做选择并感到做对了，而不是旁观主角成功。 }
+      - { source: source.bandura-1977, stance: supports, level: hypothesis, note: 替代性经验是自我效能的来源之一。但该理论指的是观察真实榜样完成自己也要面对的任务，虚构情节能否起作用未经检验。 }
+product_use:
+  beats: [被质疑, 线索, 关键选择, 反转, 被认可]
+  minutes: { min: 3, max: 20 }
+  choices: 2-3，关键选择必须让用户感到是自己做对了
+  arousal_curve: rise-peak-resolve
+  agency: 必须。依据胜任感研究，逆转应来自用户的选择，而不是剧情自动发生。
+  personalization: 可使用用户喜欢的题材（侦探、职场、奇幻等）。
+  avoid_when: [用户目标是平静下来]

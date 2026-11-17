@@ -1,0 +1,13 @@
+id: construct.negative-affect
+type: construct
+name: { zh: 负性情感, en: Negative affect }
+summary: 主观痛苦和不愉快投入的程度，如紧张、烦躁、害怕、羞愧。
+status: reviewed
+relations:
+  - type: related_to
+    target: construct.core-affect
+  - type: contrasts_with
+    target: construct.positive-affect
+    note: 两者相关较弱，降低负性情感不等于提高正性情感。产品评估时应分别看。
+    evidence:
+      - { source: source.watson-1988, stance: supports, level: validation-study }

@@ -1,0 +1,14 @@
+id: strategy.expressive-suppression
+type: strategy
+name: { zh: 表达抑制, en: Expressive suppression }
+summary: 压住正在进行中的情绪表达，例如不让别人看出自己生气。
+status: reviewed
+relations:
+  - type: part_of
+    target: strategy.response-modulation
+  - type: targets
+    target: construct.core-affect
+    evidence:
+      - { source: source.webb-2012, stance: mixed, level: meta-analysis, note: 抑制表达能减少外显表达，但对主观情绪体验的影响很小。 }
+product_use:
+  never_as_mechanic: 产品不应设计鼓励用户压住情绪的机制。

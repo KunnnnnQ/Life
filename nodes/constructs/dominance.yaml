@@ -1,0 +1,13 @@
+id: construct.dominance
+type: construct
+name: { zh: 支配感 / 控制感, en: Dominance (control) }
+summary: 个体在当下情境中感到自己能掌控、还是被情境掌控的程度。SAM 的第三个维度。
+status: reviewed
+relations:
+  - type: related_to
+    target: construct.core-affect
+    note: 不属于 Russell 的两维核心情感，但常与愉悦度、唤醒度一同测量。
+    evidence:
+      - { source: source.bradley-lang-1994, stance: supports, level: validation-study }
+caveats:
+  - 支配感维度的稳定性和区分度通常不如愉悦度与唤醒度，作为产品目标指标时要谨慎。

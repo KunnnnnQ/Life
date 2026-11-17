@@ -1,0 +1,21 @@
+id: instrument.panas
+type: instrument
+name: { zh: 正负性情感量表（PANAS）, en: Positive and Negative Affect Schedule }
+summary: 20 项情绪词评分，分别得到正性情感和负性情感两个分数。
+status: reviewed
+relations:
+  - { type: measures, target: construct.positive-affect, evidence: [{ source: source.watson-1988, stance: supports, level: validation-study }] }
+  - { type: measures, target: construct.negative-affect, evidence: [{ source: source.watson-1988, stance: supports, level: validation-study }] }
+instrument:
+  items: 20
+  response_format: 5 点评分，从“几乎没有”到“极其”
+  subscales:
+    - { name: 正性情感, items: 10, measures: construct.positive-affect }
+    - { name: 负性情感, items: 10, measures: construct.negative-affect }
+  license:
+    status: unknown
+    commercial_use: unknown
+    note: 原文发表于 APA 期刊，题目版权归属需核实。
+  items_in_repo: false
+product_use:
+  role: research-only

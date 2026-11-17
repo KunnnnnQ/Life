@@ -1,0 +1,15 @@
+id: source.rupp-2017
+type: source
+name: { zh: 休闲游戏的情绪与认知恢复效果, en: Examining the restorative effects of casual video game play }
+summary: 随机实验：被试完成疲劳任务后分别进行安静休息、引导放松或玩休闲游戏。玩游戏组的投入度和情绪恢复优于放松组。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Rupp, M. A.", "Sweetman, R.", "Sosa, A. E.", "Smither, J. A.", "McConnell, D. S."]
+  year: 2017
+  title: "Searching for affective and cognitive restoration: Examining the restorative effects of casual video game play"
+  venue: Human Factors
+  volume: 59
+  issue: 7
+  pages: 1096-1107
+  doi: 10.1177/0018720817715360

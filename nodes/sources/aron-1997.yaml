@@ -1,0 +1,15 @@
+id: source.aron-1997
+type: source
+name: { zh: 人际亲近感的实验诱发（36 个问题）, en: "The experimental generation of interpersonal closeness" }
+summary: 让陌生人两两按一组逐步加深的自我暴露问题对话，约 45 分钟后产生的亲近感明显高于闲聊对照组。
+status: reviewed
+citation:
+  kind: journal-article
+  authors: ["Aron, A.", "Melinat, E.", "Aron, E. N.", "Vallone, R. D.", "Bator, R. J."]
+  year: 1997
+  title: "The experimental generation of interpersonal closeness: A procedure and some preliminary findings"
+  venue: Personality and Social Psychology Bulletin
+  volume: 23
+  issue: 4
+  pages: 363-377
+  doi: 10.1177/0146167297234003

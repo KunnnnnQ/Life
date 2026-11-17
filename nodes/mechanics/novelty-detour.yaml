@@ -1,0 +1,21 @@
+id: mechanic.novelty-detour
+type: mechanic
+name: { zh: 新奇绕路, en: Novelty detour }
+summary: 一段节奏轻快、充满意外和小发现的短篇冒险，和用户当前处境毫无关系。
+status: draft
+relations:
+  - type: implements
+    target: strategy.distraction
+    evidence:
+      - { source: source.webb-2012, stance: supports, level: hypothesis }
+  - type: serves
+    target: goal.mood-shift
+    evidence:
+      - { source: source.bryant-zillmann-1984, stance: supports, level: hypothesis, note: 无聊者偏好刺激性内容。证据是关于“选择什么”，不是“看了以后心情是否变好”。 }
+      - { source: source.zillmann-1988, stance: supports, level: hypothesis, note: 与坏情绪无关的内容更利于打断坏情绪，这是“刻意避开用户近期经历”的理论依据。 }
+product_use:
+  beats: [意外开场, 发现, 小悬念, 意外解决]
+  minutes: { min: 3, max: 10 }
+  choices: 1-3，选择影响走向
+  arousal_curve: medium-varied
+  personalization: 仅使用题材偏好，刻意避开用户近期经历。

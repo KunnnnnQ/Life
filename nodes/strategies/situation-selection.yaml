@@ -1,0 +1,10 @@
+id: strategy.situation-selection
+type: strategy
+name: { zh: 情境选择, en: Situation selection }
+summary: 主动选择接近或回避某些情境，从而影响将要产生的情绪。用户选择“我现在想要什么体验”本身就是一种情境选择。
+status: reviewed
+relations:
+  - type: part_of
+    target: construct.emotion-regulation
+    evidence:
+      - { source: source.gross-1998, stance: supports, level: theory }

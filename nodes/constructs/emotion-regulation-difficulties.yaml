@@ -1,0 +1,14 @@
+id: construct.emotion-regulation-difficulties
+type: construct
+name: { zh: 情绪调节困难, en: Emotion regulation difficulties }
+summary: 在情绪觉察、理解、接纳和在负面情绪下维持目标行为等方面存在困难的程度。属于临床相关构念。
+status: reviewed
+relations:
+  - type: part_of
+    target: construct.emotion-regulation
+claims:
+  - statement: 情绪调节困难可以分为不接纳、目标导向困难、冲动控制困难、缺乏觉察、策略有限和缺乏清晰度等维度。
+    evidence:
+      - { source: source.gratz-roemer-2004, stance: supports, level: validation-study }
+caveats:
+  - 这是临床研究常用构念。产品不应据此给用户贴标签或做筛查结论。
