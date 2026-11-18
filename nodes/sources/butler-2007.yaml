@@ -1,0 +1,20 @@
+id: source.butler-2007
+type: source
+name:
+  zh: 情绪抑制的社交后果是否有文化差异
+  en: 'Emotion regulation and culture: Are the social consequences of emotion suppression culture-specific?'
+summary: 实验发现，抑制情绪的负面社交后果在持西方价值观的女性中较明显，在持亚洲价值观的女性中较弱。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Butler, E. A.
+  - Lee, T. L.
+  - Gross, J. J.
+  year: 2007
+  title: 'Emotion regulation and culture: Are the social consequences of emotion suppression culture-specific?'
+  venue: Emotion
+  volume: '7'
+  issue: '1'
+  pages: 30-48
+  doi: 10.1037/1528-3542.7.1.30

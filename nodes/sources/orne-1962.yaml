@@ -1,0 +1,18 @@
+id: source.orne-1962
+type: source
+name:
+  zh: 实验中的需求特征
+  en: 'On the social psychology of the psychological experiment: With particular reference to demand characteristics and their implications'
+summary: 提出“需求特征”：被试会根据对研究目的的猜测调整行为和自我报告，从而影响实验结果。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Orne, M. T.
+  year: 1962
+  title: 'On the social psychology of the psychological experiment: With particular reference to demand characteristics and their implications'
+  venue: American Psychologist
+  volume: '17'
+  issue: '11'
+  pages: 776-783
+  doi: 10.1037/h0043424

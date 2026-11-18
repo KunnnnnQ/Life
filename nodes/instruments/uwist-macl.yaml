@@ -1,0 +1,29 @@
+id: instrument.uwist-macl
+type: instrument
+name: { zh: UWIST 心境形容词表, en: UWIST Mood Adjective Checklist }
+summary: 用形容词评定当下心境，分别得到精力唤醒、紧张唤醒和愉悦基调三个分数。能区分“平静”和“没精神”。
+status: draft
+relations:
+  - { type: measures, target: construct.tense-arousal, evidence: [{ source: source.matthews-1990, stance: supports, level: validation-study }] }
+  - { type: measures, target: construct.energetic-arousal, evidence: [{ source: source.matthews-1990, stance: supports, level: validation-study }] }
+  - { type: measures, target: construct.valence, note: 原文称“愉悦基调”（hedonic tone）。, evidence: [{ source: source.matthews-1990, stance: supports, level: validation-study }] }
+instrument:
+  items: 24
+  response_format: 4 点评分（definitely / slightly / slightly not / definitely not），评定每个形容词是否符合此刻心境
+  administration_minutes: 2
+  subscales:
+    - { name: 精力唤醒, items: 8, measures: construct.energetic-arousal }
+    - { name: 紧张唤醒, items: 8, measures: construct.tense-arousal }
+    - { name: 愉悦基调, items: 8, measures: construct.valence }
+  languages:
+    - { lang: en, validated: "yes", source: source.matthews-1990 }
+    - { lang: zh, validated: unknown, note: 未找到中文版验证文献。 }
+  license:
+    status: unknown
+    commercial_use: unknown
+  items_in_repo: false
+  psychometrics_note: 部分版本另有 5 题“愤怒/挫败”分量表；每个分量表的题数由计分范围推断，需对照原文核实。
+product_use:
+  role: research-only
+  when: 研究阶段“平静下来”目标的前后测
+  short_form_idea: 产品内可只取紧张唤醒的 2–3 个形容词做快速版，但快速版本身未经验证。

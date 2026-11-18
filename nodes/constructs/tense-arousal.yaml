@@ -1,0 +1,15 @@
+id: construct.tense-arousal
+type: construct
+name: { zh: 紧张唤醒, en: Tense arousal }
+summary: 紧张、焦虑、坐立不安的激活程度。“平静下来”要降低的是它，而不是精力。
+status: reviewed
+relations:
+  - type: part_of
+    target: construct.arousal
+    evidence:
+      - { source: source.matthews-1990, stance: supports, level: validation-study }
+  - type: contrasts_with
+    target: construct.energetic-arousal
+    note: 两者可以分开变化，例如玩益智游戏后精力上升而紧张下降。
+    evidence:
+      - { source: source.matthews-1990, stance: supports, level: validation-study }

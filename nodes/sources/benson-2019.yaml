@@ -1,0 +1,20 @@
+id: source.benson-2019
+type: source
+name: { zh: 年龄、情境与情绪调节的日常采样研究, en: "Age differences in emotion regulation strategy use, variability, and flexibility" }
+summary: 150 名 18–89 岁成人在九周内记录 64213 次社交互动；总体重评和抑制使用未见年龄差异，但情境内变化与适配存在差异。
+status: draft
+citation:
+  kind: journal-article
+  authors: ["Benson, L.", "English, T.", "Conroy, D. E.", "Pincus, A. L.", "Gerstorf, D.", "Ram, N."]
+  year: 2019
+  title: "Age differences in emotion regulation strategy use, variability, and flexibility: An experience sampling approach"
+  venue: Developmental Psychology
+  volume: 55
+  issue: 9
+  pages: 1951-1964
+  doi: 10.1037/dev0000727
+  url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7189626/
+caveats:
+  - 观察性日常采样研究；不同年龄的人之间的差异不等于同一个人变老之后的因果变化。
+  - 考察重评和抑制及社交情境，没有比较读故事、音频和短视频，不支持按年龄直接指定媒介。
+  - 本次核查了作者论文摘要；不记录未核对的具体回归系数。

@@ -1,0 +1,20 @@
+id: source.tam-inzlicht-2024
+type: source
+name: { zh: 视频切换与无聊的实验研究, en: Fast-forward to boredom }
+summary: 七个实验共 1223 人发现，频繁切换或快进视频在部分情境下增加无聊并降低满意度、注意和意义感。
+status: draft
+citation:
+  kind: journal-article
+  authors: ["Tam, K. Y. Y.", "Inzlicht, M."]
+  year: 2024
+  title: "Fast-forward to boredom: How switching behavior on digital media makes people more bored"
+  venue: "Journal of Experimental Psychology: General"
+  volume: 153
+  issue: 10
+  pages: 2409-2426
+  doi: 10.1037/xge0001639
+  url: https://www.apa.org/pubs/journals/releases/xge-xge0001639.pdf
+caveats:
+  - 研究操纵的是视频之间或视频内部的切换，不等于证明所有短视频或所有快节奏剪辑有害。
+  - 七个实验中六个预注册；文章阅读和非大学生样本的结果较不一致，不能无条件推广。
+  - Study 3–5 的观看时段通常为 10 分钟；没有验证本项目的 30 秒冷笑话或个性化视频生成。

@@ -1,0 +1,21 @@
+id: risk.screen-media-assumptions
+type: risk
+name: { zh: 对短视频的先入之见, en: Assumptions about short video }
+summary: 既不能假设“爱刷视频的人就该给视频”，也不能假设“短视频有害”。两种判断都缺乏证据，应以个人反馈为准。
+status: draft
+relations:
+  - { type: threatens, target: mechanic.brief-humor-video }
+claims:
+  - statement: 数字技术使用与青少年幸福感的关联非常小，最多解释约 0.4% 的方差。
+    evidence:
+      - { source: source.orben-przybylski-2019, stance: supports, level: replicated, note: 三个大型数据集，相关研究。 }
+  - statement: 为了减少无聊而频繁切换视频，有时反而更无聊。
+    evidence:
+      - { source: source.tam-inzlicht-2024, stance: supports, level: replicated, note: 七个实验。 }
+risk:
+  severity: low
+  status: mitigated-in-code
+  mitigation:
+    - 媒介习惯只影响“接受度”，效果按个人反馈单独学习
+    - 视频为有结尾的单段内容，不做无限连播
+  components: [web/core/engine.ts#decide]

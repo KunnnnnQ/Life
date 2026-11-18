@@ -1,0 +1,20 @@
+id: source.wood-2009
+type: source
+name:
+  zh: 积极自我陈述的双刃效应
+  en: 'Positive self-statements: Power for some, peril for others'
+summary: 实验发现，让低自尊者重复积极自我陈述（如“我是可爱的人”），他们的心境反而变差；高自尊者略有获益。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Wood, J. V.
+  - Perunovic, W. Q. E.
+  - Lee, J. W.
+  year: 2009
+  title: 'Positive self-statements: Power for some, peril for others'
+  venue: Psychological Science
+  volume: '20'
+  issue: '7'
+  pages: 860-866
+  doi: 10.1111/j.1467-9280.2009.02370.x

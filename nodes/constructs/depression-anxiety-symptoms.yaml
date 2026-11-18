@@ -1,0 +1,7 @@
+id: construct.depression-anxiety-symptoms
+type: construct
+name: { zh: 抑郁与焦虑症状, en: Depression and anxiety symptoms }
+summary: 过去两周的情绪低落、兴趣减退、紧张担忧等症状水平。产品用它判断是否应该继续提供娱乐化体验，而不是给用户下诊断。
+status: reviewed
+caveats:
+  - 筛查得分高只提示需要关注，不等于诊断。产品不得向用户呈现“你有抑郁症”之类的结论。

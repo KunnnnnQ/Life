@@ -1,0 +1,31 @@
+id: mechanic.music-pause
+type: mechanic
+name: { zh: 音乐片段休息, en: Bounded music pause }
+summary: 系统在当前可播放音频且用户负担较高时，选择一段有明确时限的音乐体验，并依据本人反馈调整下次选择。
+status: draft
+relations:
+  - type: implements
+    target: strategy.response-modulation
+    evidence:
+      - { source: source.de-witte-2020, stance: supports, level: hypothesis, locator: Abstract; Discussion, note: 音乐对压力结果的汇总证据为候选机制提供依据，但自动曲目选择不是被检验的干预。 }
+  - type: serves
+    target: goal.calm-down
+    evidence:
+      - { source: source.de-witte-2020, stance: supports, level: hypothesis, locator: Discussion — Implications for future research, note: 本项目的具体曲目、时长和个性化效果未知。 }
+claims:
+  - statement: 在会话开始和负反馈后重新检查当前状态、可用时间和音频环境，再决定是否采用音乐；这是本项目的自适应设计假设。
+    evidence:
+      - { source: source.nahum-shani-2018, stance: supports, level: hypothesis, locator: Decision Points; Tailoring Variables; Decision Rules, note: 借用 JITAI 设计框架，不表示该规则的阈值已被验证。 }
+product_use:
+  medium: audio
+  content_family: music
+  beats: [进入, 连贯片段, 渐弱收尾]
+  minutes: { min: 1, max: 10 }
+  duration_note: 产品配置范围，非元分析得出的最优剂量。
+  choices: 0；允许暂停与停止。
+  reading_load: none
+  interaction_load: low
+  personalization: 参考可选 B-MMR、本人实际听后反馈和主动提供的音乐习惯；不把歌曲风格等同情绪效果。
+  candidate_signals: [本次希望降低紧张, 当前不想阅读或做选择, 可播放音频]
+  constraints: [记录片段实际时长, 音量可调, 无自动无限续播, 目标变化与喜欢程度分别记录]
+  avoid_when: [环境不允许声音且无耳机, 该片段被用户标记不适]

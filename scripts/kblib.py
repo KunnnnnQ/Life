@@ -19,6 +19,7 @@ FOLDER = {
     "mechanic": "mechanics",
     "goal": "goals",
     "source": "sources",
+    "risk": "risks",
 }
 
 # relation type -> allowed (from_type, to_type) pairs
@@ -31,6 +32,7 @@ RELATION_RULES = {
     "derived_from": {("instrument", "instrument")},
     "contrasts_with": None,  # any pair of the same type
     "related_to": None,      # any pair
+    "threatens": {("risk", t) for t in ("construct", "instrument", "strategy", "mechanic", "goal")},
 }
 
 OPEN_LICENSES = {"public-domain", "open"}
@@ -163,10 +165,18 @@ def check_graph(nodes: dict[str, dict], report: Report) -> None:
             if inst.get("subscales") and all("items" in s for s in inst["subscales"]) and declared != inst.get("items"):
                 report.err(where, f"subscale items sum to {declared}, but items = {inst.get('items')}")
 
+        if ntype == "risk":
+            has_evidence = any(True for _ in iter_evidence(node))
+            if not has_evidence:
+                report.err(where, "risk must cite at least one source (in claims or relation evidence)")
+            if not any(r["type"] == "threatens" for r in node.get("relations", [])) and not node.get("risk", {}).get("components"):
+                report.warn(where, "risk neither threatens a node nor names a product component")
+
         if ntype == "goal":
-            measure = node.get("product_use", {}).get("default_measure")
-            if measure and measure not in nodes:
-                report.err(where, f"default_measure '{measure}' does not exist")
+            for key in ("default_measure", "research_measure"):
+                measure = node.get("product_use", {}).get(key)
+                if measure and measure not in nodes:
+                    report.err(where, f"{key} '{measure}' does not exist")
 
         if node.get("status") == "deprecated" and node.get("replaced_by") not in nodes:
             report.err(where, f"replaced_by '{node.get('replaced_by')}' does not exist")

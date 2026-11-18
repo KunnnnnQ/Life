@@ -5,9 +5,13 @@ summary: 21 项量表，测量七类音乐情绪调节策略的使用习惯，�
 status: draft
 relations:
   - { type: measures, target: construct.music-mood-regulation, evidence: [{ source: source.saarikallio-2012, stance: supports, level: validation-study }] }
+claims:
+  - statement: B-MMR 使用 5 点 Likert 评分，两端为“非常不同意”和“非常同意”；七个分量表各 3 题，共 21 题。
+    evidence:
+      - { source: source.saarikallio-2012, stance: supports, level: validation-study, locator: "p. 105, Appendix B（B-MMR 简表本身的说明）" }
 instrument:
   items: 21
-  response_format: Likert 式评分（点数待对照原文核实）
+  response_format: 5 点 Likert 评分，从“非常不同意”到“非常同意”（原文 Appendix B，p. 105）
   subscales:
     - { name: 娱乐, items: 3 }
     - { name: 复苏, items: 3 }
@@ -22,4 +26,6 @@ instrument:
   items_in_repo: false
 product_use:
   role: profile-optional
-  when: 音乐模块上线后
+  when: 课堂项目加入音乐体验后，用户可选填写一次；仅做文字故事时可跳过。
+  use_for: 描述七类音乐情绪调节习惯，为音乐体验设计提供探索性参考。
+  not_for: 不作为单次体验前后情绪变化的测量，也不根据得分直接决定某首音乐必然有效。

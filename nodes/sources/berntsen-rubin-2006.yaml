@@ -1,0 +1,19 @@
+id: source.berntsen-rubin-2006
+type: source
+name:
+  zh: 事件中心性量表
+  en: 'The centrality of event scale: A measure of integrating a trauma into one''s identity and its relation to post-traumatic stress disorder symptoms'
+summary: 编制事件中心性量表（CES），测量一件事在多大程度上成为个人身份和人生故事的核心，并发现其与创伤后应激症状相关。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Berntsen, D.
+  - Rubin, D. C.
+  year: 2006
+  title: 'The centrality of event scale: A measure of integrating a trauma into one''s identity and its relation to post-traumatic stress disorder symptoms'
+  venue: Behaviour Research and Therapy
+  volume: '44'
+  issue: '2'
+  pages: 219-231
+  doi: 10.1016/j.brat.2005.01.009

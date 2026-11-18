@@ -1,0 +1,19 @@
+id: instrument.ucla-loneliness-3
+type: instrument
+name: { zh: 孤独感三题简版, en: Three-item loneliness scale }
+summary: 从 UCLA 孤独感量表提取的 3 题简版，询问缺少陪伴、被冷落和与他人隔绝的频率。
+status: draft
+relations:
+  - { type: measures, target: construct.loneliness, evidence: [{ source: source.hughes-2004, stance: supports, level: validation-study }] }
+instrument:
+  items: 3
+  response_format: 3 点评分（几乎从不 / 有时 / 经常）
+  administration_minutes: 0.5
+  license:
+    status: unknown
+    commercial_use: unknown
+  items_in_repo: false
+product_use:
+  role: profile-optional
+  when: 用户档案中可选；研究阶段做数周后的随访
+  note: 不用于单次体验前后测。

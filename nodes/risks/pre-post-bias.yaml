@@ -1,0 +1,27 @@
+id: risk.pre-post-bias
+type: risk
+name: { zh: 前后测偏差, en: Pre-post measurement bias }
+summary: 用户多在心情差时来用，下次测量本来就会回升；用户也知道系统希望自己变好。没有对照组时，前后测提升不能算作效果。
+status: draft
+relations:
+  - { type: threatens, target: instrument.affective-slider }
+  - { type: threatens, target: goal.calm-down }
+  - { type: threatens, target: goal.encouragement }
+  - { type: threatens, target: goal.mood-shift }
+claims:
+  - statement: 在极端状态下被测量的人，下次测量会自然接近平均水平，可被误认为干预效果。
+    evidence:
+      - { source: source.barnett-2004, stance: supports, level: theory }
+  - statement: 被试会根据对研究目的的猜测调整自我报告。
+    evidence:
+      - { source: source.orne-1962, stance: supports, level: theory }
+risk:
+  severity: high
+  status: mitigated-in-code
+  mitigation:
+    - 研究模式（STUDY_MODE=on）把每次体验随机分到三组：个性化、非个性化（同机制但不用任何个人信息）、中性对照（说明性短文）；分组不向参与者显示，导出数据中保留
+    - 中性对照组的反馈不参与个人学习
+    - 个人学习改为相对比较：每种体验的结果减去此人同一目标下的平均变化，共同的回归均值部分相互抵消
+    - 体验后测量的措辞改为“请再评一次此刻的状态”，并说明没有变化或变差也是正常记录
+    - 已知局限：随机化在“每次体验”层面进行，同一参与者会经历多组，需要在分析时考虑个体差异；需求特征无法完全消除；组间比较的统计分析还需要在导出数据上另外完成
+  components: [web/core/service.ts, web/core/generation.ts, web/core/engine.ts#goalBaseline, web/app/page.tsx]

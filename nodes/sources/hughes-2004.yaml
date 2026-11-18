@@ -1,0 +1,21 @@
+id: source.hughes-2004
+type: source
+name:
+  zh: 孤独感三题简版
+  en: A Short Scale for Measuring Loneliness in Large Surveys
+summary: 从 UCLA 孤独感量表中提取 3 题，用于大规模调查，并在两个全国性样本中检验其信效度。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Hughes, M. E.
+  - Waite, L. J.
+  - Hawkley, L. C.
+  - Cacioppo, J. T.
+  year: 2004
+  title: A Short Scale for Measuring Loneliness in Large Surveys
+  venue: Research on Aging
+  volume: '26'
+  issue: '6'
+  pages: 655-672
+  doi: 10.1177/0164027504268574

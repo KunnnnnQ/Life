@@ -1,0 +1,29 @@
+id: risk.crisis-in-session
+type: risk
+name: { zh: 使用中出现危机, en: Crisis during a session }
+summary: 有用户可能在严重低落甚至有自杀念头时使用产品。这时继续生成故事或匹配陌生人聊天都是不合适的。
+status: draft
+relations:
+  - { type: threatens, target: mechanic.stranger-chat }
+  - { type: threatens, target: goal.connection }
+  - { type: threatens, target: goal.encouragement }
+claims:
+  - statement: 询问自杀相关问题不会诱发自杀念头。
+    evidence:
+      - { source: source.dazzi-2014, stance: supports, level: systematic-review }
+  - statement: 4 题即可筛查抑郁和焦虑症状。
+    evidence:
+      - { source: source.kroenke-2009, stance: supports, level: validation-study }
+  - statement: 自杀风险可以按意念、方法、意图、计划和行为的递进顺序评估。
+    evidence:
+      - { source: source.posner-2011, stance: supports, level: validation-study }
+risk:
+  severity: high
+  status: mitigated-in-code
+  mitigation:
+    - 开始前可选 PHQ-4（每 14 天询问一次，可跳过）；任一分量表 ≥3 时展示求助资源，并在之后 14 天降低高刺激内容的排序
+    - 对“发生了什么”、经历记录和生成内容做危机用语检测；检测到时不创建体验，直接展示 12356 全国心理援助热线和 110/120
+    - 只记录“发生过一次安全暂停”，不保存触发的原文；含危机用语的经历永远不会进入生成内容
+    - 不由 AI 进行风险分级或心理干预
+    - 已知局限：只是关键词检测，隐晦表达会漏过、引用或玩笑可能误报；PHQ-4 中文措辞为自行改写，未经验证；真人聊天尚未实现，聊天中的检测还没有
+  components: [web/core/safety.ts, web/core/service.ts, web/core/engine.ts#decide, web/app/page.tsx]

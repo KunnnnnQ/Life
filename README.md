@@ -8,9 +8,13 @@ Mood Capsule 是一个用 AI 生成个性化短篇互动体验、帮助用户调
 
 ## 看什么
 
+- [网站整体框架](docs/website-framework.md)：系统自动选择媒介、动态事件相关性、生成任务与反馈闭环，以及已实现和待实现部分。
+- [本地网站启动说明](web/README.md)：可运行的课堂原型、接口与测试。
+- [自动选择媒介的研究说明](docs/adaptive-media-evidence.md)：短视频、幽默、音乐、年龄和动态适配的支持与限制。
 - [INDEX.md](INDEX.md)：自动生成的知识树。从用户目标一路展开到机制、策略、构念和测量工具，并列出证据缺口和量表许可状态。
 - [nodes/](nodes/)：所有节点，一个节点一个 YAML 文件。
 - [schema/node.schema.json](schema/node.schema.json)：节点格式定义。
+- [课堂项目量表使用建议](docs/classroom-measurement.md)：B-MMR 的评分依据、ERQ 中文版出处，以及 I-PANAS-SF 中文 9 题版与英语 10 题版的区别。
 
 ## 数据模型
 
@@ -24,6 +28,7 @@ Mood Capsule 是一个用 AI 生成个性化短篇互动体验、帮助用户调
 | `goal` 用户目标 | `nodes/goals/` | 用户在产品里选择的体验目标 | 平静下来、获得鼓励 |
 | `mechanic` 叙事机制 | `nodes/mechanics/` | 产品中的故事或游戏结构，带生成参数 | 慢速探索、逆转弧 |
 | `source` 文献 | `nodes/sources/` | 一篇论文或一本书，必须有 DOI 或链接 | Gross (1998) |
+| `risk` 风险 | `nodes/risks/` | 可能伤害用户或让结论失真的问题，带严重度、状态和对策；必须引用文献 | 鼓励适得其反、前后测偏差 |
 
 节点之间的关系：
 
@@ -35,6 +40,7 @@ Mood Capsule 是一个用 AI 生成个性化短篇互动体验、帮助用户调
 | `implements` | 机制 → 策略 | 这个叙事机制借用了哪种调节策略 |
 | `serves` | 机制 → 目标 | 这个机制用来满足哪个用户目标 |
 | `derived_from` | 工具 → 工具 | 简版、译本等 |
+| `threatens` | 风险 → 构念/工具/策略/机制/目标 | 这个风险会影响哪里 |
 | `contrasts_with` / `related_to` | 任意 | 对照或相关 |
 
 ### 证据怎么记

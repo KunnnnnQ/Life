@@ -1,0 +1,9 @@
+id: construct.interpersonal-closeness
+type: construct
+name: { zh: 人际亲近感, en: Interpersonal closeness }
+summary: 感到自己和另一个人有多亲近、多相连。“想和人聊聊”的直接结果指标。
+status: reviewed
+claims:
+  - statement: 人际亲近感可以用一道图示题（重叠程度不同的两个圆）有效测量。
+    evidence:
+      - { source: source.aron-1992, stance: supports, level: validation-study }

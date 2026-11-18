@@ -10,4 +10,5 @@ product_use:
   ui_label: 体验成就感
   target_shift: { valence: up, dominance: up, arousal: any }
   default_measure: instrument.affective-slider
-  note: 滑块不测支配感。若要评估这个目标，研究阶段需加测 SAM 的支配感维度。
+  research_measure: instrument.sam
+  note: 滑块不测支配感。研究阶段暂用 SAM 的支配感维度；尚未找到合适的“状态掌控感”量表，这是测量缺口。

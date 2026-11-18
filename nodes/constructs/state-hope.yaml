@@ -1,0 +1,9 @@
+id: construct.state-hope
+type: construct
+name: { zh: 状态希望, en: State hope }
+summary: 此刻觉得自己有动力（agency）、也有办法（pathways）去达成目标的程度。“获得鼓励”的直接结果指标。
+status: reviewed
+claims:
+  - statement: 状态希望可以分为动力和路径两个成分，并能随情境在短时间内变化。
+    evidence:
+      - { source: source.snyder-1996, stance: supports, level: validation-study }

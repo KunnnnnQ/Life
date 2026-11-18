@@ -1,0 +1,19 @@
+id: source.orben-przybylski-2019
+type: source
+name:
+  zh: 数字技术使用与青少年幸福感
+  en: The association between adolescent well-being and digital technology use
+summary: 用规格曲线分析三个大型数据集，发现数字技术使用与青少年幸福感的负相关非常小，最多只能解释 0.4% 的方差。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Orben, A.
+  - Przybylski, A. K.
+  year: 2019
+  title: The association between adolescent well-being and digital technology use
+  venue: Nature Human Behaviour
+  volume: '3'
+  issue: '2'
+  pages: 173-182
+  doi: 10.1038/s41562-018-0506-1

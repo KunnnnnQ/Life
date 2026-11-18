@@ -1,0 +1,20 @@
+id: risk.warnings-insufficient
+type: risk
+name: { zh: 只靠内容预警不够, en: Content warnings are insufficient }
+summary: 用“以下内容可能涉及……”的提示来替代内容过滤是无效的。用户禁止的话题必须真的不出现。
+status: draft
+relations:
+  - { type: threatens, target: mechanic.reframe-arc }
+  - { type: threatens, target: construct.adverse-childhood-experiences }
+claims:
+  - statement: 内容预警不能减轻看到负面内容后的情绪反应，反而增加观看前的预期焦虑。
+    evidence:
+      - { source: source.bridgland-2024, stance: supports, level: meta-analysis }
+risk:
+  severity: high
+  status: mitigated-in-code
+  mitigation:
+    - 禁止话题在生成前写入约束、生成后再做检查，未通过则不展示
+    - 不以预警提示作为放宽过滤的理由
+    - 已知局限：生成后检查目前只按字面匹配，同义或隐含表达可能漏过，需要补充语义检查
+  components: [web/core/generation.ts]

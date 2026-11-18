@@ -6,6 +6,10 @@ status: reviewed
 relations:
   - { type: measures, target: construct.habitual-reappraisal, evidence: [{ source: source.gross-john-2003, stance: supports, level: validation-study }] }
   - { type: measures, target: construct.habitual-suppression, evidence: [{ source: source.gross-john-2003, stance: supports, level: validation-study }] }
+claims:
+  - statement: 王力等（2007）在 1163 名大学生中验证 ERQ 中文修订版；认知重评和表达抑制的内部一致性系数分别为 0.85 和 0.77，重测信度分别为 0.82 和 0.79。
+    evidence:
+      - { source: source.wang-2007-erq-chinese, stance: supports, level: validation-study, locator: 期刊官网中英文摘要 }
 instrument:
   items: 10
   response_format: 7 点评分，从“非常不同意”到“非常同意”
@@ -15,7 +19,7 @@ instrument:
     - { name: 表达抑制, items: 4, measures: construct.habitual-suppression }
   languages:
     - { lang: en, validated: "yes", source: source.gross-john-2003 }
-    - { lang: zh, validated: unknown, note: 已知有中文修订版，待补充来源节点。 }
+    - { lang: zh, validated: "yes", source: source.wang-2007-erq-chinese, note: 王力、柳恒超、李中权、杜卫（2007）的中文修订版；证据来自大学生样本。 }
   license:
     status: free-research
     commercial_use: unknown
@@ -25,3 +29,5 @@ product_use:
   role: profile-optional
   when: 用户自愿完善长期画像时
   use_for: 影响叙事机制的偏好排序（例如重评得分高的用户可多推荐 reframe-arc），属于待验证的产品假设。
+  classroom_priority: 可选；课堂原型可以先不根据 ERQ 分数分配故事，待比较实验后再决定。
+  not_for: 不用作五分钟体验前后的即时情绪指标；两个分量表分别解释，不合成“心理健康总分”。

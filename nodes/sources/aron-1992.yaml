@@ -1,0 +1,20 @@
+id: source.aron-1992
+type: source
+name:
+  zh: 他人融入自我量表（IOS）
+  en: Inclusion of Other in the Self Scale and the structure of interpersonal closeness
+summary: 提出用 7 对重叠程度不同的圆圈测量人际亲近感的单题图示量表，并检验其信效度。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Aron, A.
+  - Aron, E. N.
+  - Smollan, D.
+  year: 1992
+  title: Inclusion of Other in the Self Scale and the structure of interpersonal closeness
+  venue: Journal of Personality and Social Psychology
+  volume: '63'
+  issue: '4'
+  pages: 596-612
+  doi: 10.1037/0022-3514.63.4.596

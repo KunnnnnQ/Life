@@ -1,0 +1,28 @@
+id: source.posner-2011
+type: source
+name:
+  zh: 哥伦比亚自杀严重程度评定量表（C-SSRS）
+  en: 'The Columbia–Suicide Severity Rating Scale: Initial Validity and Internal Consistency Findings From Three Multisite Studies With Adolescents and Adults'
+summary: 在三项多中心研究的青少年和成人样本中，检验 C-SSRS 评估自杀意念和行为的效度与内部一致性。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Posner, K.
+  - Brown, G. K.
+  - Stanley, B.
+  - Brent, D. A.
+  - Yershova, K. V.
+  - Oquendo, M. A.
+  - Currier, G. W.
+  - Melvin, G. A.
+  - Greenhill, L.
+  - Shen, S.
+  - Mann, J. J.
+  year: 2011
+  title: 'The Columbia–Suicide Severity Rating Scale: Initial Validity and Internal Consistency Findings From Three Multisite Studies With Adolescents and Adults'
+  venue: American Journal of Psychiatry
+  volume: '168'
+  issue: '12'
+  pages: 1266-1277
+  doi: 10.1176/appi.ajp.2011.10111704

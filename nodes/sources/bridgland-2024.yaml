@@ -1,0 +1,20 @@
+id: source.bridgland-2024
+type: source
+name:
+  zh: 内容预警效果的元分析
+  en: A Meta-Analysis of the Efficacy of Trigger Warnings, Content Warnings, and Content Notes
+summary: 元分析发现，内容预警不能减轻看到负面内容后的情绪反应，反而会提高观看前的预期焦虑。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Bridgland, V. M. E.
+  - Jones, P. J.
+  - Bellet, B. W.
+  year: 2024
+  title: A Meta-Analysis of the Efficacy of Trigger Warnings, Content Warnings, and Content Notes
+  venue: Clinical Psychological Science
+  volume: '12'
+  issue: '4'
+  pages: 751-771
+  doi: 10.1177/21677026231186625

@@ -1,0 +1,23 @@
+id: risk.uniform-event-decay
+type: risk
+name: { zh: 经历影响统一衰减, en: Uniform decay of life-event relevance }
+summary: 网站对所有经历使用同一个 90 天半衰期，但人对不同事件的适应速度差别很大，有些事件的影响长期不消退。
+status: draft
+relations:
+  - { type: threatens, target: construct.adverse-childhood-experiences }
+claims:
+  - statement: 人对失业、残疾、丧偶等事件的适应往往不完全，幸福感可能长期低于原水平，且个体差异很大。
+    evidence:
+      - { source: source.lucas-2007, stance: supports, level: systematic-review, note: 综述多项大型纵向研究。 }
+  - statement: 一件事是否长期影响一个人，与它是否成为身份的核心（事件中心性）有关。
+    evidence:
+      - { source: source.berntsen-rubin-2006, stance: supports, level: validation-study }
+risk:
+  severity: medium
+  status: mitigated-in-code
+  mitigation:
+    - 按事件类型设置半衰期：日常压力 30 天、成就 90 天、身份或环境变化 180 天、关系变化 365 天、失去与健康 730 天、其他 90 天
+    - 新增“在多大程度上已成为我看待自己的一部分”（事件中心性式问题）；中心性高的经历保留至少 90% 的近期性，并可替代重要性评分
+    - 持续中的经历以最近一次确认为准；所有经历仍需定期重新确认
+    - 已知局限：各类半衰期是依据 Lucas 2007 的定性结论设定的工程初值，不是从数据估计的参数；事件中心性只用一道题，不是完整量表
+  components: [web/core/engine.ts#eventWeights, web/core/catalog.ts#POLICY, web/core/contracts.ts]

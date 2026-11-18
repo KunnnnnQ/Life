@@ -1,0 +1,20 @@
+id: source.liu-2020-i-panas-sf-chinese
+type: source
+name:
+  zh: I-PANAS-SF 中文版的因子结构与测量不变性
+  en: "Chinese version of the international positive and negative affect schedule short form: factor structure and measurement invariance"
+summary: 在香港中学生中检验中文 I-PANAS-SF，最终支持删去 alert 的 9 题、两因子版本。
+status: draft
+citation:
+  kind: journal-article
+  authors: ["Liu, J. D.", "You, R. H.", "Liu, H.", "Chung, P. K."]
+  year: 2020
+  title: "Chinese version of the international positive and negative affect schedule short form: factor structure and measurement invariance"
+  venue: Health and Quality of Life Outcomes
+  volume: 18
+  pages: "285"
+  doi: 10.1186/s12955-020-01526-6
+  url: https://link.springer.com/article/10.1186/s12955-020-01526-6
+caveats:
+  - Methods 的有效分析样本为 4111，摘要中的 4136 是最初邀请人数。
+  - 研究考察体育课相关的一般情感，并未检验成年人五分钟叙事体验的测量效果或纵向测量不变性。

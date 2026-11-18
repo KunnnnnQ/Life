@@ -4,7 +4,8 @@ name: { zh: 想和人聊聊, en: Connection }
 summary: 用户不想看故事，只想和一个真实的人说说话，或者听别人说。
 status: draft
 relations:
-  - { type: targets, target: construct.valence, note: 产品定义的目标方向。 }
+  - { type: targets, target: construct.interpersonal-closeness, note: 产品定义的目标方向。 }
+  - { type: targets, target: construct.valence }
 claims:
   - statement: 人们预期和陌生人交谈不如独处，但实际交谈后的体验更积极。
     evidence:
@@ -22,3 +23,4 @@ product_use:
   sub_choices: [想说说话, 愿意听别人说, 随便闲聊]
   target_shift: { valence: up, arousal: any }
   default_measure: instrument.affective-slider
+  research_measure: instrument.ios-scale

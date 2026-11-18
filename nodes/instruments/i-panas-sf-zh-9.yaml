@@ -1,0 +1,35 @@
+id: instrument.i-panas-sf-zh-9
+type: instrument
+name: { zh: I-PANAS-SF 中文 9 题研究版, en: "Chinese 9-item I-PANAS-SF (Liu et al., 2020)" }
+summary: 香港中学生样本中获得支持的中文删题版；正性情感 4 题、负性情感 5 题。
+status: draft
+relations:
+  - type: derived_from
+    target: instrument.i-panas-sf
+    evidence:
+      - { source: source.liu-2020-i-panas-sf-chinese, stance: supports, level: validation-study, locator: Results — Factorial structure, note: 原 10 题中删除 alert。 }
+  - { type: measures, target: construct.positive-affect, evidence: [{ source: source.liu-2020-i-panas-sf-chinese, stance: supports, level: validation-study }] }
+  - { type: measures, target: construct.negative-affect, evidence: [{ source: source.liu-2020-i-panas-sf-chinese, stance: supports, level: validation-study }] }
+claims:
+  - statement: 有效样本 4111 人，年龄 11–19 岁，来自香港 59 所中学；9 题模型优于保留 alert 的 10 题模型。
+    evidence:
+      - { source: source.liu-2020-i-panas-sf-chinese, stance: supports, level: validation-study, locator: Methods — Participants; Results — Factorial structure }
+instrument:
+  items: 9
+  response_format: 5 点频率评分，1（从不）至 5（总是）；研究询问体育课相关的一般情感。
+  subscales:
+    - { name: 正性情感, items: 4, measures: construct.positive-affect }
+    - { name: 负性情感, items: 5, measures: construct.negative-affect }
+  languages:
+    - { lang: zh, validated: "yes", source: source.liu-2020-i-panas-sf-chinese, note: 限该研究的 9 题版本、香港中学生样本和施测情境。 }
+  psychometrics_note: 原文支持跨性别、年级的测量不变性；未检验纵向测量不变性。
+  license:
+    status: unknown
+    commercial_use: unknown
+  items_in_repo: false
+product_use:
+  role: research-only
+  when: 明确采用该中文研究版，并完成目标人群、措辞与时间框架预试后再考虑使用。
+  classroom_priority: 作为中文量表版本选择的证据，不作为当前成人课堂原型的默认前后测。
+  scoring_note: 正性和负性情感分别报告；9 题版与 10 题版题数不同，不直接混合原始总分。
+  adaptation_note: 若改为“此刻”的强度评分，应单独记录为项目改编，不能沿用原研究验证结论。

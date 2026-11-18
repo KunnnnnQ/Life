@@ -1,0 +1,21 @@
+id: source.kroenke-2009
+type: source
+name:
+  zh: PHQ-4 超简抑郁焦虑筛查
+  en: 'An Ultra-Brief Screening Scale for Anxiety and Depression: The PHQ-4'
+summary: 把 PHQ-2 与 GAD-2 合并成 4 题筛查工具，在约 2000 名初级保健患者中检验其信效度。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Kroenke, K.
+  - Spitzer, R. L.
+  - Williams, J. B. W.
+  - Löwe, B.
+  year: 2009
+  title: 'An Ultra-Brief Screening Scale for Anxiety and Depression: The PHQ-4'
+  venue: Psychosomatics
+  volume: '50'
+  issue: '6'
+  pages: 613-621
+  doi: 10.1176/appi.psy.50.6.613

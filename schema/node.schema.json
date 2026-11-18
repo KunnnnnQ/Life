@@ -3,145 +3,509 @@
   "$id": "https://mood-capsule-kb/schema/node.schema.json",
   "title": "Mood Capsule KB node",
   "type": "object",
-  "required": ["id", "type", "name", "summary", "status"],
+  "required": [
+    "id",
+    "type",
+    "name",
+    "summary",
+    "status"
+  ],
   "additionalProperties": false,
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^(construct|instrument|strategy|mechanic|goal|source)\\.[a-z0-9]+(-[a-z0-9]+)*$"
+      "pattern": "^(construct|instrument|strategy|mechanic|goal|source|risk)\\.[a-z0-9]+(-[a-z0-9]+)*$"
     },
-    "type": { "enum": ["construct", "instrument", "strategy", "mechanic", "goal", "source"] },
+    "type": {
+      "enum": [
+        "construct",
+        "instrument",
+        "strategy",
+        "mechanic",
+        "goal",
+        "source",
+        "risk"
+      ]
+    },
     "name": {
       "type": "object",
-      "required": ["zh", "en"],
+      "required": [
+        "zh",
+        "en"
+      ],
       "additionalProperties": false,
-      "properties": { "zh": { "type": "string" }, "en": { "type": "string" } }
+      "properties": {
+        "zh": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        }
+      }
     },
-    "summary": { "type": "string", "minLength": 10 },
-    "status": { "enum": ["draft", "reviewed", "deprecated"] },
-    "replaced_by": { "type": "string" },
-    "contributors": { "type": "array", "items": { "type": "string" } },
-    "relations": { "type": "array", "items": { "$ref": "#/$defs/relation" } },
-    "claims": { "type": "array", "items": { "$ref": "#/$defs/claim" } },
-    "caveats": { "type": "array", "items": { "type": "string" } },
-    "product_use": { "type": "object" },
-    "citation": { "$ref": "#/$defs/citation" },
-    "instrument": { "$ref": "#/$defs/instrument" }
+    "summary": {
+      "type": "string",
+      "minLength": 10
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "reviewed",
+        "deprecated"
+      ]
+    },
+    "replaced_by": {
+      "type": "string"
+    },
+    "contributors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/claim"
+      }
+    },
+    "caveats": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "product_use": {
+      "type": "object"
+    },
+    "citation": {
+      "$ref": "#/$defs/citation"
+    },
+    "instrument": {
+      "$ref": "#/$defs/instrument"
+    },
+    "risk": {
+      "$ref": "#/$defs/risk"
+    }
   },
   "allOf": [
-    { "if": { "properties": { "type": { "const": "source" } } }, "then": { "required": ["citation"] } },
-    { "if": { "properties": { "type": { "const": "instrument" } } }, "then": { "required": ["instrument", "product_use"] } },
-    { "if": { "properties": { "type": { "const": "mechanic" } } }, "then": { "required": ["product_use", "relations"] } },
-    { "if": { "properties": { "type": { "const": "goal" } } }, "then": { "required": ["product_use"] } },
-    { "if": { "properties": { "status": { "const": "deprecated" } } }, "then": { "required": ["replaced_by"] } }
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "source"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "citation"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "instrument"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "instrument",
+          "product_use"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "mechanic"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "product_use",
+          "relations"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "goal"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "product_use"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "deprecated"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "replaced_by"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "risk"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "risk"
+        ]
+      }
+    }
   ],
   "$defs": {
     "nodeRef": {
       "type": "string",
-      "pattern": "^(construct|instrument|strategy|mechanic|goal|source)\\.[a-z0-9]+(-[a-z0-9]+)*$"
+      "pattern": "^(construct|instrument|strategy|mechanic|goal|source|risk)\\.[a-z0-9]+(-[a-z0-9]+)*$"
     },
     "evidence": {
       "type": "object",
-      "required": ["source", "stance", "level"],
+      "required": [
+        "source",
+        "stance",
+        "level"
+      ],
       "additionalProperties": false,
       "properties": {
-        "source": { "type": "string", "pattern": "^source\\." },
-        "stance": { "enum": ["supports", "contradicts", "mixed"] },
+        "source": {
+          "type": "string",
+          "pattern": "^source\\."
+        },
+        "stance": {
+          "enum": [
+            "supports",
+            "contradicts",
+            "mixed"
+          ]
+        },
         "level": {
           "description": "Strongest design behind THIS piece of evidence, not the paper's prestige.",
-          "enum": ["meta-analysis", "systematic-review", "rct", "replicated", "single-study", "validation-study", "theory", "hypothesis"]
+          "enum": [
+            "meta-analysis",
+            "systematic-review",
+            "rct",
+            "replicated",
+            "single-study",
+            "validation-study",
+            "theory",
+            "hypothesis"
+          ]
         },
-        "locator": { "type": "string", "description": "Page, table or section in the source." },
-        "note": { "type": "string" }
+        "locator": {
+          "type": "string",
+          "description": "Page, table or section in the source."
+        },
+        "note": {
+          "type": "string"
+        }
       }
     },
     "relation": {
       "type": "object",
-      "required": ["type", "target"],
+      "required": [
+        "type",
+        "target"
+      ],
       "additionalProperties": false,
       "properties": {
-        "type": { "enum": ["measures", "part_of", "targets", "implements", "serves", "derived_from", "contrasts_with", "related_to"] },
-        "target": { "$ref": "#/$defs/nodeRef" },
-        "note": { "type": "string" },
-        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } }
+        "type": {
+          "enum": [
+            "measures",
+            "part_of",
+            "targets",
+            "implements",
+            "serves",
+            "derived_from",
+            "contrasts_with",
+            "related_to",
+            "threatens"
+          ]
+        },
+        "target": {
+          "$ref": "#/$defs/nodeRef"
+        },
+        "note": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        }
       }
     },
     "claim": {
       "type": "object",
-      "required": ["statement", "evidence"],
+      "required": [
+        "statement",
+        "evidence"
+      ],
       "additionalProperties": false,
       "properties": {
-        "statement": { "type": "string" },
-        "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/evidence" } }
+        "statement": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        }
       }
     },
     "citation": {
       "type": "object",
-      "required": ["kind", "authors", "year", "title", "venue"],
+      "required": [
+        "kind",
+        "authors",
+        "year",
+        "title",
+        "venue"
+      ],
       "additionalProperties": false,
       "properties": {
-        "kind": { "enum": ["journal-article", "conference-paper", "book", "book-chapter", "preprint", "dataset", "report"] },
+        "kind": {
+          "enum": [
+            "journal-article",
+            "conference-paper",
+            "book",
+            "book-chapter",
+            "preprint",
+            "dataset",
+            "report"
+          ]
+        },
         "authors": {
           "type": "array",
           "minItems": 1,
           "description": "'Family, I. I.' per author; quote each entry in YAML.",
-          "items": { "type": "string", "pattern": "^[^,]+, \\S" }
+          "items": {
+            "type": "string",
+            "pattern": "^[^,]+, \\S"
+          }
         },
-        "year": { "type": "integer", "minimum": 1800, "maximum": 2100 },
-        "title": { "type": "string" },
-        "venue": { "type": "string" },
-        "volume": { "type": ["string", "integer"] },
-        "issue": { "type": ["string", "integer"] },
-        "pages": { "type": "string" },
-        "doi": { "type": "string", "pattern": "^10\\.[0-9]{4,9}/\\S+$" },
-        "url": { "type": "string", "format": "uri" },
-        "open_access": { "type": "boolean" }
+        "year": {
+          "type": "integer",
+          "minimum": 1800,
+          "maximum": 2100
+        },
+        "title": {
+          "type": "string"
+        },
+        "venue": {
+          "type": "string"
+        },
+        "volume": {
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "issue": {
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "pages": {
+          "type": "string"
+        },
+        "doi": {
+          "type": "string",
+          "pattern": "^10\\.[0-9]{4,9}/\\S+$"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "open_access": {
+          "type": "boolean"
+        }
       }
     },
     "instrument": {
       "type": "object",
-      "required": ["items", "response_format", "license", "items_in_repo"],
+      "required": [
+        "items",
+        "response_format",
+        "license",
+        "items_in_repo"
+      ],
       "additionalProperties": false,
       "properties": {
-        "items": { "type": "integer", "minimum": 1 },
-        "response_format": { "type": "string" },
-        "administration_minutes": { "type": "number" },
+        "items": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "response_format": {
+          "type": "string"
+        },
+        "administration_minutes": {
+          "type": "number"
+        },
         "subscales": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["name"],
+            "required": [
+              "name"
+            ],
             "additionalProperties": false,
-            "properties": { "name": { "type": "string" }, "items": { "type": "integer" }, "measures": { "$ref": "#/$defs/nodeRef" } }
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "items": {
+                "type": "integer"
+              },
+              "measures": {
+                "$ref": "#/$defs/nodeRef"
+              }
+            }
           }
         },
         "languages": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["lang", "validated"],
+            "required": [
+              "lang",
+              "validated"
+            ],
             "additionalProperties": false,
             "properties": {
-              "lang": { "type": "string" },
-              "validated": { "enum": ["yes", "no", "unknown"] },
-              "source": { "type": "string", "pattern": "^source\\." },
-              "note": { "type": "string" }
+              "lang": {
+                "type": "string"
+              },
+              "validated": {
+                "enum": [
+                  "yes",
+                  "no",
+                  "unknown"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "pattern": "^source\\."
+              },
+              "note": {
+                "type": "string"
+              }
             }
           }
         },
         "license": {
           "type": "object",
-          "required": ["status"],
+          "required": [
+            "status"
+          ],
           "additionalProperties": false,
           "properties": {
-            "status": { "enum": ["public-domain", "open", "free-research", "permission-required", "commercial", "unknown"] },
-            "commercial_use": { "enum": ["allowed", "permission-required", "not-allowed", "unknown"] },
-            "note": { "type": "string" },
-            "url": { "type": "string" }
+            "status": {
+              "enum": [
+                "public-domain",
+                "open",
+                "free-research",
+                "permission-required",
+                "commercial",
+                "unknown"
+              ]
+            },
+            "commercial_use": {
+              "enum": [
+                "allowed",
+                "permission-required",
+                "not-allowed",
+                "unknown"
+              ]
+            },
+            "note": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
           }
         },
-        "items_in_repo": { "type": "boolean" },
-        "psychometrics_note": { "type": "string" }
+        "items_in_repo": {
+          "type": "boolean"
+        },
+        "psychometrics_note": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "required": [
+        "severity",
+        "status",
+        "mitigation"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "severity": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "description": "If it happens, how bad for the user or for the validity of conclusions."
+        },
+        "status": {
+          "enum": [
+            "open",
+            "mitigated-in-design",
+            "mitigated-in-code",
+            "accepted"
+          ],
+          "description": "mitigated-in-design: written into node rules only; mitigated-in-code: enforced and tested in the product."
+        },
+        "mitigation": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Product code locations affected, e.g. web/core/engine.ts#eventWeights"
+        }
       }
     }
   }

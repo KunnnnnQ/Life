@@ -1,0 +1,23 @@
+id: source.snyder-1996
+type: source
+name:
+  zh: 状态希望量表
+  en: Development and validation of the State Hope Scale
+summary: 编制 6 项状态希望量表，包含“动力”（agency）和“路径”（pathways）两个成分，用于测量此时此刻的希望水平。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Snyder, C. R.
+  - Sympson, S. C.
+  - Ybasco, F. C.
+  - Borders, T. F.
+  - Babyak, M. A.
+  - Higgins, R. L.
+  year: 1996
+  title: Development and validation of the State Hope Scale
+  venue: Journal of Personality and Social Psychology
+  volume: '70'
+  issue: '2'
+  pages: 321-335
+  doi: 10.1037/0022-3514.70.2.321

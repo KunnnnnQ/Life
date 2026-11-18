@@ -1,0 +1,21 @@
+id: risk.happiness-pressure
+type: risk
+name: { zh: “必须开心”的压力, en: Pressure to feel happy }
+summary: 产品如果承诺“5 分钟让你开心”，可能让没变开心的用户更失望，觉得自己“连这都不行”。
+status: draft
+relations:
+  - { type: threatens, target: goal.mood-shift }
+  - { type: threatens, target: goal.encouragement }
+claims:
+  - statement: 越看重快乐的人，在积极情境下反而越失望、越不快乐。
+    evidence:
+      - { source: source.mauss-2011, stance: supports, level: single-study }
+risk:
+  severity: medium
+  status: mitigated-in-code
+  mitigation:
+    - 文案只描述体验内容和时长，不承诺情绪结果；生成内容命中“让你开心”“保证好起来”“心情提升 X%”等说法则不展示
+    - 自动测试扫描界面文案和示例内容，出现承诺性说法即失败
+    - 反馈页说明“没有变化或更难受也是正常记录”，不显示任何提升百分比
+    - 已知局限：检查基于固定说法
+  components: [web/core/safety.ts#findPromise, web/core/generation.ts, web/app/page.tsx, web/tests/intake.test.mjs]

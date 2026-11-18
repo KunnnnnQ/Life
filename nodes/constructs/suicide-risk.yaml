@@ -1,0 +1,11 @@
+id: construct.suicide-risk
+type: construct
+name: { zh: 自杀风险, en: Suicide risk }
+summary: 自杀意念、计划、意图和既往行为的严重程度。产品的底线安全指标。
+status: reviewed
+claims:
+  - statement: 询问自杀相关问题不会诱发自杀念头。
+    evidence:
+      - { source: source.dazzi-2014, stance: supports, level: systematic-review }
+caveats:
+  - 课堂原型没有专业人员跟进能力，不应自行做风险分级。检测到信号时只做“暂停 + 提供现实求助渠道”。

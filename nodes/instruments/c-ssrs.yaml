@@ -1,0 +1,19 @@
+id: instrument.c-ssrs
+type: instrument
+name: { zh: 哥伦比亚自杀严重程度评定量表（筛查版）, en: Columbia-Suicide Severity Rating Scale (Screener) }
+summary: 筛查版为 6 道是/否题，依次询问死亡愿望、自杀念头、方法、意图、计划和既往行为，前面答“否”可跳过后续题。
+status: draft
+relations:
+  - { type: measures, target: construct.suicide-risk, evidence: [{ source: source.posner-2011, stance: supports, level: validation-study, note: 验证的是完整版；筛查版另有官方版本。 }] }
+instrument:
+  items: 6
+  response_format: 是 / 否，带跳题规则；有“近一个月”“终生/近期”“上次接触以来”等版本
+  administration_minutes: 2
+  license:
+    status: unknown
+    commercial_use: unknown
+    note: 原设计由经过培训的人员使用，官方提供培训。
+  items_in_repo: false
+product_use:
+  role: reference-only
+  note: 课堂原型不自行实施 C-SSRS，因为没有专业人员跟进。只借鉴其题目顺序来设计危机信号识别，并在检测到信号时停止体验、展示求助渠道。

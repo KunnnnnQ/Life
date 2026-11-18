@@ -4,7 +4,7 @@ name: { zh: 平静下来, en: Calm down }
 summary: 用户希望降低紧张、焦虑或激动的程度。
 status: draft
 relations:
-  - { type: targets, target: construct.arousal, note: 产品定义的目标方向，不是实证结论。指的是紧张性唤醒，不是精力。 }
+  - { type: targets, target: construct.tense-arousal, note: 产品定义的目标方向，不是实证结论。降低紧张，精力不限。 }
 claims:
   - statement: 疲劳任务后短暂玩休闲游戏，情绪恢复优于引导放松，安静休息反而略降低情绪。
     evidence:
@@ -21,4 +21,5 @@ product_use:
   ui_label: 平静下来
   target_shift: { tension: down, energy: any, valence: hold-or-up }
   default_measure: instrument.affective-slider
+  research_measure: instrument.uwist-macl
   note: 情绪滑块只有一个唤醒维度，分不出紧张和精力。研究阶段建议额外加一道“紧张程度”题。

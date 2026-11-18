@@ -1,0 +1,19 @@
+id: source.bonanno-burton-2013
+type: source
+name:
+  zh: 调节灵活性
+  en: 'Regulatory flexibility: An individual differences perspective on coping and emotion regulation'
+summary: 提出“调节灵活性”观点：没有一种策略总是有效，适应性取决于能否根据情境选择、调整和切换策略。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Bonanno, G. A.
+  - Burton, C. L.
+  year: 2013
+  title: 'Regulatory flexibility: An individual differences perspective on coping and emotion regulation'
+  venue: Perspectives on Psychological Science
+  volume: '8'
+  issue: '6'
+  pages: 591-612
+  doi: 10.1177/1745691613504116

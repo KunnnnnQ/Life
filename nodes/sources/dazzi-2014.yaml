@@ -1,0 +1,21 @@
+id: source.dazzi-2014
+type: source
+name:
+  zh: 询问自杀是否会诱发自杀念头
+  en: Does asking about suicide and related behaviours induce suicidal ideation? What is the evidence?
+summary: 综述现有研究，认为询问自杀相关问题不会诱发自杀念头，甚至可能减轻部分人的念头。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Dazzi, T.
+  - Gribble, R.
+  - Wessely, S.
+  - Fear, N. T.
+  year: 2014
+  title: Does asking about suicide and related behaviours induce suicidal ideation? What is the evidence?
+  venue: Psychological Medicine
+  volume: '44'
+  issue: '16'
+  pages: 3361-3363
+  doi: 10.1017/S0033291714001299

@@ -1,0 +1,12 @@
+id: construct.event-centrality
+type: construct
+name: { zh: 事件中心性, en: Event centrality }
+summary: 某段经历在多大程度上成为一个人身份和人生故事的核心。比“这件事重不重要”更能说明它为什么长期影响人。
+status: reviewed
+claims:
+  - statement: 事件中心性可以被可靠测量，并与创伤后应激症状相关。
+    evidence:
+      - { source: source.berntsen-rubin-2006, stance: supports, level: validation-study, note: 原研究针对负面和创伤事件。 }
+product_use:
+  use_for: 替代或补充经历档案中的“重要性”，例如问“这件事是否已经成为你看待自己的一部分”。
+  forbidden: [根据得分推断创伤程度或心理问题]

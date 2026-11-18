@@ -1,0 +1,27 @@
+id: risk.avoidance-overuse
+type: risk
+name: { zh: 过度依赖分心与回避, en: Overuse of distraction and avoidance }
+summary: 多数体验机制靠转移注意。短期有效，但如果用户每次遇到同一件事都靠产品回避，长期可能维持而不是缓解问题。
+status: draft
+relations:
+  - { type: threatens, target: strategy.distraction }
+  - { type: threatens, target: mechanic.slow-exploration }
+  - { type: threatens, target: mechanic.novelty-detour }
+  - { type: threatens, target: mechanic.reversal-arc }
+  - { type: threatens, target: mechanic.brief-humor-video }
+claims:
+  - statement: 回避、反刍、抑制与抑郁、焦虑等多种心理问题正相关。
+    evidence:
+      - { source: source.aldao-2010, stance: supports, level: meta-analysis, note: 相关研究，不能证明回避导致问题，但提示长期单一使用有风险。 }
+  - statement: 没有一种调节策略总是有效，适应性来自根据情境灵活选择和切换策略。
+    evidence:
+      - { source: source.bonanno-burton-2013, stance: supports, level: theory }
+risk:
+  severity: medium
+  status: mitigated-in-code
+  mitigation:
+    - 统计近 14 天最近 6 次体验中分心类的比例；至少 5 次且 ≥80% 时，给非分心类体验加 0.08 分，并在“为什么这样安排”里说明，不强制
+    - 当前紧张程度 ≥8 时不做调整，因为高强度情绪下先分心更合适（Sheppes 2011）
+    - 产品文案不把体验说成“解决问题”
+    - 已知局限：没有和具体经历关联，只看整体比例；没有长期随访，无法知道这样调整是否真的减少了回避
+  components: [web/core/engine.ts#avoidancePattern, web/core/catalog.ts#POLICY]

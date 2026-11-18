@@ -1,0 +1,20 @@
+id: source.aldao-2010
+type: source
+name:
+  zh: 情绪调节策略与心理病理的元分析
+  en: 'Emotion-regulation strategies across psychopathology: A meta-analytic review'
+summary: 元分析发现，反刍、回避和抑制与抑郁、焦虑等多种心理问题正相关；重评和问题解决则呈负相关，但效应较小。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Aldao, A.
+  - Nolen-Hoeksema, S.
+  - Schweizer, S.
+  year: 2010
+  title: 'Emotion-regulation strategies across psychopathology: A meta-analytic review'
+  venue: Clinical Psychology Review
+  volume: '30'
+  issue: '2'
+  pages: 217-237
+  doi: 10.1016/j.cpr.2009.11.004

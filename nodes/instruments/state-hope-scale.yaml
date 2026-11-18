@@ -1,0 +1,24 @@
+id: instrument.state-hope-scale
+type: instrument
+name: { zh: 状态希望量表, en: State Hope Scale }
+summary: 6 题，测量此刻的希望水平，可在短时间内重复测量。适合作为“获得鼓励”的结果指标。
+status: draft
+relations:
+  - { type: measures, target: construct.state-hope, evidence: [{ source: source.snyder-1996, stance: supports, level: validation-study }] }
+instrument:
+  items: 6
+  response_format: Likert 式评分，从“完全不符合”到“完全符合”（点数待对照原文核实；同作者的成人特质希望量表为 8 点）
+  administration_minutes: 1
+  subscales:
+    - { name: 动力, items: 3, measures: construct.state-hope }
+    - { name: 路径, items: 3, measures: construct.state-hope }
+  languages:
+    - { lang: en, validated: "yes", source: source.snyder-1996 }
+    - { lang: zh, validated: unknown, note: 未查中文版。 }
+  license:
+    status: unknown
+    commercial_use: unknown
+  items_in_repo: false
+product_use:
+  role: research-only
+  when: 研究阶段“获得鼓励”目标的前后测

@@ -1,0 +1,26 @@
+id: instrument.phq-4
+type: instrument
+name: { zh: PHQ-4 抑郁焦虑超简筛查, en: Patient Health Questionnaire-4 }
+summary: 4 题，询问过去两周的情绪低落、兴趣减退、紧张和担忧频率，分别得到抑郁和焦虑两个筛查分。
+status: draft
+relations:
+  - { type: measures, target: construct.depression-anxiety-symptoms, evidence: [{ source: source.kroenke-2009, stance: supports, level: validation-study, note: 样本为美国初级保健患者。 }] }
+instrument:
+  items: 4
+  response_format: 4 点评分（0 完全没有 到 3 几乎每天），回顾过去两周
+  administration_minutes: 1
+  subscales:
+    - { name: 抑郁（PHQ-2）, items: 2, measures: construct.depression-anxiety-symptoms }
+    - { name: 焦虑（GAD-2）, items: 2, measures: construct.depression-anxiety-symptoms }
+  languages:
+    - { lang: en, validated: "yes", source: source.kroenke-2009 }
+    - { lang: zh, validated: unknown, note: 中文版 PHQ-9 与 GAD-7 应用广泛，PHQ-4 中文验证文献待补。 }
+  license:
+    status: unknown
+    commercial_use: unknown
+  items_in_repo: false
+product_use:
+  role: safety-gate
+  when: 首次使用前，以及之后每两周最多一次
+  rule: 任一分量表得分较高时，不阻止使用，但在体验前展示现实支持资源，并降低高强度内容的排序。具体阈值按原文核实后写入。
+  never: [向用户展示诊断性解读, 把得分用于个性化内容素材]

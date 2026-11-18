@@ -1,0 +1,20 @@
+id: source.barnett-2004
+type: source
+name:
+  zh: 回归均值
+  en: 'Regression to the mean: what it is and how to deal with it'
+summary: 解释回归均值：在极端状态下被选中或测量的人，下次测量时会自然接近平均水平，可被误认为干预效果；并给出识别与处理方法。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Barnett, A. G.
+  - van der Pols, J. C.
+  - Dobson, A. J.
+  year: 2004
+  title: 'Regression to the mean: what it is and how to deal with it'
+  venue: International Journal of Epidemiology
+  volume: '34'
+  issue: '1'
+  pages: 215-220
+  doi: 10.1093/ije/dyh299

@@ -1,0 +1,20 @@
+id: source.matthews-1990
+type: source
+name:
+  zh: UWIST 心境形容词表
+  en: 'Refining the measurement of mood: The UWIST Mood Adjective Checklist'
+summary: 编制形容词式心境量表，因素分析（N=388）确认可分别测量精力唤醒、紧张唤醒和愉悦基调三个维度。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Matthews, G.
+  - Jones, D. M.
+  - Chamberlain, A. G.
+  year: 1990
+  title: 'Refining the measurement of mood: The UWIST Mood Adjective Checklist'
+  venue: British Journal of Psychology
+  volume: '81'
+  issue: '1'
+  pages: 17-42
+  doi: 10.1111/j.2044-8295.1990.tb02343.x

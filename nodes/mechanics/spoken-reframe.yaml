@@ -1,0 +1,32 @@
+id: mechanic.spoken-reframe
+type: mechanic
+name: { zh: 低阅读负担的音频故事, en: Spoken reframe story }
+summary: 将重新理解困境的叙事结构写成可听的短故事，系统依据当下负担和个人反馈选择音频呈现。
+status: draft
+relations:
+  - type: implements
+    target: strategy.reappraisal
+    evidence:
+      - { source: source.webb-2012, stance: supports, level: hypothesis, note: 本人重评的证据不能直接证明旁听角色重评有效。 }
+  - type: serves
+    target: goal.encouragement
+    evidence:
+      - { source: source.bhattacharjee-2025, stance: supports, level: hypothesis, note: 原研究为个性化阅读故事；改成音频后还需独立检验。 }
+claims:
+  - statement: 本机制的媒介优先级不由年龄单独决定，而以当前负担和同一用户在相似情境下的反馈更新。
+    evidence:
+      - { source: source.benson-2019, stance: mixed, level: hypothesis, locator: Abstract, note: 日常采样说明情境与年龄关系复杂；它没有直接检验音频或推荐算法。 }
+      - { source: source.nahum-shani-2018, stance: supports, level: hypothesis, locator: Tailoring Variables; Proximal Outcomes Related to Intervention Adherence and Retention, note: 借用动态状态与负担适配原则。 }
+product_use:
+  medium: audio
+  content_family: supportive-narrative
+  beats: [确认感受, 角色受挫, 出现另一种理解, 一个小行动, 开放式收尾]
+  minutes: { min: 2, max: 8 }
+  duration_note: 课堂原型设计范围，不是已验证最优时长。
+  choices: 0-1；控制互动负担。
+  reading_load: none
+  interaction_load: low
+  candidate_signals: [本次希望鼓励, 阅读疲劳, 当前能够听音频]
+  personalization: 可以在用户允许时借用处境结构，不复述敏感事件细节。
+  constraints: [提供文字替代内容, 标记语音生成是否完成, 不把脚本或占位内容称为已生成音频]
+  avoid_when: [环境不能播放音频, 当前情绪强度高且不愿接触相似处境]

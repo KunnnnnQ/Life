@@ -1,0 +1,10 @@
+id: construct.energetic-arousal
+type: construct
+name: { zh: 精力唤醒, en: Energetic arousal }
+summary: 有活力、清醒、精神饱满的程度。疲惫时它低，恢复后它高。
+status: reviewed
+relations:
+  - type: part_of
+    target: construct.arousal
+    evidence:
+      - { source: source.matthews-1990, stance: supports, level: validation-study }

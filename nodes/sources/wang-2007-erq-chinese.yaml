@@ -1,0 +1,21 @@
+id: source.wang-2007-erq-chinese
+type: source
+name:
+  zh: 情绪调节问卷中文版的信效度研究
+  en: Reliability and Validity of Emotion Regulation Questionnaire Chinese Revised Version
+summary: 王力、柳恒超、李中权、杜卫在大学生中验证 ERQ 中文修订版，支持认知重评与表达抑制两个维度。
+status: draft
+citation:
+  kind: journal-article
+  authors: ["Wang, L.", "Liu, H. C.", "Li, Z. Q.", "Du, W."]
+  year: 2007
+  title: 情绪调节问卷中文版的信效度研究
+  venue: 中国健康心理学杂志
+  volume: 15
+  issue: 6
+  pages: 503-505
+  url: https://jkxl.cbpt.cnki.net/portal/journal/portal/client/paper/031d218dc2c43c106a21690dfc5f9053
+caveats:
+  - 本次核查依据期刊官网的元数据和中英文摘要，未核实重测间隔等全文细节。
+  - 刊方标注 DOI 为 10.13342/j.cnki.cjhp.2007.06.012；2026-11-17 查询 Crossref 返回 404，故采用本库支持的期刊 URL 引用，并保留刊方 DOI 于此；不能声称该文通过了 Crossref 核验。
+  - 量表信效度证据不等于根据分数推荐故事的效果证据。

@@ -1,0 +1,4746 @@
+{
+  "version": "0.1.0",
+  "hash": "864ef2de63311b0ceede759172ce7dea3891068f0564867c84c9f792ab19467a",
+  "nodes": {
+    "construct.adverse-childhood-experiences": {
+      "id": "construct.adverse-childhood-experiences",
+      "type": "construct",
+      "name": {
+        "zh": "童年不良经历（ACE）",
+        "en": "Adverse childhood experiences"
+      },
+      "summary": "18 岁前经历的虐待、忽视和家庭功能失调等事件。与产品中“成长经历权重”的设想直接相关，这里记录它能用和不能用的边界。",
+      "status": "reviewed",
+      "claims": [
+        {
+          "statement": "在人群层面，ACE 类别数与成年后多种健康风险呈剂量反应关系。",
+          "evidence": [
+            {
+              "source": "source.felitti-1998",
+              "stance": "supports",
+              "level": "single-study",
+              "note": "回顾性自报，样本为美国一家医疗机构的成年会员。"
+            }
+          ]
+        },
+        {
+          "statement": "ACE 分数用于预测具体某个人的健康结局时准确度很低。",
+          "evidence": [
+            {
+              "source": "source.baldwin-2021",
+              "stance": "supports",
+              "level": "replicated",
+              "note": "两个纵向队列中结论一致。"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "群体层面的关联不能用来推断某个用户“受了多大影响”。"
+      ],
+      "product_use": {
+        "allowed": "仅在用户主动提供并授权时，作为故事内容的可选素材或需要回避的主题。",
+        "forbidden": [
+          "计算个体心理风险分数或“创伤权重”",
+          "未经用户同意在故事中引用相关经历"
+        ],
+        "default": "不采集"
+      }
+    },
+    "construct.arousal": {
+      "id": "construct.arousal",
+      "type": "construct",
+      "name": {
+        "zh": "唤醒度",
+        "en": "Arousal"
+      },
+      "summary": "情感状态的激活程度，从平静、困倦到兴奋、紧张。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.core-affect",
+          "evidence": [
+            {
+              "source": "source.russell-1980",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        }
+      ]
+    },
+    "construct.co-rumination": {
+      "id": "construct.co-rumination",
+      "type": "construct",
+      "name": {
+        "zh": "共同反刍",
+        "en": "Co-rumination"
+      },
+      "summary": "两个人反复、过度地讨论问题和负面感受，反复揣测原因和后果，而不转向解决或别的话题。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "related_to",
+          "target": "construct.emotion-regulation",
+          "note": "可以看作人际层面的不良调节模式。"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "共同反刍同时与更高的友谊质量和更多的抑郁、焦虑症状相关。",
+          "evidence": [
+            {
+              "source": "source.rose-2002",
+              "stance": "supports",
+              "level": "single-study",
+              "note": "样本为中小学生，相关研究。用于成年陌生人之间是外推。"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "detect_in": "mechanic.stranger-chat",
+        "signals": [
+          "同一负面话题反复出现",
+          "双方都在加深对坏结果的推测",
+          "对话中没有新信息或转向"
+        ],
+        "response": "轻轻引入新话题或换个角度的问题，不打断、不评判。"
+      }
+    },
+    "construct.core-affect": {
+      "id": "construct.core-affect",
+      "type": "construct",
+      "name": {
+        "zh": "核心情感",
+        "en": "Core affect"
+      },
+      "summary": "在任意时刻都存在的基础情感状态，通常用愉悦度和唤醒度两个维度描述。产品里“此刻的心情”默认落在这个空间里。",
+      "status": "reviewed",
+      "claims": [
+        {
+          "statement": "多种情绪词可以排布在愉悦度 × 唤醒度构成的近似环形空间中。",
+          "evidence": [
+            {
+              "source": "source.russell-1980",
+              "stance": "supports",
+              "level": "single-study"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "维度模型适合快速测量，但会丢失具体情绪（如愤怒和恐惧都是低愉悦高唤醒）的区别。产品需要区分时应配合离散情绪标签。"
+      ]
+    },
+    "construct.depression-anxiety-symptoms": {
+      "id": "construct.depression-anxiety-symptoms",
+      "type": "construct",
+      "name": {
+        "zh": "抑郁与焦虑症状",
+        "en": "Depression and anxiety symptoms"
+      },
+      "summary": "过去两周的情绪低落、兴趣减退、紧张担忧等症状水平。产品用它判断是否应该继续提供娱乐化体验，而不是给用户下诊断。",
+      "status": "reviewed",
+      "caveats": [
+        "筛查得分高只提示需要关注，不等于诊断。产品不得向用户呈现“你有抑郁症”之类的结论。"
+      ]
+    },
+    "construct.dominance": {
+      "id": "construct.dominance",
+      "type": "construct",
+      "name": {
+        "zh": "支配感 / 控制感",
+        "en": "Dominance (control)"
+      },
+      "summary": "个体在当下情境中感到自己能掌控、还是被情境掌控的程度。SAM 的第三个维度。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "related_to",
+          "target": "construct.core-affect",
+          "note": "不属于 Russell 的两维核心情感，但常与愉悦度、唤醒度一同测量。",
+          "evidence": [
+            {
+              "source": "source.bradley-lang-1994",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "支配感维度的稳定性和区分度通常不如愉悦度与唤醒度，作为产品目标指标时要谨慎。"
+      ]
+    },
+    "construct.emotion-regulation": {
+      "id": "construct.emotion-regulation",
+      "type": "construct",
+      "name": {
+        "zh": "情绪调节",
+        "en": "Emotion regulation"
+      },
+      "summary": "个体影响自己产生哪些情绪、何时产生、如何体验和表达这些情绪的过程。本产品的核心理论框架。",
+      "status": "reviewed",
+      "claims": [
+        {
+          "statement": "调节策略可以按其在情绪产生过程中起作用的位置分为情境选择、情境修改、注意部署、认知改变和反应调节五族。",
+          "evidence": [
+            {
+              "source": "source.gross-1998",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        },
+        {
+          "statement": "调节是一个包含识别是否需要调节、选择策略、执行策略和监控结果的循环过程。",
+          "evidence": [
+            {
+              "source": "source.gross-2015",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        },
+        {
+          "statement": "电子游戏为情绪调节提供了机会，但以游戏为载体的情绪调节干预，其效果证据仍然有限。",
+          "evidence": [
+            {
+              "source": "source.villani-2018",
+              "stance": "mixed",
+              "level": "systematic-review"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "过程模型是组织研究的框架，不是每个环节都已被同等程度地验证。"
+      ]
+    },
+    "construct.emotion-regulation-difficulties": {
+      "id": "construct.emotion-regulation-difficulties",
+      "type": "construct",
+      "name": {
+        "zh": "情绪调节困难",
+        "en": "Emotion regulation difficulties"
+      },
+      "summary": "在情绪觉察、理解、接纳和在负面情绪下维持目标行为等方面存在困难的程度。属于临床相关构念。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.emotion-regulation"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "情绪调节困难可以分为不接纳、目标导向困难、冲动控制困难、缺乏觉察、策略有限和缺乏清晰度等维度。",
+          "evidence": [
+            {
+              "source": "source.gratz-roemer-2004",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "这是临床研究常用构念。产品不应据此给用户贴标签或做筛查结论。"
+      ]
+    },
+    "construct.energetic-arousal": {
+      "id": "construct.energetic-arousal",
+      "type": "construct",
+      "name": {
+        "zh": "精力唤醒",
+        "en": "Energetic arousal"
+      },
+      "summary": "有活力、清醒、精神饱满的程度。疲惫时它低，恢复后它高。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.arousal",
+          "evidence": [
+            {
+              "source": "source.matthews-1990",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ]
+    },
+    "construct.event-centrality": {
+      "id": "construct.event-centrality",
+      "type": "construct",
+      "name": {
+        "zh": "事件中心性",
+        "en": "Event centrality"
+      },
+      "summary": "某段经历在多大程度上成为一个人身份和人生故事的核心。比“这件事重不重要”更能说明它为什么长期影响人。",
+      "status": "reviewed",
+      "claims": [
+        {
+          "statement": "事件中心性可以被可靠测量，并与创伤后应激症状相关。",
+          "evidence": [
+            {
+              "source": "source.berntsen-rubin-2006",
+              "stance": "supports",
+              "level": "validation-study",
+              "note": "原研究针对负面和创伤事件。"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "use_for": "替代或补充经历档案中的“重要性”，例如问“这件事是否已经成为你看待自己的一部分”。",
+        "forbidden": [
+          "根据得分推断创伤程度或心理问题"
+        ]
+      }
+    },
+    "construct.habitual-reappraisal": {
+      "id": "construct.habitual-reappraisal",
+      "type": "construct",
+      "name": {
+        "zh": "习惯性认知重评",
+        "en": "Habitual cognitive reappraisal"
+      },
+      "summary": "个体在日常生活中习惯通过改变对情境的理解来调节情绪的程度。是一种稳定的个体差异，区别于某一次具体的重评行为（见 strategy.reappraisal）。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.emotion-regulation"
+        },
+        {
+          "type": "related_to",
+          "target": "strategy.reappraisal"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "习惯性重评得分较高的人报告更多正性情绪、更少负性情绪和更高的幸福感。",
+          "evidence": [
+            {
+              "source": "source.gross-john-2003",
+              "stance": "supports",
+              "level": "single-study",
+              "note": "相关研究，不能推出因果。"
+            }
+          ]
+        }
+      ]
+    },
+    "construct.habitual-suppression": {
+      "id": "construct.habitual-suppression",
+      "type": "construct",
+      "name": {
+        "zh": "习惯性表达抑制",
+        "en": "Habitual expressive suppression"
+      },
+      "summary": "个体习惯通过压住情绪的外在表达来调节情绪的程度。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.emotion-regulation"
+        },
+        {
+          "type": "related_to",
+          "target": "strategy.expressive-suppression"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "习惯性抑制得分较高的人报告更少正性情绪、更多负性情绪和较差的人际功能。",
+          "evidence": [
+            {
+              "source": "source.gross-john-2003",
+              "stance": "supports",
+              "level": "single-study",
+              "note": "相关研究，且样本以北美大学生为主；抑制的后果可能存在文化差异。"
+            },
+            {
+              "source": "source.butler-2007",
+              "stance": "mixed",
+              "level": "single-study",
+              "note": "抑制的负面社交后果在持亚洲价值观的人中较弱，不能直接推到中文用户。"
+            }
+          ]
+        }
+      ]
+    },
+    "construct.interpersonal-closeness": {
+      "id": "construct.interpersonal-closeness",
+      "type": "construct",
+      "name": {
+        "zh": "人际亲近感",
+        "en": "Interpersonal closeness"
+      },
+      "summary": "感到自己和另一个人有多亲近、多相连。“想和人聊聊”的直接结果指标。",
+      "status": "reviewed",
+      "claims": [
+        {
+          "statement": "人际亲近感可以用一道图示题（重叠程度不同的两个圆）有效测量。",
+          "evidence": [
+            {
+              "source": "source.aron-1992",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ]
+    },
+    "construct.loneliness": {
+      "id": "construct.loneliness",
+      "type": "construct",
+      "name": {
+        "zh": "孤独感",
+        "en": "Loneliness"
+      },
+      "summary": "主观上感到缺少陪伴、被冷落或与他人隔绝的程度。是较稳定的状态，适合作背景或长期随访，不适合测一次聊天的即时效果。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "contrasts_with",
+          "target": "construct.interpersonal-closeness",
+          "note": "一次聊天后的亲近感上升，不等于长期孤独感下降。"
+        }
+      ]
+    },
+    "construct.music-mood-regulation": {
+      "id": "construct.music-mood-regulation",
+      "type": "construct",
+      "name": {
+        "zh": "音乐情绪调节",
+        "en": "Music in mood regulation"
+      },
+      "summary": "个体使用音乐来改变、维持或释放情绪的习惯和方式。为未来的音乐模块预留。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.emotion-regulation"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "人们使用音乐调节情绪的方式可以归为娱乐、复苏、强烈感受、转移注意、宣泄、心理整理和慰藉七类策略。",
+          "evidence": [
+            {
+              "source": "source.saarikallio-2012",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ]
+    },
+    "construct.negative-affect": {
+      "id": "construct.negative-affect",
+      "type": "construct",
+      "name": {
+        "zh": "负性情感",
+        "en": "Negative affect"
+      },
+      "summary": "主观痛苦和不愉快投入的程度，如紧张、烦躁、害怕、羞愧。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "related_to",
+          "target": "construct.core-affect"
+        },
+        {
+          "type": "contrasts_with",
+          "target": "construct.positive-affect",
+          "note": "两者相关较弱，降低负性情感不等于提高正性情感。产品评估时应分别看。",
+          "evidence": [
+            {
+              "source": "source.watson-1988",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ]
+    },
+    "construct.positive-affect": {
+      "id": "construct.positive-affect",
+      "type": "construct",
+      "name": {
+        "zh": "正性情感",
+        "en": "Positive affect"
+      },
+      "summary": "感到热情、活跃、警觉的程度。在 PANAS 框架中与负性情感是两个相对独立的维度，而不是一条线的两端。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "related_to",
+          "target": "construct.core-affect"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "正性情感与负性情感可以作为两个相对独立的维度被可靠地测量。",
+          "evidence": [
+            {
+              "source": "source.watson-1988",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ]
+    },
+    "construct.state-hope": {
+      "id": "construct.state-hope",
+      "type": "construct",
+      "name": {
+        "zh": "状态希望",
+        "en": "State hope"
+      },
+      "summary": "此刻觉得自己有动力（agency）、也有办法（pathways）去达成目标的程度。“获得鼓励”的直接结果指标。",
+      "status": "reviewed",
+      "claims": [
+        {
+          "statement": "状态希望可以分为动力和路径两个成分，并能随情境在短时间内变化。",
+          "evidence": [
+            {
+              "source": "source.snyder-1996",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ]
+    },
+    "construct.suicide-risk": {
+      "id": "construct.suicide-risk",
+      "type": "construct",
+      "name": {
+        "zh": "自杀风险",
+        "en": "Suicide risk"
+      },
+      "summary": "自杀意念、计划、意图和既往行为的严重程度。产品的底线安全指标。",
+      "status": "reviewed",
+      "claims": [
+        {
+          "statement": "询问自杀相关问题不会诱发自杀念头。",
+          "evidence": [
+            {
+              "source": "source.dazzi-2014",
+              "stance": "supports",
+              "level": "systematic-review"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "课堂原型没有专业人员跟进能力，不应自行做风险分级。检测到信号时只做“暂停 + 提供现实求助渠道”。"
+      ]
+    },
+    "construct.tense-arousal": {
+      "id": "construct.tense-arousal",
+      "type": "construct",
+      "name": {
+        "zh": "紧张唤醒",
+        "en": "Tense arousal"
+      },
+      "summary": "紧张、焦虑、坐立不安的激活程度。“平静下来”要降低的是它，而不是精力。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.arousal",
+          "evidence": [
+            {
+              "source": "source.matthews-1990",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "type": "contrasts_with",
+          "target": "construct.energetic-arousal",
+          "note": "两者可以分开变化，例如玩益智游戏后精力上升而紧张下降。",
+          "evidence": [
+            {
+              "source": "source.matthews-1990",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ]
+    },
+    "construct.valence": {
+      "id": "construct.valence",
+      "type": "construct",
+      "name": {
+        "zh": "愉悦度",
+        "en": "Valence (pleasure)"
+      },
+      "summary": "情感状态的好坏程度，从非常不愉快到非常愉快。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.core-affect",
+          "evidence": [
+            {
+              "source": "source.russell-1980",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        }
+      ]
+    },
+    "goal.calm-down": {
+      "id": "goal.calm-down",
+      "type": "goal",
+      "name": {
+        "zh": "平静下来",
+        "en": "Calm down"
+      },
+      "summary": "用户希望降低紧张、焦虑或激动的程度。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "targets",
+          "target": "construct.tense-arousal",
+          "note": "产品定义的目标方向，不是实证结论。降低紧张，精力不限。"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "疲劳任务后短暂玩休闲游戏，情绪恢复优于引导放松，安静休息反而略降低情绪。",
+          "evidence": [
+            {
+              "source": "source.rupp-2017",
+              "stance": "supports",
+              "level": "single-study",
+              "note": "随机分组的实验室研究，样本较小。"
+            }
+          ]
+        },
+        {
+          "statement": "益智类休闲游戏会提高精力唤醒，而正念 app 会降低它；两者的主观恢复体验没有差异。",
+          "evidence": [
+            {
+              "source": "source.collins-2019",
+              "stance": "mixed",
+              "level": "single-study",
+              "note": "实验室部分 n=45。"
+            }
+          ]
+        },
+        {
+          "statement": "压力和疲劳越多的人越倾向用游戏来恢复。",
+          "evidence": [
+            {
+              "source": "source.reinecke-2009",
+              "stance": "supports",
+              "level": "single-study",
+              "note": "横断面调查，只说明使用动机，不说明效果。"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "“平静”不应简单等同于唤醒度下降。紧张降低而精力恢复，可能才是用户想要的结果。测量时应分开问“紧张程度”和“精力程度”。"
+      ],
+      "product_use": {
+        "ui_label": "平静下来",
+        "target_shift": {
+          "tension": "down",
+          "energy": "any",
+          "valence": "hold-or-up"
+        },
+        "default_measure": "instrument.affective-slider",
+        "research_measure": "instrument.uwist-macl",
+        "note": "情绪滑块只有一个唤醒维度，分不出紧张和精力。研究阶段建议额外加一道“紧张程度”题。"
+      }
+    },
+    "goal.connection": {
+      "id": "goal.connection",
+      "type": "goal",
+      "name": {
+        "zh": "想和人聊聊",
+        "en": "Connection"
+      },
+      "summary": "用户不想看故事，只想和一个真实的人说说话，或者听别人说。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "targets",
+          "target": "construct.interpersonal-closeness",
+          "note": "产品定义的目标方向。"
+        },
+        {
+          "type": "targets",
+          "target": "construct.valence"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "人们预期和陌生人交谈不如独处，但实际交谈后的体验更积极。",
+          "evidence": [
+            {
+              "source": "source.epley-schroeder-2014",
+              "stance": "supports",
+              "level": "single-study",
+              "note": "论文包含多个实验。"
+            }
+          ]
+        },
+        {
+          "statement": "和不太熟的人互动越多，当天的幸福感越高。",
+          "evidence": [
+            {
+              "source": "source.sandstrom-dunn-2014",
+              "stance": "supports",
+              "level": "single-study",
+              "note": "相关研究。"
+            }
+          ]
+        },
+        {
+          "statement": "陌生人按一组逐步加深的自我暴露问题对话，比闲聊产生更强的亲近感。",
+          "evidence": [
+            {
+              "source": "source.aron-1997",
+              "stance": "supports",
+              "level": "single-study",
+              "note": "面对面实验，约 45 分钟；匿名文字聊天和更短的时长下效果未知。"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "研究中的陌生人交谈多为面对面、在日常场景中发生，和匿名线上文字聊天差别很大。"
+      ],
+      "product_use": {
+        "ui_label": "想和人聊聊",
+        "sub_choices": [
+          "想说说话",
+          "愿意听别人说",
+          "随便闲聊"
+        ],
+        "target_shift": {
+          "valence": "up",
+          "arousal": "any"
+        },
+        "default_measure": "instrument.affective-slider",
+        "research_measure": "instrument.ios-scale"
+      }
+    },
+    "goal.encouragement": {
+      "id": "goal.encouragement",
+      "type": "goal",
+      "name": {
+        "zh": "获得鼓励",
+        "en": "Encouragement"
+      },
+      "summary": "用户感到失落或自我怀疑，希望获得支持和继续下去的力量。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "targets",
+          "target": "construct.state-hope",
+          "note": "产品定义的目标方向。"
+        },
+        {
+          "type": "targets",
+          "target": "construct.valence"
+        }
+      ],
+      "product_use": {
+        "ui_label": "获得鼓励",
+        "target_shift": {
+          "hope": "up",
+          "valence": "up",
+          "arousal": "any"
+        },
+        "default_measure": "instrument.affective-slider",
+        "research_measure": "instrument.state-hope-scale",
+        "note": "有的用户需要的是被理解而不是被鼓励。体验开头应先确认感受，再推进。"
+      }
+    },
+    "goal.mastery": {
+      "id": "goal.mastery",
+      "type": "goal",
+      "name": {
+        "zh": "体验成就感 / 爽一下",
+        "en": "Mastery"
+      },
+      "summary": "用户希望在安全的虚构情境中体验掌控、胜任和逆转。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "targets",
+          "target": "construct.dominance",
+          "note": "产品定义的目标方向。"
+        },
+        {
+          "type": "targets",
+          "target": "construct.valence"
+        }
+      ],
+      "product_use": {
+        "ui_label": "体验成就感",
+        "target_shift": {
+          "valence": "up",
+          "dominance": "up",
+          "arousal": "any"
+        },
+        "default_measure": "instrument.affective-slider",
+        "research_measure": "instrument.sam",
+        "note": "滑块不测支配感。研究阶段暂用 SAM 的支配感维度；尚未找到合适的“状态掌控感”量表，这是测量缺口。"
+      }
+    },
+    "goal.mood-shift": {
+      "id": "goal.mood-shift",
+      "type": "goal",
+      "name": {
+        "zh": "换个心情",
+        "en": "Mood shift"
+      },
+      "summary": "用户没有明确方向，只想离开当前状态，体验些不一样的东西。常见于无聊或心烦。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "targets",
+          "target": "construct.valence",
+          "note": "产品定义的目标方向。"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "处于无聊状态的人自由选择时更多选刺激性的内容。",
+          "evidence": [
+            {
+              "source": "source.bryant-zillmann-1984",
+              "stance": "supports",
+              "level": "single-study"
+            }
+          ]
+        },
+        {
+          "statement": "人们倾向选择能缓解坏情绪的媒介内容；与当前坏情绪语义相近的内容不利于打断它。",
+          "evidence": [
+            {
+              "source": "source.zillmann-1988",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "ui_label": "换个心情",
+        "target_shift": {
+          "valence": "up",
+          "arousal": "any"
+        },
+        "default_measure": "instrument.affective-slider"
+      }
+    },
+    "instrument.affective-slider": {
+      "id": "instrument.affective-slider",
+      "type": "instrument",
+      "name": {
+        "zh": "情绪滑块",
+        "en": "Affective Slider"
+      },
+      "summary": "两个连续滑块分别测量愉悦度和唤醒度，为数字界面设计，比 SAM 更容易理解。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "measures",
+          "target": "construct.valence",
+          "evidence": [
+            {
+              "source": "source.betella-verschure-2016",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "type": "measures",
+          "target": "construct.arousal",
+          "evidence": [
+            {
+              "source": "source.betella-verschure-2016",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "type": "related_to",
+          "target": "instrument.sam",
+          "note": "原文以 SAM 为参照进行比较验证。"
+        }
+      ],
+      "instrument": {
+        "items": 2,
+        "response_format": "连续滑块，两端为图标，无数字刻度",
+        "administration_minutes": 0.2,
+        "languages": [
+          {
+            "lang": "无文字",
+            "validated": "yes",
+            "note": "两端为表情图标。"
+          }
+        ],
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown",
+          "note": "作者公开了实现代码，具体许可证需核对后再写入。"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "per-session-default",
+        "when": "体验前后各一次；体验中可选一次",
+        "output": {
+          "valence": "0-1",
+          "arousal": "0-1"
+        }
+      },
+      "caveats": [
+        "单次滑块评分噪声较大，只适合看方向和群体趋势，不适合给个人下结论。"
+      ]
+    },
+    "instrument.b-mmr": {
+      "id": "instrument.b-mmr",
+      "type": "instrument",
+      "name": {
+        "zh": "音乐情绪调节简表（B-MMR）",
+        "en": "Brief Music in Mood Regulation Scale"
+      },
+      "summary": "21 项量表，测量七类音乐情绪调节策略的使用习惯，每类 3 项。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "measures",
+          "target": "construct.music-mood-regulation",
+          "evidence": [
+            {
+              "source": "source.saarikallio-2012",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "statement": "B-MMR 使用 5 点 Likert 评分，两端为“非常不同意”和“非常同意”；七个分量表各 3 题，共 21 题。",
+          "evidence": [
+            {
+              "source": "source.saarikallio-2012",
+              "stance": "supports",
+              "level": "validation-study",
+              "locator": "p. 105, Appendix B（B-MMR 简表本身的说明）"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 21,
+        "response_format": "5 点 Likert 评分，从“非常不同意”到“非常同意”（原文 Appendix B，p. 105）",
+        "subscales": [
+          {
+            "name": "娱乐",
+            "items": 3
+          },
+          {
+            "name": "复苏",
+            "items": 3
+          },
+          {
+            "name": "强烈感受",
+            "items": 3
+          },
+          {
+            "name": "转移注意",
+            "items": 3
+          },
+          {
+            "name": "宣泄",
+            "items": 3
+          },
+          {
+            "name": "心理整理",
+            "items": 3
+          },
+          {
+            "name": "慰藉",
+            "items": 3
+          }
+        ],
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "profile-optional",
+        "when": "课堂项目加入音乐体验后，用户可选填写一次；仅做文字故事时可跳过。",
+        "use_for": "描述七类音乐情绪调节习惯，为音乐体验设计提供探索性参考。",
+        "not_for": "不作为单次体验前后情绪变化的测量，也不根据得分直接决定某首音乐必然有效。"
+      }
+    },
+    "instrument.c-ssrs": {
+      "id": "instrument.c-ssrs",
+      "type": "instrument",
+      "name": {
+        "zh": "哥伦比亚自杀严重程度评定量表（筛查版）",
+        "en": "Columbia-Suicide Severity Rating Scale (Screener)"
+      },
+      "summary": "筛查版为 6 道是/否题，依次询问死亡愿望、自杀念头、方法、意图、计划和既往行为，前面答“否”可跳过后续题。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "measures",
+          "target": "construct.suicide-risk",
+          "evidence": [
+            {
+              "source": "source.posner-2011",
+              "stance": "supports",
+              "level": "validation-study",
+              "note": "验证的是完整版；筛查版另有官方版本。"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 6,
+        "response_format": "是 / 否，带跳题规则；有“近一个月”“终生/近期”“上次接触以来”等版本",
+        "administration_minutes": 2,
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown",
+          "note": "原设计由经过培训的人员使用，官方提供培训。"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "reference-only",
+        "note": "课堂原型不自行实施 C-SSRS，因为没有专业人员跟进。只借鉴其题目顺序来设计危机信号识别，并在检测到信号时停止体验、展示求助渠道。"
+      }
+    },
+    "instrument.ders-16": {
+      "id": "instrument.ders-16",
+      "type": "instrument",
+      "name": {
+        "zh": "情绪调节困难量表简版（DERS-16）",
+        "en": "DERS-16"
+      },
+      "summary": "DERS 的 16 项简版，测量情绪调节困难的五个维度（不含觉察）。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "measures",
+          "target": "construct.emotion-regulation-difficulties",
+          "evidence": [
+            {
+              "source": "source.bjureberg-2016",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 16,
+        "response_format": "5 点评分，从“几乎从不”到“几乎总是”",
+        "administration_minutes": 3,
+        "subscales": [
+          {
+            "name": "缺乏清晰度",
+            "items": 2
+          },
+          {
+            "name": "目标导向困难",
+            "items": 3
+          },
+          {
+            "name": "冲动控制困难",
+            "items": 3
+          },
+          {
+            "name": "策略有限",
+            "items": 5
+          },
+          {
+            "name": "不接纳",
+            "items": 3
+          }
+        ],
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "research-only",
+        "note": "不能作为使用产品的前置门槛，也不向用户展示“困难程度”解读。"
+      },
+      "caveats": [
+        "临床相关量表。得分高时产品应提供现实支持渠道信息，而不是继续娱乐化生成。"
+      ]
+    },
+    "instrument.erq": {
+      "id": "instrument.erq",
+      "type": "instrument",
+      "name": {
+        "zh": "情绪调节问卷（ERQ）",
+        "en": "Emotion Regulation Questionnaire"
+      },
+      "summary": "10 项问卷，测量习惯性认知重评和表达抑制两种调节方式。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "measures",
+          "target": "construct.habitual-reappraisal",
+          "evidence": [
+            {
+              "source": "source.gross-john-2003",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "type": "measures",
+          "target": "construct.habitual-suppression",
+          "evidence": [
+            {
+              "source": "source.gross-john-2003",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "statement": "王力等（2007）在 1163 名大学生中验证 ERQ 中文修订版；认知重评和表达抑制的内部一致性系数分别为 0.85 和 0.77，重测信度分别为 0.82 和 0.79。",
+          "evidence": [
+            {
+              "source": "source.wang-2007-erq-chinese",
+              "stance": "supports",
+              "level": "validation-study",
+              "locator": "期刊官网中英文摘要"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 10,
+        "response_format": "7 点评分，从“非常不同意”到“非常同意”",
+        "administration_minutes": 2,
+        "subscales": [
+          {
+            "name": "认知重评",
+            "items": 6,
+            "measures": "construct.habitual-reappraisal"
+          },
+          {
+            "name": "表达抑制",
+            "items": 4,
+            "measures": "construct.habitual-suppression"
+          }
+        ],
+        "languages": [
+          {
+            "lang": "en",
+            "validated": "yes",
+            "source": "source.gross-john-2003"
+          },
+          {
+            "lang": "zh",
+            "validated": "yes",
+            "source": "source.wang-2007-erq-chinese",
+            "note": "王力、柳恒超、李中权、杜卫（2007）的中文修订版；证据来自大学生样本。"
+          }
+        ],
+        "license": {
+          "status": "free-research",
+          "commercial_use": "unknown",
+          "note": "原作者实验室公开提供用于研究。商业使用需核实。"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "profile-optional",
+        "when": "用户自愿完善长期画像时",
+        "use_for": "影响叙事机制的偏好排序（例如重评得分高的用户可多推荐 reframe-arc），属于待验证的产品假设。",
+        "classroom_priority": "可选；课堂原型可以先不根据 ERQ 分数分配故事，待比较实验后再决定。",
+        "not_for": "不用作五分钟体验前后的即时情绪指标；两个分量表分别解释，不合成“心理健康总分”。"
+      }
+    },
+    "instrument.i-panas-sf": {
+      "id": "instrument.i-panas-sf",
+      "type": "instrument",
+      "name": {
+        "zh": "国际版 PANAS 短表",
+        "en": "I-PANAS-SF"
+      },
+      "summary": "PANAS 的 10 项英语跨文化短版，分别测量正性和负性情感；用于短时体验评估前需明确语言版本和测量时间框架。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "instrument.panas"
+        },
+        {
+          "type": "measures",
+          "target": "construct.positive-affect",
+          "evidence": [
+            {
+              "source": "source.thompson-2007",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "type": "measures",
+          "target": "construct.negative-affect",
+          "evidence": [
+            {
+              "source": "source.thompson-2007",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "type": "related_to",
+          "target": "instrument.i-panas-sf-zh-9",
+          "note": "Liu 等（2020）支持的中文删题版，不能与本节点的英语 10 题版混用。",
+          "evidence": [
+            {
+              "source": "source.liu-2020-i-panas-sf-chinese",
+              "stance": "supports",
+              "level": "validation-study",
+              "locator": "Results — Factorial structure"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 10,
+        "response_format": "5 点评分",
+        "administration_minutes": 1,
+        "subscales": [
+          {
+            "name": "正性情感",
+            "items": 5,
+            "measures": "construct.positive-affect"
+          },
+          {
+            "name": "负性情感",
+            "items": 5,
+            "measures": "construct.negative-affect"
+          }
+        ],
+        "languages": [
+          {
+            "lang": "en",
+            "validated": "yes",
+            "source": "source.thompson-2007"
+          },
+          {
+            "lang": "zh",
+            "validated": "unknown",
+            "source": "source.liu-2020-i-panas-sf-chinese",
+            "note": "本节点保持原版 10 题。Liu 等（2020）最终支持删去 alert 的中文 9 题版，见 instrument.i-panas-sf-zh-9；不能据此把中文 10 题版标为已验证。"
+          }
+        ],
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "research-only",
+        "when": "研究方案确定语言版本、题数和时间框架之后，作为候选测量工具。",
+        "not_for": "不把一般情绪频率得分直接解释成五分钟内的状态变化；不混用 9 题与 10 题版本。",
+        "classroom_priority": "非课堂原型必填；当前先用简短即时反馈，量表前后测方案另行预试。"
+      }
+    },
+    "instrument.i-panas-sf-zh-9": {
+      "id": "instrument.i-panas-sf-zh-9",
+      "type": "instrument",
+      "name": {
+        "zh": "I-PANAS-SF 中文 9 题研究版",
+        "en": "Chinese 9-item I-PANAS-SF (Liu et al., 2020)"
+      },
+      "summary": "香港中学生样本中获得支持的中文删题版；正性情感 4 题、负性情感 5 题。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "instrument.i-panas-sf",
+          "evidence": [
+            {
+              "source": "source.liu-2020-i-panas-sf-chinese",
+              "stance": "supports",
+              "level": "validation-study",
+              "locator": "Results — Factorial structure",
+              "note": "原 10 题中删除 alert。"
+            }
+          ]
+        },
+        {
+          "type": "measures",
+          "target": "construct.positive-affect",
+          "evidence": [
+            {
+              "source": "source.liu-2020-i-panas-sf-chinese",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "type": "measures",
+          "target": "construct.negative-affect",
+          "evidence": [
+            {
+              "source": "source.liu-2020-i-panas-sf-chinese",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "statement": "有效样本 4111 人，年龄 11–19 岁，来自香港 59 所中学；9 题模型优于保留 alert 的 10 题模型。",
+          "evidence": [
+            {
+              "source": "source.liu-2020-i-panas-sf-chinese",
+              "stance": "supports",
+              "level": "validation-study",
+              "locator": "Methods — Participants; Results — Factorial structure"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 9,
+        "response_format": "5 点频率评分，1（从不）至 5（总是）；研究询问体育课相关的一般情感。",
+        "subscales": [
+          {
+            "name": "正性情感",
+            "items": 4,
+            "measures": "construct.positive-affect"
+          },
+          {
+            "name": "负性情感",
+            "items": 5,
+            "measures": "construct.negative-affect"
+          }
+        ],
+        "languages": [
+          {
+            "lang": "zh",
+            "validated": "yes",
+            "source": "source.liu-2020-i-panas-sf-chinese",
+            "note": "限该研究的 9 题版本、香港中学生样本和施测情境。"
+          }
+        ],
+        "psychometrics_note": "原文支持跨性别、年级的测量不变性；未检验纵向测量不变性。",
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "research-only",
+        "when": "明确采用该中文研究版，并完成目标人群、措辞与时间框架预试后再考虑使用。",
+        "classroom_priority": "作为中文量表版本选择的证据，不作为当前成人课堂原型的默认前后测。",
+        "scoring_note": "正性和负性情感分别报告；9 题版与 10 题版题数不同，不直接混合原始总分。",
+        "adaptation_note": "若改为“此刻”的强度评分，应单独记录为项目改编，不能沿用原研究验证结论。"
+      }
+    },
+    "instrument.ios-scale": {
+      "id": "instrument.ios-scale",
+      "type": "instrument",
+      "name": {
+        "zh": "他人融入自我量表（IOS）",
+        "en": "Inclusion of Other in the Self Scale"
+      },
+      "summary": "一道图示题：从 7 对重叠程度不同的圆中选出最能代表“我和对方”关系的一对。几秒即可完成。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "measures",
+          "target": "construct.interpersonal-closeness",
+          "evidence": [
+            {
+              "source": "source.aron-1992",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 1,
+        "response_format": "7 个图示选项，两个圆从完全分离到几乎重合",
+        "administration_minutes": 0.2,
+        "languages": [
+          {
+            "lang": "无文字",
+            "validated": "yes",
+            "note": "图示为主，只需翻译“我”和“对方”。"
+          }
+        ],
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "per-session-optional",
+        "when": "陌生人对话结束后",
+        "note": "只适合测“和这次聊天对象”的亲近感，不测整体孤独感。"
+      }
+    },
+    "instrument.panas": {
+      "id": "instrument.panas",
+      "type": "instrument",
+      "name": {
+        "zh": "正负性情感量表（PANAS）",
+        "en": "Positive and Negative Affect Schedule"
+      },
+      "summary": "20 项情绪词评分，分别得到正性情感和负性情感两个分数。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "measures",
+          "target": "construct.positive-affect",
+          "evidence": [
+            {
+              "source": "source.watson-1988",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "type": "measures",
+          "target": "construct.negative-affect",
+          "evidence": [
+            {
+              "source": "source.watson-1988",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 20,
+        "response_format": "5 点评分，从“几乎没有”到“极其”",
+        "subscales": [
+          {
+            "name": "正性情感",
+            "items": 10,
+            "measures": "construct.positive-affect"
+          },
+          {
+            "name": "负性情感",
+            "items": 10,
+            "measures": "construct.negative-affect"
+          }
+        ],
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown",
+          "note": "原文发表于 APA 期刊，题目版权归属需核实。"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "research-only"
+      }
+    },
+    "instrument.phq-4": {
+      "id": "instrument.phq-4",
+      "type": "instrument",
+      "name": {
+        "zh": "PHQ-4 抑郁焦虑超简筛查",
+        "en": "Patient Health Questionnaire-4"
+      },
+      "summary": "4 题，询问过去两周的情绪低落、兴趣减退、紧张和担忧频率，分别得到抑郁和焦虑两个筛查分。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "measures",
+          "target": "construct.depression-anxiety-symptoms",
+          "evidence": [
+            {
+              "source": "source.kroenke-2009",
+              "stance": "supports",
+              "level": "validation-study",
+              "note": "样本为美国初级保健患者。"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 4,
+        "response_format": "4 点评分（0 完全没有 到 3 几乎每天），回顾过去两周",
+        "administration_minutes": 1,
+        "subscales": [
+          {
+            "name": "抑郁（PHQ-2）",
+            "items": 2,
+            "measures": "construct.depression-anxiety-symptoms"
+          },
+          {
+            "name": "焦虑（GAD-2）",
+            "items": 2,
+            "measures": "construct.depression-anxiety-symptoms"
+          }
+        ],
+        "languages": [
+          {
+            "lang": "en",
+            "validated": "yes",
+            "source": "source.kroenke-2009"
+          },
+          {
+            "lang": "zh",
+            "validated": "unknown",
+            "note": "中文版 PHQ-9 与 GAD-7 应用广泛，PHQ-4 中文验证文献待补。"
+          }
+        ],
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "safety-gate",
+        "when": "首次使用前，以及之后每两周最多一次",
+        "rule": "任一分量表得分较高时，不阻止使用，但在体验前展示现实支持资源，并降低高强度内容的排序。具体阈值按原文核实后写入。",
+        "never": [
+          "向用户展示诊断性解读",
+          "把得分用于个性化内容素材"
+        ]
+      }
+    },
+    "instrument.sam": {
+      "id": "instrument.sam",
+      "type": "instrument",
+      "name": {
+        "zh": "自评小人量表（SAM）",
+        "en": "Self-Assessment Manikin"
+      },
+      "summary": "用图画小人测量愉悦度、唤醒度和支配感的非文字自评工具，几秒即可完成。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "measures",
+          "target": "construct.valence",
+          "evidence": [
+            {
+              "source": "source.bradley-lang-1994",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "type": "measures",
+          "target": "construct.arousal",
+          "evidence": [
+            {
+              "source": "source.bradley-lang-1994",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "type": "measures",
+          "target": "construct.dominance",
+          "evidence": [
+            {
+              "source": "source.bradley-lang-1994",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 3,
+        "response_format": "图画式，每个维度 5 个小人，常用 9 点计分（可在小人之间作答）",
+        "administration_minutes": 0.5,
+        "languages": [
+          {
+            "lang": "无文字",
+            "validated": "yes",
+            "note": "图画为主，但指导语仍需翻译。"
+          }
+        ],
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown",
+          "note": "研究用材料由原作者所在机构分发。商业产品使用前需联系核实。"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "per-session-optional",
+        "when": "体验前后各一次",
+        "note": "若许可不明，产品默认改用 instrument.affective-slider。"
+      }
+    },
+    "instrument.state-hope-scale": {
+      "id": "instrument.state-hope-scale",
+      "type": "instrument",
+      "name": {
+        "zh": "状态希望量表",
+        "en": "State Hope Scale"
+      },
+      "summary": "6 题，测量此刻的希望水平，可在短时间内重复测量。适合作为“获得鼓励”的结果指标。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "measures",
+          "target": "construct.state-hope",
+          "evidence": [
+            {
+              "source": "source.snyder-1996",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 6,
+        "response_format": "Likert 式评分，从“完全不符合”到“完全符合”（点数待对照原文核实；同作者的成人特质希望量表为 8 点）",
+        "administration_minutes": 1,
+        "subscales": [
+          {
+            "name": "动力",
+            "items": 3,
+            "measures": "construct.state-hope"
+          },
+          {
+            "name": "路径",
+            "items": 3,
+            "measures": "construct.state-hope"
+          }
+        ],
+        "languages": [
+          {
+            "lang": "en",
+            "validated": "yes",
+            "source": "source.snyder-1996"
+          },
+          {
+            "lang": "zh",
+            "validated": "unknown",
+            "note": "未查中文版。"
+          }
+        ],
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "research-only",
+        "when": "研究阶段“获得鼓励”目标的前后测"
+      }
+    },
+    "instrument.ucla-loneliness-3": {
+      "id": "instrument.ucla-loneliness-3",
+      "type": "instrument",
+      "name": {
+        "zh": "孤独感三题简版",
+        "en": "Three-item loneliness scale"
+      },
+      "summary": "从 UCLA 孤独感量表提取的 3 题简版，询问缺少陪伴、被冷落和与他人隔绝的频率。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "measures",
+          "target": "construct.loneliness",
+          "evidence": [
+            {
+              "source": "source.hughes-2004",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 3,
+        "response_format": "3 点评分（几乎从不 / 有时 / 经常）",
+        "administration_minutes": 0.5,
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown"
+        },
+        "items_in_repo": false
+      },
+      "product_use": {
+        "role": "profile-optional",
+        "when": "用户档案中可选；研究阶段做数周后的随访",
+        "note": "不用于单次体验前后测。"
+      }
+    },
+    "instrument.uwist-macl": {
+      "id": "instrument.uwist-macl",
+      "type": "instrument",
+      "name": {
+        "zh": "UWIST 心境形容词表",
+        "en": "UWIST Mood Adjective Checklist"
+      },
+      "summary": "用形容词评定当下心境，分别得到精力唤醒、紧张唤醒和愉悦基调三个分数。能区分“平静”和“没精神”。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "measures",
+          "target": "construct.tense-arousal",
+          "evidence": [
+            {
+              "source": "source.matthews-1990",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "type": "measures",
+          "target": "construct.energetic-arousal",
+          "evidence": [
+            {
+              "source": "source.matthews-1990",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "type": "measures",
+          "target": "construct.valence",
+          "note": "原文称“愉悦基调”（hedonic tone）。",
+          "evidence": [
+            {
+              "source": "source.matthews-1990",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "instrument": {
+        "items": 24,
+        "response_format": "4 点评分（definitely / slightly / slightly not / definitely not），评定每个形容词是否符合此刻心境",
+        "administration_minutes": 2,
+        "subscales": [
+          {
+            "name": "精力唤醒",
+            "items": 8,
+            "measures": "construct.energetic-arousal"
+          },
+          {
+            "name": "紧张唤醒",
+            "items": 8,
+            "measures": "construct.tense-arousal"
+          },
+          {
+            "name": "愉悦基调",
+            "items": 8,
+            "measures": "construct.valence"
+          }
+        ],
+        "languages": [
+          {
+            "lang": "en",
+            "validated": "yes",
+            "source": "source.matthews-1990"
+          },
+          {
+            "lang": "zh",
+            "validated": "unknown",
+            "note": "未找到中文版验证文献。"
+          }
+        ],
+        "license": {
+          "status": "unknown",
+          "commercial_use": "unknown"
+        },
+        "items_in_repo": false,
+        "psychometrics_note": "部分版本另有 5 题“愤怒/挫败”分量表；每个分量表的题数由计分范围推断，需对照原文核实。"
+      },
+      "product_use": {
+        "role": "research-only",
+        "when": "研究阶段“平静下来”目标的前后测",
+        "short_form_idea": "产品内可只取紧张唤醒的 2–3 个形容词做快速版，但快速版本身未经验证。"
+      }
+    },
+    "mechanic.brief-humor-video": {
+      "id": "mechanic.brief-humor-video",
+      "type": "mechanic",
+      "name": {
+        "zh": "有结尾的短幽默视频",
+        "en": "Bounded humorous video"
+      },
+      "summary": "系统选择一段有铺垫、包袱和收尾的短幽默内容，可采用冷幽默；不让用户在无尽片段中连续切换。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "implements",
+          "target": "strategy.distraction",
+          "evidence": [
+            {
+              "source": "source.webb-2012",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "由实验室分心外推至观看幽默视频；不是本产品的直接效果证据。"
+            }
+          ]
+        },
+        {
+          "type": "serves",
+          "target": "goal.mood-shift",
+          "evidence": [
+            {
+              "source": "source.yamakoshi-2025",
+              "stance": "supports",
+              "level": "hypothesis",
+              "locator": "Methods — Intervention; Results — Subjective mood",
+              "note": "原研究是约四分钟预选喜剧视频，本项目的生成式冷幽默与更短时长仍需检验。"
+            },
+            {
+              "source": "source.tam-inzlicht-2024",
+              "stance": "mixed",
+              "level": "hypothesis",
+              "locator": "Studies 3–5; General Discussion",
+              "note": "支持限制连续切换的设计考虑，不等于证明本产品的单片方案一定有效。"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "medium": "video",
+        "content_family": "humorous-distraction",
+        "beats": [
+          "温和进入",
+          "铺垫",
+          "意外包袱",
+          "留白",
+          "收尾"
+        ],
+        "minutes": {
+          "min": 0.5,
+          "max": 4
+        },
+        "duration_note": "该时长范围是产品假设；最接近的新研究使用约四分钟片段。",
+        "choices": "0；用户始终可以停止或反馈不合适。",
+        "pace": "根据本次刺激耐受度与个人反馈调整；不因习惯刷短视频就默认快剪辑。",
+        "reading_load": "low",
+        "interaction_load": "low",
+        "candidate_signals": [
+          "本次希望换心情",
+          "阅读负担高",
+          "过往幽默体验接受度好"
+        ],
+        "personalization": "以题材和幽默风格适配为主；不把真实痛苦经历直接编成笑料。",
+        "constraints": [
+          "无无限滚动",
+          "不突发高音量或惊吓",
+          "不调侃用户本人",
+          "不把完播率当作情绪改善"
+        ],
+        "avoid_when": [
+          "用户不接受幽默",
+          "当前明确不愿被打断",
+          "设备或环境不能播放视频"
+        ]
+      }
+    },
+    "mechanic.humor-pep-talk": {
+      "id": "mechanic.humor-pep-talk",
+      "type": "mechanic",
+      "name": {
+        "zh": "幽默励志",
+        "en": "Humorous pep talk"
+      },
+      "summary": "一个原创角色用夸张但善意的方式，把用户的处境调侃成一件没那么严重、甚至有点好笑的事，最后落到一句真诚的鼓励。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "implements",
+          "target": "strategy.humorous-reappraisal",
+          "evidence": [
+            {
+              "source": "source.samson-gross-2012",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "研究中的幽默由被试自己产生；由角色讲给用户听，效果是否相同未经检验。"
+            }
+          ]
+        },
+        {
+          "type": "serves",
+          "target": "goal.encouragement",
+          "evidence": [
+            {
+              "source": "source.samson-gross-2012",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "只支持“善意幽默优于刻薄幽默”，不支持“幽默优于其他鼓励方式”。"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "beats": [
+          "确认感受",
+          "夸张调侃",
+          "换个角度",
+          "真诚收尾"
+        ],
+        "minutes": {
+          "min": 1,
+          "max": 5
+        },
+        "choices": "0-1",
+        "arousal_curve": "rise-then-settle",
+        "humor_style": "只用善意幽默，调侃处境，不调侃用户本人。",
+        "timing": "必须先确认感受，再进入幽默段落。用户情绪强度很高时不使用。",
+        "character": {
+          "source": "只用原创角色。用户选择人设（如损友、毒舌学长、温柔前辈）、画风和声音。",
+          "forbidden": [
+            "真人的脸或声音",
+            "已有影视、动漫、游戏角色的形象或名字"
+          ]
+        },
+        "media_stages": [
+          {
+            "stage": 1,
+            "form": "文字台词"
+          },
+          {
+            "stage": 2,
+            "form": "配音和 2D 口型角色"
+          },
+          {
+            "stage": 3,
+            "form": "只在高潮生成短视频片段"
+          }
+        ],
+        "compliance": "AI 生成的音视频必须加 AI 生成标识。上线前需法律审查肖像、声音与深度合成相关规定。",
+        "avoid_when": [
+          "用户在禁止内容里选了“不要开玩笑”"
+        ]
+      }
+    },
+    "mechanic.music-pause": {
+      "id": "mechanic.music-pause",
+      "type": "mechanic",
+      "name": {
+        "zh": "音乐片段休息",
+        "en": "Bounded music pause"
+      },
+      "summary": "系统在当前可播放音频且用户负担较高时，选择一段有明确时限的音乐体验，并依据本人反馈调整下次选择。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "implements",
+          "target": "strategy.response-modulation",
+          "evidence": [
+            {
+              "source": "source.de-witte-2020",
+              "stance": "supports",
+              "level": "hypothesis",
+              "locator": "Abstract; Discussion",
+              "note": "音乐对压力结果的汇总证据为候选机制提供依据，但自动曲目选择不是被检验的干预。"
+            }
+          ]
+        },
+        {
+          "type": "serves",
+          "target": "goal.calm-down",
+          "evidence": [
+            {
+              "source": "source.de-witte-2020",
+              "stance": "supports",
+              "level": "hypothesis",
+              "locator": "Discussion — Implications for future research",
+              "note": "本项目的具体曲目、时长和个性化效果未知。"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "statement": "在会话开始和负反馈后重新检查当前状态、可用时间和音频环境，再决定是否采用音乐；这是本项目的自适应设计假设。",
+          "evidence": [
+            {
+              "source": "source.nahum-shani-2018",
+              "stance": "supports",
+              "level": "hypothesis",
+              "locator": "Decision Points; Tailoring Variables; Decision Rules",
+              "note": "借用 JITAI 设计框架，不表示该规则的阈值已被验证。"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "medium": "audio",
+        "content_family": "music",
+        "beats": [
+          "进入",
+          "连贯片段",
+          "渐弱收尾"
+        ],
+        "minutes": {
+          "min": 1,
+          "max": 10
+        },
+        "duration_note": "产品配置范围，非元分析得出的最优剂量。",
+        "choices": "0；允许暂停与停止。",
+        "reading_load": "none",
+        "interaction_load": "low",
+        "personalization": "参考可选 B-MMR、本人实际听后反馈和主动提供的音乐习惯；不把歌曲风格等同情绪效果。",
+        "candidate_signals": [
+          "本次希望降低紧张",
+          "当前不想阅读或做选择",
+          "可播放音频"
+        ],
+        "constraints": [
+          "记录片段实际时长",
+          "音量可调",
+          "无自动无限续播",
+          "目标变化与喜欢程度分别记录"
+        ],
+        "avoid_when": [
+          "环境不允许声音且无耳机",
+          "该片段被用户标记不适"
+        ]
+      }
+    },
+    "mechanic.novelty-detour": {
+      "id": "mechanic.novelty-detour",
+      "type": "mechanic",
+      "name": {
+        "zh": "新奇绕路",
+        "en": "Novelty detour"
+      },
+      "summary": "一段节奏轻快、充满意外和小发现的短篇冒险，和用户当前处境毫无关系。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "implements",
+          "target": "strategy.distraction",
+          "evidence": [
+            {
+              "source": "source.webb-2012",
+              "stance": "supports",
+              "level": "hypothesis"
+            }
+          ]
+        },
+        {
+          "type": "serves",
+          "target": "goal.mood-shift",
+          "evidence": [
+            {
+              "source": "source.bryant-zillmann-1984",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "无聊者偏好刺激性内容。证据是关于“选择什么”，不是“看了以后心情是否变好”。"
+            },
+            {
+              "source": "source.zillmann-1988",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "与坏情绪无关的内容更利于打断坏情绪，这是“刻意避开用户近期经历”的理论依据。"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "beats": [
+          "意外开场",
+          "发现",
+          "小悬念",
+          "意外解决"
+        ],
+        "minutes": {
+          "min": 3,
+          "max": 10
+        },
+        "choices": "1-3，选择影响走向",
+        "arousal_curve": "medium-varied",
+        "personalization": "仅使用题材偏好，刻意避开用户近期经历。"
+      }
+    },
+    "mechanic.reframe-arc": {
+      "id": "mechanic.reframe-arc",
+      "type": "mechanic",
+      "name": {
+        "zh": "重新理解的故事弧",
+        "en": "Reframe arc"
+      },
+      "summary": "角色遭遇与用户处境相似但不相同的挫折，在故事中逐渐发现新的理解方式。让用户替代性地经历一次重评。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "implements",
+          "target": "strategy.reappraisal",
+          "evidence": [
+            {
+              "source": "source.webb-2012",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "研究中的重评由本人进行；看角色重评属于替代性重评，没有直接证据。"
+            },
+            {
+              "source": "source.green-brock-2000",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "叙事传输为“读者接受角色的新理解”提供了机制解释，但原研究测的是信念改变，不是情绪调节。"
+            }
+          ]
+        },
+        {
+          "type": "serves",
+          "target": "goal.encouragement",
+          "evidence": [
+            {
+              "source": "source.bhattacharjee-2025",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "最接近的证据：个性化“克服困境”故事被评价为更能减弱对消极想法的相信。但结果多为用户感知评分，未测情绪变化，且是阅读而非互动。"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "beats": [
+          "确认情绪",
+          "挫折",
+          "卡住",
+          "新视角出现",
+          "小的行动",
+          "开放式结尾"
+        ],
+        "minutes": {
+          "min": 5,
+          "max": 20
+        },
+        "choices": "2-3，至少一个选择决定角色采取哪种理解",
+        "arousal_curve": "dip-then-rise",
+        "personalization": "可在用户授权下借用其处境的“结构”（如被否定），但不复述真实事件。",
+        "plausibility": "故事要贴近但不能失真。过于完美的转折会让用户觉得不可信。",
+        "avoid_when": [
+          "当前负面情绪强度很高（先用 slow-exploration 或 novelty-detour）",
+          "用户在“禁止话题”里列出了相关主题"
+        ]
+      }
+    },
+    "mechanic.reversal-arc": {
+      "id": "mechanic.reversal-arc",
+      "type": "mechanic",
+      "name": {
+        "zh": "逆转弧",
+        "en": "Reversal arc"
+      },
+      "summary": "主角起初被低估或处于劣势，通过观察、判断和选择完成一次漂亮的逆转。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "implements",
+          "target": "strategy.distraction",
+          "note": "沉浸在高投入的情节里本身带有转移注意的作用。",
+          "evidence": [
+            {
+              "source": "source.webb-2012",
+              "stance": "supports",
+              "level": "hypothesis"
+            }
+          ]
+        },
+        {
+          "type": "serves",
+          "target": "goal.mastery",
+          "evidence": [
+            {
+              "source": "source.ryan-2006",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "游戏中的胜任感和自主感与玩后幸福感提升相关。前提是用户自己做选择并感到做对了，而不是旁观主角成功。"
+            },
+            {
+              "source": "source.bandura-1977",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "替代性经验是自我效能的来源之一。但该理论指的是观察真实榜样完成自己也要面对的任务，虚构情节能否起作用未经检验。"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "beats": [
+          "被质疑",
+          "线索",
+          "关键选择",
+          "反转",
+          "被认可"
+        ],
+        "minutes": {
+          "min": 3,
+          "max": 20
+        },
+        "choices": "2-3，关键选择必须让用户感到是自己做对了",
+        "arousal_curve": "rise-peak-resolve",
+        "agency": "必须。依据胜任感研究，逆转应来自用户的选择，而不是剧情自动发生。",
+        "personalization": "可使用用户喜欢的题材（侦探、职场、奇幻等）。",
+        "avoid_when": [
+          "用户目标是平静下来"
+        ]
+      }
+    },
+    "mechanic.slow-exploration": {
+      "id": "mechanic.slow-exploration",
+      "type": "mechanic",
+      "name": {
+        "zh": "慢速探索",
+        "en": "Slow exploration"
+      },
+      "summary": "在一个安静、低冲突的世界里慢慢走动、观察细节、完成简单任务。没有失败条件。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "implements",
+          "target": "strategy.distraction",
+          "evidence": [
+            {
+              "source": "source.webb-2012",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "元分析支持的是实验室分心任务；此机制是否产生相同效果未经检验。"
+            }
+          ]
+        },
+        {
+          "type": "serves",
+          "target": "goal.calm-down",
+          "evidence": [
+            {
+              "source": "source.sheppes-2011",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "高强度情绪下分心更容易被选择，故作为高唤醒用户的首选候选。"
+            },
+            {
+              "source": "source.rupp-2017",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "最接近的类比证据。被测的是休闲游戏而非叙事探索，但都属于“低压力、有轻度任务”的体验，且优于纯放松。"
+            },
+            {
+              "source": "source.collins-2019",
+              "stance": "mixed",
+              "level": "hypothesis",
+              "note": "有任务的游戏会提高精力唤醒。若用户想要的是“静下来”而非“恢复精神”，任务密度应更低。"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "beats": [
+          "进入场景",
+          "感官细节",
+          "小任务",
+          "小任务",
+          "安静收尾"
+        ],
+        "minutes": {
+          "min": 3,
+          "max": 20
+        },
+        "choices": "0-2，选择只影响风景不影响结局",
+        "arousal_curve": "flat-low",
+        "task_density": "低。小任务是为了保持投入，不是为了制造挑战。",
+        "personalization": "仅使用用户声明的喜好（场景、季节、意象），不使用个人经历。",
+        "avoid_when": [
+          "用户明确说想要刺激感"
+        ]
+      }
+    },
+    "mechanic.spoken-reframe": {
+      "id": "mechanic.spoken-reframe",
+      "type": "mechanic",
+      "name": {
+        "zh": "低阅读负担的音频故事",
+        "en": "Spoken reframe story"
+      },
+      "summary": "将重新理解困境的叙事结构写成可听的短故事，系统依据当下负担和个人反馈选择音频呈现。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "implements",
+          "target": "strategy.reappraisal",
+          "evidence": [
+            {
+              "source": "source.webb-2012",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "本人重评的证据不能直接证明旁听角色重评有效。"
+            }
+          ]
+        },
+        {
+          "type": "serves",
+          "target": "goal.encouragement",
+          "evidence": [
+            {
+              "source": "source.bhattacharjee-2025",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "原研究为个性化阅读故事；改成音频后还需独立检验。"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "statement": "本机制的媒介优先级不由年龄单独决定，而以当前负担和同一用户在相似情境下的反馈更新。",
+          "evidence": [
+            {
+              "source": "source.benson-2019",
+              "stance": "mixed",
+              "level": "hypothesis",
+              "locator": "Abstract",
+              "note": "日常采样说明情境与年龄关系复杂；它没有直接检验音频或推荐算法。"
+            },
+            {
+              "source": "source.nahum-shani-2018",
+              "stance": "supports",
+              "level": "hypothesis",
+              "locator": "Tailoring Variables; Proximal Outcomes Related to Intervention Adherence and Retention",
+              "note": "借用动态状态与负担适配原则。"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "medium": "audio",
+        "content_family": "supportive-narrative",
+        "beats": [
+          "确认感受",
+          "角色受挫",
+          "出现另一种理解",
+          "一个小行动",
+          "开放式收尾"
+        ],
+        "minutes": {
+          "min": 2,
+          "max": 8
+        },
+        "duration_note": "课堂原型设计范围，不是已验证最优时长。",
+        "choices": "0-1；控制互动负担。",
+        "reading_load": "none",
+        "interaction_load": "low",
+        "candidate_signals": [
+          "本次希望鼓励",
+          "阅读疲劳",
+          "当前能够听音频"
+        ],
+        "personalization": "可以在用户允许时借用处境结构，不复述敏感事件细节。",
+        "constraints": [
+          "提供文字替代内容",
+          "标记语音生成是否完成",
+          "不把脚本或占位内容称为已生成音频"
+        ],
+        "avoid_when": [
+          "环境不能播放音频",
+          "当前情绪强度高且不愿接触相似处境"
+        ]
+      }
+    },
+    "mechanic.stranger-chat": {
+      "id": "mechanic.stranger-chat",
+      "type": "mechanic",
+      "name": {
+        "zh": "陌生人对话",
+        "en": "Stranger chat"
+      },
+      "summary": "按本次目标把两个用户随机配对文字聊天，AI 只负责开场话题、安全把关和收尾，不参与闲聊。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "implements",
+          "target": "strategy.situation-selection",
+          "evidence": [
+            {
+              "source": "source.epley-schroeder-2014",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "选择和陌生人交谈而不是独处。原研究为线下面对面交谈。"
+            }
+          ]
+        },
+        {
+          "type": "serves",
+          "target": "goal.connection",
+          "evidence": [
+            {
+              "source": "source.epley-schroeder-2014",
+              "stance": "supports",
+              "level": "hypothesis"
+            },
+            {
+              "source": "source.sandstrom-dunn-2014",
+              "stance": "supports",
+              "level": "hypothesis"
+            },
+            {
+              "source": "source.rose-2002",
+              "stance": "mixed",
+              "level": "hypothesis",
+              "note": "两个情绪低落的人互相倾诉，可能陷入共同反刍，加重负面情绪。"
+            }
+          ]
+        },
+        {
+          "type": "related_to",
+          "target": "construct.co-rumination",
+          "note": "AI 需要识别并轻柔打断共同反刍。",
+          "evidence": [
+            {
+              "source": "source.rose-2002",
+              "stance": "supports",
+              "level": "hypothesis",
+              "note": "原研究对象是中小学生朋友，不是成年陌生人。"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "matching": "按本次目标配对（想说说话 ↔ 愿意听；闲聊 ↔ 闲聊），不按年龄、性别、外貌。",
+        "opening": {
+          "method": "AI 提供一组逐步加深的开场问题，双方可跳过。",
+          "evidence": "source.aron-1997"
+        },
+        "minutes": {
+          "min": 5,
+          "max": 20
+        },
+        "ai_role": [
+          "开场话题",
+          "安全把关",
+          "识别共同反刍并引入新话题",
+          "结束时的收尾"
+        ],
+        "ai_never": [
+          "假装成真人",
+          "在双方未同意时读取对话",
+          "随意插话或评价任何一方"
+        ],
+        "consent": "匹配前双方都要同意 AI 读取对话内容，任何一方拒绝则 AI 只做关键词级别的安全检测。",
+        "fallback": "无人可匹配时可以和 AI 聊，但必须明确告知对方是 AI。",
+        "cold_start": "只在固定时段开放（如每晚 21:00–23:00），集中在线人数。",
+        "safety": [
+          "仅限成年用户",
+          "一键举报和拉黑，结束后可选择永不再匹配",
+          "检测到自伤或危机信号时，暂停对话并提供现实支持渠道",
+          "禁止交换联系方式和外链（可后续放开）"
+        ],
+        "compliance": "涉及实名、内容审核、即时通讯相关备案。上线前需法律审查。",
+        "avoid_when": [
+          "当前负面情绪强度很高且用户选择“想说说话”时，优先引导到愿意倾听的一方，而不是同样低落的人"
+        ]
+      }
+    },
+    "risk.avoidance-overuse": {
+      "id": "risk.avoidance-overuse",
+      "type": "risk",
+      "name": {
+        "zh": "过度依赖分心与回避",
+        "en": "Overuse of distraction and avoidance"
+      },
+      "summary": "多数体验机制靠转移注意。短期有效，但如果用户每次遇到同一件事都靠产品回避，长期可能维持而不是缓解问题。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "threatens",
+          "target": "strategy.distraction"
+        },
+        {
+          "type": "threatens",
+          "target": "mechanic.slow-exploration"
+        },
+        {
+          "type": "threatens",
+          "target": "mechanic.novelty-detour"
+        },
+        {
+          "type": "threatens",
+          "target": "mechanic.reversal-arc"
+        },
+        {
+          "type": "threatens",
+          "target": "mechanic.brief-humor-video"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "回避、反刍、抑制与抑郁、焦虑等多种心理问题正相关。",
+          "evidence": [
+            {
+              "source": "source.aldao-2010",
+              "stance": "supports",
+              "level": "meta-analysis",
+              "note": "相关研究，不能证明回避导致问题，但提示长期单一使用有风险。"
+            }
+          ]
+        },
+        {
+          "statement": "没有一种调节策略总是有效，适应性来自根据情境灵活选择和切换策略。",
+          "evidence": [
+            {
+              "source": "source.bonanno-burton-2013",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        }
+      ],
+      "risk": {
+        "severity": "medium",
+        "status": "mitigated-in-code",
+        "mitigation": [
+          "统计近 14 天最近 6 次体验中分心类的比例；至少 5 次且 ≥80% 时，给非分心类体验加 0.08 分，并在“为什么这样安排”里说明，不强制",
+          "当前紧张程度 ≥8 时不做调整，因为高强度情绪下先分心更合适（Sheppes 2011）",
+          "产品文案不把体验说成“解决问题”",
+          "已知局限：没有和具体经历关联，只看整体比例；没有长期随访，无法知道这样调整是否真的减少了回避"
+        ],
+        "components": [
+          "web/core/engine.ts#avoidancePattern",
+          "web/core/catalog.ts#POLICY"
+        ]
+      }
+    },
+    "risk.crisis-in-session": {
+      "id": "risk.crisis-in-session",
+      "type": "risk",
+      "name": {
+        "zh": "使用中出现危机",
+        "en": "Crisis during a session"
+      },
+      "summary": "有用户可能在严重低落甚至有自杀念头时使用产品。这时继续生成故事或匹配陌生人聊天都是不合适的。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "threatens",
+          "target": "mechanic.stranger-chat"
+        },
+        {
+          "type": "threatens",
+          "target": "goal.connection"
+        },
+        {
+          "type": "threatens",
+          "target": "goal.encouragement"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "询问自杀相关问题不会诱发自杀念头。",
+          "evidence": [
+            {
+              "source": "source.dazzi-2014",
+              "stance": "supports",
+              "level": "systematic-review"
+            }
+          ]
+        },
+        {
+          "statement": "4 题即可筛查抑郁和焦虑症状。",
+          "evidence": [
+            {
+              "source": "source.kroenke-2009",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        },
+        {
+          "statement": "自杀风险可以按意念、方法、意图、计划和行为的递进顺序评估。",
+          "evidence": [
+            {
+              "source": "source.posner-2011",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "risk": {
+        "severity": "high",
+        "status": "mitigated-in-code",
+        "mitigation": [
+          "开始前可选 PHQ-4（每 14 天询问一次，可跳过）；任一分量表 ≥3 时展示求助资源，并在之后 14 天降低高刺激内容的排序",
+          "对“发生了什么”、经历记录和生成内容做危机用语检测；检测到时不创建体验，直接展示 12356 全国心理援助热线和 110/120",
+          "只记录“发生过一次安全暂停”，不保存触发的原文；含危机用语的经历永远不会进入生成内容",
+          "不由 AI 进行风险分级或心理干预",
+          "已知局限：只是关键词检测，隐晦表达会漏过、引用或玩笑可能误报；PHQ-4 中文措辞为自行改写，未经验证；真人聊天尚未实现，聊天中的检测还没有"
+        ],
+        "components": [
+          "web/core/safety.ts",
+          "web/core/service.ts",
+          "web/core/engine.ts#decide",
+          "web/app/page.tsx"
+        ]
+      }
+    },
+    "risk.cultural-generalization": {
+      "id": "risk.cultural-generalization",
+      "type": "risk",
+      "name": {
+        "zh": "跨文化外推",
+        "en": "Cross-cultural generalization"
+      },
+      "summary": "知识库大部分证据来自欧美大学生样本，直接套用到中文用户可能不成立，表达抑制就是一个例子。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "threatens",
+          "target": "construct.habitual-suppression"
+        },
+        {
+          "type": "threatens",
+          "target": "instrument.erq"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "抑制情绪的负面社交后果在持西方价值观的人中较明显，在持亚洲价值观的人中较弱。",
+          "evidence": [
+            {
+              "source": "source.butler-2007",
+              "stance": "supports",
+              "level": "single-study",
+              "note": "样本为美国大学女生，按价值观而非国籍分组。"
+            }
+          ]
+        }
+      ],
+      "risk": {
+        "severity": "medium",
+        "status": "mitigated-in-design",
+        "mitigation": [
+          "不把 ERQ 抑制得分解读为“不好的习惯”，只用于偏好排序",
+          "优先使用有中文验证的量表版本，并在节点中标明样本来源"
+        ]
+      }
+    },
+    "risk.happiness-pressure": {
+      "id": "risk.happiness-pressure",
+      "type": "risk",
+      "name": {
+        "zh": "“必须开心”的压力",
+        "en": "Pressure to feel happy"
+      },
+      "summary": "产品如果承诺“5 分钟让你开心”，可能让没变开心的用户更失望，觉得自己“连这都不行”。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "threatens",
+          "target": "goal.mood-shift"
+        },
+        {
+          "type": "threatens",
+          "target": "goal.encouragement"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "越看重快乐的人，在积极情境下反而越失望、越不快乐。",
+          "evidence": [
+            {
+              "source": "source.mauss-2011",
+              "stance": "supports",
+              "level": "single-study"
+            }
+          ]
+        }
+      ],
+      "risk": {
+        "severity": "medium",
+        "status": "mitigated-in-code",
+        "mitigation": [
+          "文案只描述体验内容和时长，不承诺情绪结果；生成内容命中“让你开心”“保证好起来”“心情提升 X%”等说法则不展示",
+          "自动测试扫描界面文案和示例内容，出现承诺性说法即失败",
+          "反馈页说明“没有变化或更难受也是正常记录”，不显示任何提升百分比",
+          "已知局限：检查基于固定说法"
+        ],
+        "components": [
+          "web/core/safety.ts#findPromise",
+          "web/core/generation.ts",
+          "web/app/page.tsx",
+          "web/tests/intake.test.mjs"
+        ]
+      }
+    },
+    "risk.positive-statement-backfire": {
+      "id": "risk.positive-statement-backfire",
+      "type": "risk",
+      "name": {
+        "zh": "鼓励适得其反",
+        "en": "Encouragement backfire"
+      },
+      "summary": "对自我评价低的人直接说“你很棒”“一切都会好”，可能让他们感觉更差。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "threatens",
+          "target": "goal.encouragement"
+        },
+        {
+          "type": "threatens",
+          "target": "mechanic.reframe-arc"
+        },
+        {
+          "type": "threatens",
+          "target": "mechanic.spoken-reframe"
+        },
+        {
+          "type": "threatens",
+          "target": "mechanic.humor-pep-talk"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "低自尊者重复积极自我陈述后心境反而变差，高自尊者略有获益。",
+          "evidence": [
+            {
+              "source": "source.wood-2009",
+              "stance": "supports",
+              "level": "single-study",
+              "note": "论文含多项实验，但为单一研究团队。"
+            }
+          ]
+        }
+      ],
+      "risk": {
+        "severity": "high",
+        "status": "mitigated-in-code",
+        "mitigation": [
+          "生成提示词禁止对用户本人下积极断言；生成后再检查“你一定能行”“你很棒”“一切都会好起来”等说法，命中则不展示、需重新安排",
+          "先确认感受，再推进；结尾开放，不强行圆满",
+          "反馈里有“有点像在被说教”选项；选了之后这次体验的学习分数最多 0.25，该机制在此用户上的排序随之降低",
+          "已知局限：检查基于固定说法，换个措辞的说教会漏过；角色之间的鼓励不受限制"
+        ],
+        "components": [
+          "web/core/safety.ts#findAffirmation",
+          "web/core/generation.ts",
+          "web/core/engine.ts#outcome",
+          "web/app/page.tsx"
+        ]
+      }
+    },
+    "risk.pre-post-bias": {
+      "id": "risk.pre-post-bias",
+      "type": "risk",
+      "name": {
+        "zh": "前后测偏差",
+        "en": "Pre-post measurement bias"
+      },
+      "summary": "用户多在心情差时来用，下次测量本来就会回升；用户也知道系统希望自己变好。没有对照组时，前后测提升不能算作效果。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "threatens",
+          "target": "instrument.affective-slider"
+        },
+        {
+          "type": "threatens",
+          "target": "goal.calm-down"
+        },
+        {
+          "type": "threatens",
+          "target": "goal.encouragement"
+        },
+        {
+          "type": "threatens",
+          "target": "goal.mood-shift"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "在极端状态下被测量的人，下次测量会自然接近平均水平，可被误认为干预效果。",
+          "evidence": [
+            {
+              "source": "source.barnett-2004",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        },
+        {
+          "statement": "被试会根据对研究目的的猜测调整自我报告。",
+          "evidence": [
+            {
+              "source": "source.orne-1962",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        }
+      ],
+      "risk": {
+        "severity": "high",
+        "status": "mitigated-in-code",
+        "mitigation": [
+          "研究模式（STUDY_MODE=on）把每次体验随机分到三组：个性化、非个性化（同机制但不用任何个人信息）、中性对照（说明性短文）；分组不向参与者显示，导出数据中保留",
+          "中性对照组的反馈不参与个人学习",
+          "个人学习改为相对比较：每种体验的结果减去此人同一目标下的平均变化，共同的回归均值部分相互抵消",
+          "体验后测量的措辞改为“请再评一次此刻的状态”，并说明没有变化或变差也是正常记录",
+          "已知局限：随机化在“每次体验”层面进行，同一参与者会经历多组，需要在分析时考虑个体差异；需求特征无法完全消除；组间比较的统计分析还需要在导出数据上另外完成"
+        ],
+        "components": [
+          "web/core/service.ts",
+          "web/core/generation.ts",
+          "web/core/engine.ts#goalBaseline",
+          "web/app/page.tsx"
+        ]
+      }
+    },
+    "risk.screen-media-assumptions": {
+      "id": "risk.screen-media-assumptions",
+      "type": "risk",
+      "name": {
+        "zh": "对短视频的先入之见",
+        "en": "Assumptions about short video"
+      },
+      "summary": "既不能假设“爱刷视频的人就该给视频”，也不能假设“短视频有害”。两种判断都缺乏证据，应以个人反馈为准。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "threatens",
+          "target": "mechanic.brief-humor-video"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "数字技术使用与青少年幸福感的关联非常小，最多解释约 0.4% 的方差。",
+          "evidence": [
+            {
+              "source": "source.orben-przybylski-2019",
+              "stance": "supports",
+              "level": "replicated",
+              "note": "三个大型数据集，相关研究。"
+            }
+          ]
+        },
+        {
+          "statement": "为了减少无聊而频繁切换视频，有时反而更无聊。",
+          "evidence": [
+            {
+              "source": "source.tam-inzlicht-2024",
+              "stance": "supports",
+              "level": "replicated",
+              "note": "七个实验。"
+            }
+          ]
+        }
+      ],
+      "risk": {
+        "severity": "low",
+        "status": "mitigated-in-code",
+        "mitigation": [
+          "媒介习惯只影响“接受度”，效果按个人反馈单独学习",
+          "视频为有结尾的单段内容，不做无限连播"
+        ],
+        "components": [
+          "web/core/engine.ts#decide"
+        ]
+      }
+    },
+    "risk.uniform-event-decay": {
+      "id": "risk.uniform-event-decay",
+      "type": "risk",
+      "name": {
+        "zh": "经历影响统一衰减",
+        "en": "Uniform decay of life-event relevance"
+      },
+      "summary": "网站对所有经历使用同一个 90 天半衰期，但人对不同事件的适应速度差别很大，有些事件的影响长期不消退。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "threatens",
+          "target": "construct.adverse-childhood-experiences"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "人对失业、残疾、丧偶等事件的适应往往不完全，幸福感可能长期低于原水平，且个体差异很大。",
+          "evidence": [
+            {
+              "source": "source.lucas-2007",
+              "stance": "supports",
+              "level": "systematic-review",
+              "note": "综述多项大型纵向研究。"
+            }
+          ]
+        },
+        {
+          "statement": "一件事是否长期影响一个人，与它是否成为身份的核心（事件中心性）有关。",
+          "evidence": [
+            {
+              "source": "source.berntsen-rubin-2006",
+              "stance": "supports",
+              "level": "validation-study"
+            }
+          ]
+        }
+      ],
+      "risk": {
+        "severity": "medium",
+        "status": "mitigated-in-code",
+        "mitigation": [
+          "按事件类型设置半衰期：日常压力 30 天、成就 90 天、身份或环境变化 180 天、关系变化 365 天、失去与健康 730 天、其他 90 天",
+          "新增“在多大程度上已成为我看待自己的一部分”（事件中心性式问题）；中心性高的经历保留至少 90% 的近期性，并可替代重要性评分",
+          "持续中的经历以最近一次确认为准；所有经历仍需定期重新确认",
+          "已知局限：各类半衰期是依据 Lucas 2007 的定性结论设定的工程初值，不是从数据估计的参数；事件中心性只用一道题，不是完整量表"
+        ],
+        "components": [
+          "web/core/engine.ts#eventWeights",
+          "web/core/catalog.ts#POLICY",
+          "web/core/contracts.ts"
+        ]
+      }
+    },
+    "risk.warnings-insufficient": {
+      "id": "risk.warnings-insufficient",
+      "type": "risk",
+      "name": {
+        "zh": "只靠内容预警不够",
+        "en": "Content warnings are insufficient"
+      },
+      "summary": "用“以下内容可能涉及……”的提示来替代内容过滤是无效的。用户禁止的话题必须真的不出现。",
+      "status": "draft",
+      "relations": [
+        {
+          "type": "threatens",
+          "target": "mechanic.reframe-arc"
+        },
+        {
+          "type": "threatens",
+          "target": "construct.adverse-childhood-experiences"
+        }
+      ],
+      "claims": [
+        {
+          "statement": "内容预警不能减轻看到负面内容后的情绪反应，反而增加观看前的预期焦虑。",
+          "evidence": [
+            {
+              "source": "source.bridgland-2024",
+              "stance": "supports",
+              "level": "meta-analysis"
+            }
+          ]
+        }
+      ],
+      "risk": {
+        "severity": "high",
+        "status": "mitigated-in-code",
+        "mitigation": [
+          "禁止话题在生成前写入约束、生成后再做检查，未通过则不展示",
+          "不以预警提示作为放宽过滤的理由",
+          "已知局限：生成后检查目前只按字面匹配，同义或隐含表达可能漏过，需要补充语义检查"
+        ],
+        "components": [
+          "web/core/generation.ts"
+        ]
+      }
+    },
+    "source.aldao-2010": {
+      "id": "source.aldao-2010",
+      "type": "source",
+      "name": {
+        "zh": "情绪调节策略与心理病理的元分析",
+        "en": "Emotion-regulation strategies across psychopathology: A meta-analytic review"
+      },
+      "summary": "元分析发现，反刍、回避和抑制与抑郁、焦虑等多种心理问题正相关；重评和问题解决则呈负相关，但效应较小。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Aldao, A.",
+          "Nolen-Hoeksema, S.",
+          "Schweizer, S."
+        ],
+        "year": 2010,
+        "title": "Emotion-regulation strategies across psychopathology: A meta-analytic review",
+        "venue": "Clinical Psychology Review",
+        "volume": "30",
+        "issue": "2",
+        "pages": "217-237",
+        "doi": "10.1016/j.cpr.2009.11.004"
+      }
+    },
+    "source.aron-1992": {
+      "id": "source.aron-1992",
+      "type": "source",
+      "name": {
+        "zh": "他人融入自我量表（IOS）",
+        "en": "Inclusion of Other in the Self Scale and the structure of interpersonal closeness"
+      },
+      "summary": "提出用 7 对重叠程度不同的圆圈测量人际亲近感的单题图示量表，并检验其信效度。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Aron, A.",
+          "Aron, E. N.",
+          "Smollan, D."
+        ],
+        "year": 1992,
+        "title": "Inclusion of Other in the Self Scale and the structure of interpersonal closeness",
+        "venue": "Journal of Personality and Social Psychology",
+        "volume": "63",
+        "issue": "4",
+        "pages": "596-612",
+        "doi": "10.1037/0022-3514.63.4.596"
+      }
+    },
+    "source.aron-1997": {
+      "id": "source.aron-1997",
+      "type": "source",
+      "name": {
+        "zh": "人际亲近感的实验诱发（36 个问题）",
+        "en": "The experimental generation of interpersonal closeness"
+      },
+      "summary": "让陌生人两两按一组逐步加深的自我暴露问题对话，约 45 分钟后产生的亲近感明显高于闲聊对照组。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Aron, A.",
+          "Melinat, E.",
+          "Aron, E. N.",
+          "Vallone, R. D.",
+          "Bator, R. J."
+        ],
+        "year": 1997,
+        "title": "The experimental generation of interpersonal closeness: A procedure and some preliminary findings",
+        "venue": "Personality and Social Psychology Bulletin",
+        "volume": 23,
+        "issue": 4,
+        "pages": "363-377",
+        "doi": "10.1177/0146167297234003"
+      }
+    },
+    "source.baldwin-2021": {
+      "id": "source.baldwin-2021",
+      "type": "source",
+      "name": {
+        "zh": "ACE 分数的群体预测与个体预测",
+        "en": "Population vs individual prediction of poor health from ACE screening"
+      },
+      "summary": "在两个纵向队列中发现，ACE 分数在人群层面与不良健康结局相关，但用于预测具体个体时准确度很低。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Baldwin, J. R.",
+          "Caspi, A.",
+          "Meehan, A. J.",
+          "Ambler, A.",
+          "Arseneault, L.",
+          "Fisher, H. L.",
+          "Harrington, H.",
+          "Matthews, T.",
+          "Odgers, C. L.",
+          "Poulton, R.",
+          "Ramrakha, S.",
+          "Moffitt, T. E.",
+          "Danese, A."
+        ],
+        "year": 2021,
+        "title": "Population vs individual prediction of poor health from results of adverse childhood experiences screening",
+        "venue": "JAMA Pediatrics",
+        "volume": 175,
+        "issue": 4,
+        "pages": "385-393",
+        "doi": "10.1001/jamapediatrics.2020.5602"
+      }
+    },
+    "source.bandura-1977": {
+      "id": "source.bandura-1977",
+      "type": "source",
+      "name": {
+        "zh": "自我效能理论",
+        "en": "Self-efficacy: Toward a unifying theory of behavioral change"
+      },
+      "summary": "提出自我效能的四个来源：亲身成功经验、替代性经验（看到他人成功）、言语说服和生理情绪状态。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Bandura, A."
+        ],
+        "year": 1977,
+        "title": "Self-efficacy: Toward a unifying theory of behavioral change",
+        "venue": "Psychological Review",
+        "volume": 84,
+        "issue": 2,
+        "pages": "191-215",
+        "doi": "10.1037/0033-295X.84.2.191"
+      }
+    },
+    "source.barnett-2004": {
+      "id": "source.barnett-2004",
+      "type": "source",
+      "name": {
+        "zh": "回归均值",
+        "en": "Regression to the mean: what it is and how to deal with it"
+      },
+      "summary": "解释回归均值：在极端状态下被选中或测量的人，下次测量时会自然接近平均水平，可被误认为干预效果；并给出识别与处理方法。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Barnett, A. G.",
+          "van der Pols, J. C.",
+          "Dobson, A. J."
+        ],
+        "year": 2004,
+        "title": "Regression to the mean: what it is and how to deal with it",
+        "venue": "International Journal of Epidemiology",
+        "volume": "34",
+        "issue": "1",
+        "pages": "215-220",
+        "doi": "10.1093/ije/dyh299"
+      }
+    },
+    "source.benson-2019": {
+      "id": "source.benson-2019",
+      "type": "source",
+      "name": {
+        "zh": "年龄、情境与情绪调节的日常采样研究",
+        "en": "Age differences in emotion regulation strategy use, variability, and flexibility"
+      },
+      "summary": "150 名 18–89 岁成人在九周内记录 64213 次社交互动；总体重评和抑制使用未见年龄差异，但情境内变化与适配存在差异。",
+      "status": "draft",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Benson, L.",
+          "English, T.",
+          "Conroy, D. E.",
+          "Pincus, A. L.",
+          "Gerstorf, D.",
+          "Ram, N."
+        ],
+        "year": 2019,
+        "title": "Age differences in emotion regulation strategy use, variability, and flexibility: An experience sampling approach",
+        "venue": "Developmental Psychology",
+        "volume": 55,
+        "issue": 9,
+        "pages": "1951-1964",
+        "doi": "10.1037/dev0000727",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7189626/"
+      },
+      "caveats": [
+        "观察性日常采样研究；不同年龄的人之间的差异不等于同一个人变老之后的因果变化。",
+        "考察重评和抑制及社交情境，没有比较读故事、音频和短视频，不支持按年龄直接指定媒介。",
+        "本次核查了作者论文摘要；不记录未核对的具体回归系数。"
+      ]
+    },
+    "source.berntsen-rubin-2006": {
+      "id": "source.berntsen-rubin-2006",
+      "type": "source",
+      "name": {
+        "zh": "事件中心性量表",
+        "en": "The centrality of event scale: A measure of integrating a trauma into one's identity and its relation to post-traumatic stress disorder symptoms"
+      },
+      "summary": "编制事件中心性量表（CES），测量一件事在多大程度上成为个人身份和人生故事的核心，并发现其与创伤后应激症状相关。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Berntsen, D.",
+          "Rubin, D. C."
+        ],
+        "year": 2006,
+        "title": "The centrality of event scale: A measure of integrating a trauma into one's identity and its relation to post-traumatic stress disorder symptoms",
+        "venue": "Behaviour Research and Therapy",
+        "volume": "44",
+        "issue": "2",
+        "pages": "219-231",
+        "doi": "10.1016/j.brat.2005.01.009"
+      }
+    },
+    "source.betella-verschure-2016": {
+      "id": "source.betella-verschure-2016",
+      "type": "source",
+      "name": {
+        "zh": "情绪滑块（Affective Slider）",
+        "en": "The Affective Slider: A digital self-assessment scale for the measurement of human emotions"
+      },
+      "summary": "提出用两个连续滑块测量愉悦度与唤醒度的数字化自评工具，并与 SAM 做比较验证。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Betella, A.",
+          "Verschure, P. F. M. J."
+        ],
+        "year": 2016,
+        "title": "The Affective Slider: A digital self-assessment scale for the measurement of human emotions",
+        "venue": "PLOS ONE",
+        "volume": 11,
+        "issue": 2,
+        "pages": "e0148037",
+        "doi": "10.1371/journal.pone.0148037",
+        "open_access": true
+      }
+    },
+    "source.bhattacharjee-2025": {
+      "id": "source.bhattacharjee-2025",
+      "type": "source",
+      "name": {
+        "zh": "个性化 LLM 叙事干预的用户感知",
+        "en": "Perfectly to a Tee: Understanding user perceptions of personalized LLM-enhanced narrative interventions"
+      },
+      "summary": "346 名 18 至 25 岁年轻人随机阅读人工撰写或 LLM 个性化的“克服困境”故事。个性化故事在传达要点、促进反思、减弱对消极想法的相信程度上被评价更好。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "conference-paper",
+        "authors": [
+          "Bhattacharjee, A.",
+          "Xu, S. Y.",
+          "Rao, P.",
+          "Zeng, Y.",
+          "Meyerhoff, J.",
+          "Ahmed, S. I.",
+          "Mohr, D. C.",
+          "Liut, M.",
+          "Mariakakis, A.",
+          "Kornfield, R.",
+          "Williams, J. J."
+        ],
+        "year": 2025,
+        "title": "Perfectly to a Tee: Understanding user perceptions of personalized LLM-enhanced narrative interventions",
+        "venue": "Proceedings of the 2025 ACM Designing Interactive Systems Conference (DIS '25)",
+        "pages": "1387-1416",
+        "doi": "10.1145/3715336.3735810",
+        "url": "https://arxiv.org/abs/2409.16732"
+      }
+    },
+    "source.bjureberg-2016": {
+      "id": "source.bjureberg-2016",
+      "type": "source",
+      "name": {
+        "zh": "DERS-16 简版验证",
+        "en": "Development and validation of a brief version of the DERS: The DERS-16"
+      },
+      "summary": "从 DERS 中提取 16 项形成简版（不含“觉察”维度），检验其信效度及与原版的一致性。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Bjureberg, J.",
+          "Ljótsson, B.",
+          "Tull, M. T.",
+          "Hedman, E.",
+          "Sahlin, H.",
+          "Lundh, L.-G.",
+          "Bjärehed, J.",
+          "DiLillo, D.",
+          "Messman-Moore, T.",
+          "Gumpert, C. H.",
+          "Gratz, K. L."
+        ],
+        "year": 2016,
+        "title": "Development and validation of a brief version of the Difficulties in Emotion Regulation Scale: The DERS-16",
+        "venue": "Journal of Psychopathology and Behavioral Assessment",
+        "volume": 38,
+        "issue": 2,
+        "pages": "284-296",
+        "doi": "10.1007/s10862-015-9514-x"
+      }
+    },
+    "source.bonanno-burton-2013": {
+      "id": "source.bonanno-burton-2013",
+      "type": "source",
+      "name": {
+        "zh": "调节灵活性",
+        "en": "Regulatory flexibility: An individual differences perspective on coping and emotion regulation"
+      },
+      "summary": "提出“调节灵活性”观点：没有一种策略总是有效，适应性取决于能否根据情境选择、调整和切换策略。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Bonanno, G. A.",
+          "Burton, C. L."
+        ],
+        "year": 2013,
+        "title": "Regulatory flexibility: An individual differences perspective on coping and emotion regulation",
+        "venue": "Perspectives on Psychological Science",
+        "volume": "8",
+        "issue": "6",
+        "pages": "591-612",
+        "doi": "10.1177/1745691613504116"
+      }
+    },
+    "source.bradley-lang-1994": {
+      "id": "source.bradley-lang-1994",
+      "type": "source",
+      "name": {
+        "zh": "SAM 自评小人量表原始验证",
+        "en": "Measuring emotion: The Self-Assessment Manikin and the semantic differential"
+      },
+      "summary": "提出并验证 SAM 图画式自评工具，用三个图形维度测量愉悦度、唤醒度和支配感，并与语义差异量表比较。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Bradley, M. M.",
+          "Lang, P. J."
+        ],
+        "year": 1994,
+        "title": "Measuring emotion: The self-assessment manikin and the semantic differential",
+        "venue": "Journal of Behavior Therapy and Experimental Psychiatry",
+        "volume": 25,
+        "issue": 1,
+        "pages": "49-59",
+        "doi": "10.1016/0005-7916(94)90063-9"
+      }
+    },
+    "source.bridgland-2024": {
+      "id": "source.bridgland-2024",
+      "type": "source",
+      "name": {
+        "zh": "内容预警效果的元分析",
+        "en": "A Meta-Analysis of the Efficacy of Trigger Warnings, Content Warnings, and Content Notes"
+      },
+      "summary": "元分析发现，内容预警不能减轻看到负面内容后的情绪反应，反而会提高观看前的预期焦虑。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Bridgland, V. M. E.",
+          "Jones, P. J.",
+          "Bellet, B. W."
+        ],
+        "year": 2024,
+        "title": "A Meta-Analysis of the Efficacy of Trigger Warnings, Content Warnings, and Content Notes",
+        "venue": "Clinical Psychological Science",
+        "volume": "12",
+        "issue": "4",
+        "pages": "751-771",
+        "doi": "10.1177/21677026231186625"
+      }
+    },
+    "source.bryant-zillmann-1984": {
+      "id": "source.bryant-zillmann-1984",
+      "type": "source",
+      "name": {
+        "zh": "用电视缓解无聊与压力",
+        "en": "Using television to alleviate boredom and stress"
+      },
+      "summary": "实验先让被试处于无聊或紧张状态，再让其自由选看节目。无聊者更多选择刺激性节目；紧张者对刺激和放松节目的选择数量相近。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Bryant, J.",
+          "Zillmann, D."
+        ],
+        "year": 1984,
+        "title": "Using television to alleviate boredom and stress: Selective exposure as a function of induced excitational states",
+        "venue": "Journal of Broadcasting",
+        "volume": 28,
+        "issue": 1,
+        "pages": "1-20",
+        "doi": "10.1080/08838158409386511"
+      }
+    },
+    "source.butler-2007": {
+      "id": "source.butler-2007",
+      "type": "source",
+      "name": {
+        "zh": "情绪抑制的社交后果是否有文化差异",
+        "en": "Emotion regulation and culture: Are the social consequences of emotion suppression culture-specific?"
+      },
+      "summary": "实验发现，抑制情绪的负面社交后果在持西方价值观的女性中较明显，在持亚洲价值观的女性中较弱。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Butler, E. A.",
+          "Lee, T. L.",
+          "Gross, J. J."
+        ],
+        "year": 2007,
+        "title": "Emotion regulation and culture: Are the social consequences of emotion suppression culture-specific?",
+        "venue": "Emotion",
+        "volume": "7",
+        "issue": "1",
+        "pages": "30-48",
+        "doi": "10.1037/1528-3542.7.1.30"
+      }
+    },
+    "source.collins-2019": {
+      "id": "source.collins-2019",
+      "type": "source",
+      "name": {
+        "zh": "数字游戏与正念 app 对下班后恢复的比较",
+        "en": "Digital games and mindfulness apps: Comparison of effects on post work recovery"
+      },
+      "summary": "实验室研究（n=45）与现场研究（n=20）。实验室中，益智游戏提高了精力唤醒，正念 app 和对照组降低了它；三组主观恢复体验无差异。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Collins, E.",
+          "Cox, A.",
+          "Wilcock, C.",
+          "Sethu-Jones, G."
+        ],
+        "year": 2019,
+        "title": "Digital games and mindfulness apps: Comparison of effects on post work recovery",
+        "venue": "JMIR Mental Health",
+        "volume": 6,
+        "issue": 7,
+        "pages": "e12853",
+        "doi": "10.2196/12853",
+        "open_access": true
+      }
+    },
+    "source.dazzi-2014": {
+      "id": "source.dazzi-2014",
+      "type": "source",
+      "name": {
+        "zh": "询问自杀是否会诱发自杀念头",
+        "en": "Does asking about suicide and related behaviours induce suicidal ideation? What is the evidence?"
+      },
+      "summary": "综述现有研究，认为询问自杀相关问题不会诱发自杀念头，甚至可能减轻部分人的念头。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Dazzi, T.",
+          "Gribble, R.",
+          "Wessely, S.",
+          "Fear, N. T."
+        ],
+        "year": 2014,
+        "title": "Does asking about suicide and related behaviours induce suicidal ideation? What is the evidence?",
+        "venue": "Psychological Medicine",
+        "volume": "44",
+        "issue": "16",
+        "pages": "3361-3363",
+        "doi": "10.1017/S0033291714001299"
+      }
+    },
+    "source.de-witte-2020": {
+      "id": "source.de-witte-2020",
+      "type": "source",
+      "name": {
+        "zh": "音乐干预与压力结果的元分析",
+        "en": "Effects of music interventions on stress-related outcomes"
+      },
+      "summary": "汇总 104 项随机试验、9617 名参与者的两项元分析，发现音乐干预对心理与生理压力结果有总体改善，但干预形式和研究情境不同。",
+      "status": "draft",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "de Witte, M.",
+          "Spruit, A.",
+          "van Hooren, S.",
+          "Moonen, X.",
+          "Stams, G. J."
+        ],
+        "year": 2020,
+        "title": "Effects of music interventions on stress-related outcomes: a systematic review and two meta-analyses",
+        "venue": "Health Psychology Review",
+        "volume": 14,
+        "issue": 2,
+        "pages": "294-324",
+        "doi": "10.1080/17437199.2019.1627897",
+        "url": "https://pure.uva.nl/ws/files/58927620/Effects_of_music_interventions_on_stress_related_outcomes_a_systematic_review_and_two_meta_analyses.pdf"
+      },
+      "caveats": [
+        "汇总包括不同情境下的音乐聆听和音乐治疗，不能把所有效果归给自动推荐播放列表。",
+        "没有确立普适的最佳时长、年龄权重或曲目选择算法；本项目具体时长与音乐适配需另行检验。"
+      ]
+    },
+    "source.epley-schroeder-2014": {
+      "id": "source.epley-schroeder-2014",
+      "type": "source",
+      "name": {
+        "zh": "错误地寻求独处",
+        "en": "Mistakenly seeking solitude"
+      },
+      "summary": "多个实验（含通勤途中的现场实验）发现，人们预期和陌生人交谈不如独处愉快，但实际交谈后的体验更积极。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Epley, N.",
+          "Schroeder, J."
+        ],
+        "year": 2014,
+        "title": "Mistakenly seeking solitude",
+        "venue": "Journal of Experimental Psychology: General",
+        "volume": 143,
+        "issue": 5,
+        "pages": "1980-1999",
+        "doi": "10.1037/a0037323"
+      }
+    },
+    "source.felitti-1998": {
+      "id": "source.felitti-1998",
+      "type": "source",
+      "name": {
+        "zh": "童年不良经历（ACE）原始研究",
+        "en": "The Adverse Childhood Experiences (ACE) Study"
+      },
+      "summary": "大样本回顾性研究，发现童年不良经历类别数与成年后多种健康风险在人群层面呈剂量反应关系。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Felitti, V. J.",
+          "Anda, R. F.",
+          "Nordenberg, D.",
+          "Williamson, D. F.",
+          "Spitz, A. M.",
+          "Edwards, V.",
+          "Koss, M. P.",
+          "Marks, J. S."
+        ],
+        "year": 1998,
+        "title": "Relationship of childhood abuse and household dysfunction to many of the leading causes of death in adults: The Adverse Childhood Experiences (ACE) Study",
+        "venue": "American Journal of Preventive Medicine",
+        "volume": 14,
+        "issue": 4,
+        "pages": "245-258",
+        "doi": "10.1016/S0749-3797(98)00017-8"
+      }
+    },
+    "source.gratz-roemer-2004": {
+      "id": "source.gratz-roemer-2004",
+      "type": "source",
+      "name": {
+        "zh": "DERS 原始量表",
+        "en": "Difficulties in Emotion Regulation Scale (DERS)"
+      },
+      "summary": "编制 36 项情绪调节困难量表（DERS），提出包含接纳、目标导向、冲动控制、觉察、策略和清晰度在内的多维结构。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Gratz, K. L.",
+          "Roemer, L."
+        ],
+        "year": 2004,
+        "title": "Multidimensional assessment of emotion regulation and dysregulation: Development, factor structure, and initial validation of the Difficulties in Emotion Regulation Scale",
+        "venue": "Journal of Psychopathology and Behavioral Assessment",
+        "volume": 26,
+        "issue": 1,
+        "pages": "41-54",
+        "doi": "10.1023/B:JOBA.0000007455.08539.94"
+      }
+    },
+    "source.green-brock-2000": {
+      "id": "source.green-brock-2000",
+      "type": "source",
+      "name": {
+        "zh": "叙事传输与说服",
+        "en": "The role of transportation in the persuasiveness of public narratives"
+      },
+      "summary": "提出并测量“叙事传输”：读者越沉浸于故事，越容易接受与故事一致的信念。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Green, M. C.",
+          "Brock, T. C."
+        ],
+        "year": 2000,
+        "title": "The role of transportation in the persuasiveness of public narratives",
+        "venue": "Journal of Personality and Social Psychology",
+        "volume": 79,
+        "issue": 5,
+        "pages": "701-721",
+        "doi": "10.1037/0022-3514.79.5.701"
+      }
+    },
+    "source.gross-1998": {
+      "id": "source.gross-1998",
+      "type": "source",
+      "name": {
+        "zh": "情绪调节综述与过程模型",
+        "en": "The emerging field of emotion regulation: An integrative review"
+      },
+      "summary": "系统提出情绪调节的过程模型，把调节策略按其在情绪产生过程中起作用的时间点分为五类。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Gross, J. J."
+        ],
+        "year": 1998,
+        "title": "The emerging field of emotion regulation: An integrative review",
+        "venue": "Review of General Psychology",
+        "volume": 2,
+        "issue": 3,
+        "pages": "271-299",
+        "doi": "10.1037/1089-2680.2.3.271"
+      }
+    },
+    "source.gross-2015": {
+      "id": "source.gross-2015",
+      "type": "source",
+      "name": {
+        "zh": "情绪调节：现状与展望",
+        "en": "Emotion regulation: Current status and future prospects"
+      },
+      "summary": "回顾过程模型提出后的研究进展，提出扩展过程模型，把策略的识别、选择、执行和监控纳入调节循环。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Gross, J. J."
+        ],
+        "year": 2015,
+        "title": "Emotion regulation: Current status and future prospects",
+        "venue": "Psychological Inquiry",
+        "volume": 26,
+        "issue": 1,
+        "pages": "1-26",
+        "doi": "10.1080/1047840X.2014.940781"
+      }
+    },
+    "source.gross-john-2003": {
+      "id": "source.gross-john-2003",
+      "type": "source",
+      "name": {
+        "zh": "ERQ 原始研究：重评与抑制的个体差异",
+        "en": "Individual differences in two emotion regulation processes"
+      },
+      "summary": "编制情绪调节问卷（ERQ），并在多个样本中考察习惯性认知重评与表达抑制和情绪、人际关系、幸福感的关联。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Gross, J. J.",
+          "John, O. P."
+        ],
+        "year": 2003,
+        "title": "Individual differences in two emotion regulation processes: Implications for affect, relationships, and well-being",
+        "venue": "Journal of Personality and Social Psychology",
+        "volume": 85,
+        "issue": 2,
+        "pages": "348-362",
+        "doi": "10.1037/0022-3514.85.2.348"
+      }
+    },
+    "source.hughes-2004": {
+      "id": "source.hughes-2004",
+      "type": "source",
+      "name": {
+        "zh": "孤独感三题简版",
+        "en": "A Short Scale for Measuring Loneliness in Large Surveys"
+      },
+      "summary": "从 UCLA 孤独感量表中提取 3 题，用于大规模调查，并在两个全国性样本中检验其信效度。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Hughes, M. E.",
+          "Waite, L. J.",
+          "Hawkley, L. C.",
+          "Cacioppo, J. T."
+        ],
+        "year": 2004,
+        "title": "A Short Scale for Measuring Loneliness in Large Surveys",
+        "venue": "Research on Aging",
+        "volume": "26",
+        "issue": "6",
+        "pages": "655-672",
+        "doi": "10.1177/0164027504268574"
+      }
+    },
+    "source.kroenke-2009": {
+      "id": "source.kroenke-2009",
+      "type": "source",
+      "name": {
+        "zh": "PHQ-4 超简抑郁焦虑筛查",
+        "en": "An Ultra-Brief Screening Scale for Anxiety and Depression: The PHQ-4"
+      },
+      "summary": "把 PHQ-2 与 GAD-2 合并成 4 题筛查工具，在约 2000 名初级保健患者中检验其信效度。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Kroenke, K.",
+          "Spitzer, R. L.",
+          "Williams, J. B. W.",
+          "Löwe, B."
+        ],
+        "year": 2009,
+        "title": "An Ultra-Brief Screening Scale for Anxiety and Depression: The PHQ-4",
+        "venue": "Psychosomatics",
+        "volume": "50",
+        "issue": "6",
+        "pages": "613-621",
+        "doi": "10.1176/appi.psy.50.6.613"
+      }
+    },
+    "source.liu-2020-i-panas-sf-chinese": {
+      "id": "source.liu-2020-i-panas-sf-chinese",
+      "type": "source",
+      "name": {
+        "zh": "I-PANAS-SF 中文版的因子结构与测量不变性",
+        "en": "Chinese version of the international positive and negative affect schedule short form: factor structure and measurement invariance"
+      },
+      "summary": "在香港中学生中检验中文 I-PANAS-SF，最终支持删去 alert 的 9 题、两因子版本。",
+      "status": "draft",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Liu, J. D.",
+          "You, R. H.",
+          "Liu, H.",
+          "Chung, P. K."
+        ],
+        "year": 2020,
+        "title": "Chinese version of the international positive and negative affect schedule short form: factor structure and measurement invariance",
+        "venue": "Health and Quality of Life Outcomes",
+        "volume": 18,
+        "pages": "285",
+        "doi": "10.1186/s12955-020-01526-6",
+        "url": "https://link.springer.com/article/10.1186/s12955-020-01526-6"
+      },
+      "caveats": [
+        "Methods 的有效分析样本为 4111，摘要中的 4136 是最初邀请人数。",
+        "研究考察体育课相关的一般情感，并未检验成年人五分钟叙事体验的测量效果或纵向测量不变性。"
+      ]
+    },
+    "source.lucas-2007": {
+      "id": "source.lucas-2007",
+      "type": "source",
+      "name": {
+        "zh": "适应与幸福感设定点",
+        "en": "Adaptation and the Set-Point Model of Subjective Well-Being"
+      },
+      "summary": "综述纵向研究，指出人对重大生活事件的适应并非总是完全的，如失业、残疾、丧偶后幸福感可能长期不回到原水平，且个体差异很大。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Lucas, R. E."
+        ],
+        "year": 2007,
+        "title": "Adaptation and the Set-Point Model of Subjective Well-Being",
+        "venue": "Current Directions in Psychological Science",
+        "volume": "16",
+        "issue": "2",
+        "pages": "75-79",
+        "doi": "10.1111/j.1467-8721.2007.00479.x"
+      }
+    },
+    "source.matthews-1990": {
+      "id": "source.matthews-1990",
+      "type": "source",
+      "name": {
+        "zh": "UWIST 心境形容词表",
+        "en": "Refining the measurement of mood: The UWIST Mood Adjective Checklist"
+      },
+      "summary": "编制形容词式心境量表，因素分析（N=388）确认可分别测量精力唤醒、紧张唤醒和愉悦基调三个维度。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Matthews, G.",
+          "Jones, D. M.",
+          "Chamberlain, A. G."
+        ],
+        "year": 1990,
+        "title": "Refining the measurement of mood: The UWIST Mood Adjective Checklist",
+        "venue": "British Journal of Psychology",
+        "volume": "81",
+        "issue": "1",
+        "pages": "17-42",
+        "doi": "10.1111/j.2044-8295.1990.tb02343.x"
+      }
+    },
+    "source.mauss-2011": {
+      "id": "source.mauss-2011",
+      "type": "source",
+      "name": {
+        "zh": "追求快乐可能使人不快乐",
+        "en": "Can seeking happiness make people unhappy? Paradoxical effects of valuing happiness"
+      },
+      "summary": "相关研究与实验发现，越看重快乐的人在积极情境下反而越失望、越不快乐。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Mauss, I. B.",
+          "Tamir, M.",
+          "Anderson, C. L.",
+          "Savino, N. S."
+        ],
+        "year": 2011,
+        "title": "Can seeking happiness make people unhappy? Paradoxical effects of valuing happiness",
+        "venue": "Emotion",
+        "volume": "11",
+        "issue": "4",
+        "pages": "807-815",
+        "doi": "10.1037/a0022010"
+      }
+    },
+    "source.nahum-shani-2018": {
+      "id": "source.nahum-shani-2018",
+      "type": "source",
+      "name": {
+        "zh": "即时自适应干预的组成与设计原则",
+        "en": "Just-in-Time Adaptive Interventions (JITAIs) in Mobile Health"
+      },
+      "summary": "提出按变化中的状态和情境选择支持的设计框架，区分目标、决策时点、候选内容、适配变量和决策规则，并讨论负担与缺失数据。",
+      "status": "draft",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Nahum-Shani, I.",
+          "Smith, S. N.",
+          "Spring, B. J.",
+          "Collins, L. M.",
+          "Witkiewitz, K.",
+          "Tewari, A.",
+          "Murphy, S. A."
+        ],
+        "year": 2018,
+        "title": "Just-in-Time Adaptive Interventions (JITAIs) in Mobile Health: Key Components and Design Principles for Ongoing Health Behavior Support",
+        "venue": "Annals of Behavioral Medicine",
+        "volume": 52,
+        "issue": 6,
+        "pages": "446-462",
+        "doi": "10.1007/s12160-016-9830-8",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364076/"
+      },
+      "caveats": [
+        "这是设计框架，不能用于声称本项目的选择算法已有疗效。",
+        "原文明确指出许多理论缺少时间尺度信息；没有给出童年经历、年龄或近期事件的通用衰减系数。",
+        "参与程度和干预疲劳需要考虑，但参与程度不能替代本次目标的实际结果。"
+      ]
+    },
+    "source.orben-przybylski-2019": {
+      "id": "source.orben-przybylski-2019",
+      "type": "source",
+      "name": {
+        "zh": "数字技术使用与青少年幸福感",
+        "en": "The association between adolescent well-being and digital technology use"
+      },
+      "summary": "用规格曲线分析三个大型数据集，发现数字技术使用与青少年幸福感的负相关非常小，最多只能解释 0.4% 的方差。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Orben, A.",
+          "Przybylski, A. K."
+        ],
+        "year": 2019,
+        "title": "The association between adolescent well-being and digital technology use",
+        "venue": "Nature Human Behaviour",
+        "volume": "3",
+        "issue": "2",
+        "pages": "173-182",
+        "doi": "10.1038/s41562-018-0506-1"
+      }
+    },
+    "source.orne-1962": {
+      "id": "source.orne-1962",
+      "type": "source",
+      "name": {
+        "zh": "实验中的需求特征",
+        "en": "On the social psychology of the psychological experiment: With particular reference to demand characteristics and their implications"
+      },
+      "summary": "提出“需求特征”：被试会根据对研究目的的猜测调整行为和自我报告，从而影响实验结果。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Orne, M. T."
+        ],
+        "year": 1962,
+        "title": "On the social psychology of the psychological experiment: With particular reference to demand characteristics and their implications",
+        "venue": "American Psychologist",
+        "volume": "17",
+        "issue": "11",
+        "pages": "776-783",
+        "doi": "10.1037/h0043424"
+      }
+    },
+    "source.posner-2011": {
+      "id": "source.posner-2011",
+      "type": "source",
+      "name": {
+        "zh": "哥伦比亚自杀严重程度评定量表（C-SSRS）",
+        "en": "The Columbia–Suicide Severity Rating Scale: Initial Validity and Internal Consistency Findings From Three Multisite Studies With Adolescents and Adults"
+      },
+      "summary": "在三项多中心研究的青少年和成人样本中，检验 C-SSRS 评估自杀意念和行为的效度与内部一致性。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Posner, K.",
+          "Brown, G. K.",
+          "Stanley, B.",
+          "Brent, D. A.",
+          "Yershova, K. V.",
+          "Oquendo, M. A.",
+          "Currier, G. W.",
+          "Melvin, G. A.",
+          "Greenhill, L.",
+          "Shen, S.",
+          "Mann, J. J."
+        ],
+        "year": 2011,
+        "title": "The Columbia–Suicide Severity Rating Scale: Initial Validity and Internal Consistency Findings From Three Multisite Studies With Adolescents and Adults",
+        "venue": "American Journal of Psychiatry",
+        "volume": "168",
+        "issue": "12",
+        "pages": "1266-1277",
+        "doi": "10.1176/appi.ajp.2011.10111704"
+      }
+    },
+    "source.reinecke-2009": {
+      "id": "source.reinecke-2009",
+      "type": "source",
+      "name": {
+        "zh": "游戏与压力恢复",
+        "en": "Games and recovery: The use of video and computer games to recuperate from stress and strain"
+      },
+      "summary": "1614 人的在线调查，发现工作疲劳和日常烦恼越多的人越倾向用游戏来恢复；社会支持较少的人尤其如此。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Reinecke, L."
+        ],
+        "year": 2009,
+        "title": "Games and recovery: The use of video and computer games to recuperate from stress and strain",
+        "venue": "Journal of Media Psychology",
+        "volume": 21,
+        "issue": 3,
+        "pages": "126-142",
+        "doi": "10.1027/1864-1105.21.3.126"
+      }
+    },
+    "source.rose-2002": {
+      "id": "source.rose-2002",
+      "type": "source",
+      "name": {
+        "zh": "友谊中的共同反刍",
+        "en": "Co-rumination in the friendships of girls and boys"
+      },
+      "summary": "提出“共同反刍”概念：朋友间反复讨论问题和负面感受。它与更高的友谊质量相关，也与更多的抑郁、焦虑症状相关。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Rose, A. J."
+        ],
+        "year": 2002,
+        "title": "Co-rumination in the friendships of girls and boys",
+        "venue": "Child Development",
+        "volume": 73,
+        "issue": 6,
+        "pages": "1830-1843",
+        "doi": "10.1111/1467-8624.00509"
+      }
+    },
+    "source.rupp-2017": {
+      "id": "source.rupp-2017",
+      "type": "source",
+      "name": {
+        "zh": "休闲游戏的情绪与认知恢复效果",
+        "en": "Examining the restorative effects of casual video game play"
+      },
+      "summary": "随机实验：被试完成疲劳任务后分别进行安静休息、引导放松或玩休闲游戏。玩游戏组的投入度和情绪恢复优于放松组。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Rupp, M. A.",
+          "Sweetman, R.",
+          "Sosa, A. E.",
+          "Smither, J. A.",
+          "McConnell, D. S."
+        ],
+        "year": 2017,
+        "title": "Searching for affective and cognitive restoration: Examining the restorative effects of casual video game play",
+        "venue": "Human Factors",
+        "volume": 59,
+        "issue": 7,
+        "pages": "1096-1107",
+        "doi": "10.1177/0018720817715360"
+      }
+    },
+    "source.russell-1980": {
+      "id": "source.russell-1980",
+      "type": "source",
+      "name": {
+        "zh": "情绪环形模型",
+        "en": "A circumplex model of affect"
+      },
+      "summary": "提出情绪可以用“愉悦度 × 唤醒度”两个维度构成的环形空间来描述，是核心情感（core affect）维度观的基础文献。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Russell, J. A."
+        ],
+        "year": 1980,
+        "title": "A circumplex model of affect",
+        "venue": "Journal of Personality and Social Psychology",
+        "volume": 39,
+        "issue": 6,
+        "pages": "1161-1178",
+        "doi": "10.1037/h0077714"
+      }
+    },
+    "source.ryan-2006": {
+      "id": "source.ryan-2006",
+      "type": "source",
+      "name": {
+        "zh": "电子游戏的动机吸引力：自我决定理论视角",
+        "en": "The motivational pull of video games: A self-determination theory approach"
+      },
+      "summary": "四项研究。前三项发现游戏中感到的胜任感和自主感与享受程度、以及玩前到玩后的幸福感变化相关。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Ryan, R. M.",
+          "Rigby, C. S.",
+          "Przybylski, A."
+        ],
+        "year": 2006,
+        "title": "The motivational pull of video games: A self-determination theory approach",
+        "venue": "Motivation and Emotion",
+        "volume": 30,
+        "issue": 4,
+        "pages": "347-363",
+        "doi": "10.1007/s11031-006-9051-8"
+      }
+    },
+    "source.saarikallio-2012": {
+      "id": "source.saarikallio-2012",
+      "type": "source",
+      "name": {
+        "zh": "音乐情绪调节简表（B-MMR）",
+        "en": "Development and validation of the Brief Music in Mood Regulation Scale (B-MMR)"
+      },
+      "summary": "编制 21 项音乐情绪调节简表，测量人们使用音乐调节情绪的七类策略。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Saarikallio, S."
+        ],
+        "year": 2012,
+        "title": "Development and validation of the Brief Music in Mood Regulation Scale (B-MMR)",
+        "venue": "Music Perception",
+        "volume": 30,
+        "issue": 1,
+        "pages": "97-105",
+        "doi": "10.1525/mp.2012.30.1.97",
+        "url": "https://jyx.jyu.fi/bitstream/handle/123456789/48414/1/saarikallios97.full.pdf"
+      }
+    },
+    "source.samson-gross-2012": {
+      "id": "source.samson-gross-2012",
+      "type": "source",
+      "name": {
+        "zh": "幽默作为情绪调节",
+        "en": "Humour as emotion regulation: The differential consequences of negative versus positive humour"
+      },
+      "summary": "实验比较面对负面图片时使用善意幽默和刻薄幽默的效果，善意幽默在降低负面情绪、提升正面情绪上更有效。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Samson, A. C.",
+          "Gross, J. J."
+        ],
+        "year": 2012,
+        "title": "Humour as emotion regulation: The differential consequences of negative versus positive humour",
+        "venue": "Cognition and Emotion",
+        "volume": 26,
+        "issue": 2,
+        "pages": "375-384",
+        "doi": "10.1080/02699931.2011.585069"
+      }
+    },
+    "source.sandstrom-dunn-2014": {
+      "id": "source.sandstrom-dunn-2014",
+      "type": "source",
+      "name": {
+        "zh": "弱关系互动与幸福感",
+        "en": "Social interactions and well-being: The surprising power of weak ties"
+      },
+      "summary": "发现与不太熟的人（弱关系）互动更多的人、以及互动更多的那些天，幸福感更高。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Sandstrom, G. M.",
+          "Dunn, E. W."
+        ],
+        "year": 2014,
+        "title": "Social interactions and well-being: The surprising power of weak ties",
+        "venue": "Personality and Social Psychology Bulletin",
+        "volume": 40,
+        "issue": 7,
+        "pages": "910-922",
+        "doi": "10.1177/0146167214529799"
+      }
+    },
+    "source.sheppes-2011": {
+      "id": "source.sheppes-2011",
+      "type": "source",
+      "name": {
+        "zh": "情绪调节选择",
+        "en": "Emotion-regulation choice"
+      },
+      "summary": "实验发现面对高强度负面刺激时，人们更倾向选择分心；面对低强度刺激时更倾向选择重评。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Sheppes, G.",
+          "Scheibe, S.",
+          "Suri, G.",
+          "Gross, J. J."
+        ],
+        "year": 2011,
+        "title": "Emotion-regulation choice",
+        "venue": "Psychological Science",
+        "volume": 22,
+        "issue": 11,
+        "pages": "1391-1396",
+        "doi": "10.1177/0956797611418350"
+      }
+    },
+    "source.snyder-1996": {
+      "id": "source.snyder-1996",
+      "type": "source",
+      "name": {
+        "zh": "状态希望量表",
+        "en": "Development and validation of the State Hope Scale"
+      },
+      "summary": "编制 6 项状态希望量表，包含“动力”（agency）和“路径”（pathways）两个成分，用于测量此时此刻的希望水平。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Snyder, C. R.",
+          "Sympson, S. C.",
+          "Ybasco, F. C.",
+          "Borders, T. F.",
+          "Babyak, M. A.",
+          "Higgins, R. L."
+        ],
+        "year": 1996,
+        "title": "Development and validation of the State Hope Scale",
+        "venue": "Journal of Personality and Social Psychology",
+        "volume": "70",
+        "issue": "2",
+        "pages": "321-335",
+        "doi": "10.1037/0022-3514.70.2.321"
+      }
+    },
+    "source.tam-inzlicht-2024": {
+      "id": "source.tam-inzlicht-2024",
+      "type": "source",
+      "name": {
+        "zh": "视频切换与无聊的实验研究",
+        "en": "Fast-forward to boredom"
+      },
+      "summary": "七个实验共 1223 人发现，频繁切换或快进视频在部分情境下增加无聊并降低满意度、注意和意义感。",
+      "status": "draft",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Tam, K. Y. Y.",
+          "Inzlicht, M."
+        ],
+        "year": 2024,
+        "title": "Fast-forward to boredom: How switching behavior on digital media makes people more bored",
+        "venue": "Journal of Experimental Psychology: General",
+        "volume": 153,
+        "issue": 10,
+        "pages": "2409-2426",
+        "doi": "10.1037/xge0001639",
+        "url": "https://www.apa.org/pubs/journals/releases/xge-xge0001639.pdf"
+      },
+      "caveats": [
+        "研究操纵的是视频之间或视频内部的切换，不等于证明所有短视频或所有快节奏剪辑有害。",
+        "七个实验中六个预注册；文章阅读和非大学生样本的结果较不一致，不能无条件推广。",
+        "Study 3–5 的观看时段通常为 10 分钟；没有验证本项目的 30 秒冷笑话或个性化视频生成。"
+      ]
+    },
+    "source.thompson-2007": {
+      "id": "source.thompson-2007",
+      "type": "source",
+      "name": {
+        "zh": "国际版 PANAS 短表（I-PANAS-SF）",
+        "en": "Development and validation of an internationally reliable short-form of the PANAS"
+      },
+      "summary": "从 PANAS 中挑出 10 项、去除跨文化歧义较大的词，形成 I-PANAS-SF，并在多国样本中检验信效度。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Thompson, E. R."
+        ],
+        "year": 2007,
+        "title": "Development and validation of an internationally reliable short-form of the Positive and Negative Affect Schedule (PANAS)",
+        "venue": "Journal of Cross-Cultural Psychology",
+        "volume": 38,
+        "issue": 2,
+        "pages": "227-242",
+        "doi": "10.1177/0022022106297301"
+      }
+    },
+    "source.villani-2018": {
+      "id": "source.villani-2018",
+      "type": "source",
+      "name": {
+        "zh": "电子游戏与情绪调节系统综述",
+        "en": "Videogames for emotion regulation: A systematic review"
+      },
+      "summary": "按 PRISMA 检索并纳入 23 项研究，认为电子游戏为情绪调节提供了机会，但其干预效果的证据仍然有限。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Villani, D.",
+          "Carissoli, C.",
+          "Triberti, S.",
+          "Marchetti, A.",
+          "Gilli, G.",
+          "Riva, G."
+        ],
+        "year": 2018,
+        "title": "Videogames for emotion regulation: A systematic review",
+        "venue": "Games for Health Journal",
+        "volume": 7,
+        "issue": 2,
+        "pages": "85-99",
+        "doi": "10.1089/g4h.2017.0108"
+      }
+    },
+    "source.wang-2007-erq-chinese": {
+      "id": "source.wang-2007-erq-chinese",
+      "type": "source",
+      "name": {
+        "zh": "情绪调节问卷中文版的信效度研究",
+        "en": "Reliability and Validity of Emotion Regulation Questionnaire Chinese Revised Version"
+      },
+      "summary": "王力、柳恒超、李中权、杜卫在大学生中验证 ERQ 中文修订版，支持认知重评与表达抑制两个维度。",
+      "status": "draft",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Wang, L.",
+          "Liu, H. C.",
+          "Li, Z. Q.",
+          "Du, W."
+        ],
+        "year": 2007,
+        "title": "情绪调节问卷中文版的信效度研究",
+        "venue": "中国健康心理学杂志",
+        "volume": 15,
+        "issue": 6,
+        "pages": "503-505",
+        "url": "https://jkxl.cbpt.cnki.net/portal/journal/portal/client/paper/031d218dc2c43c106a21690dfc5f9053"
+      },
+      "caveats": [
+        "本次核查依据期刊官网的元数据和中英文摘要，未核实重测间隔等全文细节。",
+        "刊方标注 DOI 为 10.13342/j.cnki.cjhp.2007.06.012；2026-11-17 查询 Crossref 返回 404，故采用本库支持的期刊 URL 引用，并保留刊方 DOI 于此；不能声称该文通过了 Crossref 核验。",
+        "量表信效度证据不等于根据分数推荐故事的效果证据。"
+      ]
+    },
+    "source.watson-1988": {
+      "id": "source.watson-1988",
+      "type": "source",
+      "name": {
+        "zh": "PANAS 原始量表",
+        "en": "Development and validation of brief measures of positive and negative affect: The PANAS scales"
+      },
+      "summary": "编制 PANAS（20 项），把正性情绪与负性情绪作为两个相对独立的维度测量。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Watson, D.",
+          "Clark, L. A.",
+          "Tellegen, A."
+        ],
+        "year": 1988,
+        "title": "Development and validation of brief measures of positive and negative affect: The PANAS scales",
+        "venue": "Journal of Personality and Social Psychology",
+        "volume": 54,
+        "issue": 6,
+        "pages": "1063-1070",
+        "doi": "10.1037/0022-3514.54.6.1063"
+      }
+    },
+    "source.webb-2012": {
+      "id": "source.webb-2012",
+      "type": "source",
+      "name": {
+        "zh": "过程模型策略有效性的元分析",
+        "en": "Dealing with feeling: A meta-analysis of the effectiveness of strategies derived from the process model of emotion regulation"
+      },
+      "summary": "汇总实验研究，比较注意部署、认知改变、反应调节等策略族及其子策略对情绪结果的效应量。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Webb, T. L.",
+          "Miles, E.",
+          "Sheeran, P."
+        ],
+        "year": 2012,
+        "title": "Dealing with feeling: A meta-analysis of the effectiveness of strategies derived from the process model of emotion regulation",
+        "venue": "Psychological Bulletin",
+        "volume": 138,
+        "issue": 4,
+        "pages": "775-808",
+        "doi": "10.1037/a0027600"
+      }
+    },
+    "source.wood-2009": {
+      "id": "source.wood-2009",
+      "type": "source",
+      "name": {
+        "zh": "积极自我陈述的双刃效应",
+        "en": "Positive self-statements: Power for some, peril for others"
+      },
+      "summary": "实验发现，让低自尊者重复积极自我陈述（如“我是可爱的人”），他们的心境反而变差；高自尊者略有获益。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Wood, J. V.",
+          "Perunovic, W. Q. E.",
+          "Lee, J. W."
+        ],
+        "year": 2009,
+        "title": "Positive self-statements: Power for some, peril for others",
+        "venue": "Psychological Science",
+        "volume": "20",
+        "issue": "7",
+        "pages": "860-866",
+        "doi": "10.1111/j.1467-9280.2009.02370.x"
+      }
+    },
+    "source.yamakoshi-2025": {
+      "id": "source.yamakoshi-2025",
+      "type": "source",
+      "name": {
+        "zh": "四分钟喜剧视频与即时心境",
+        "en": "Effects of laughter on focus and stress in middle-aged adults"
+      },
+      "summary": "25 名 40–65 岁健康日语成人交叉观看约四分钟较好笑和较不好笑的喜剧视频；较好笑条件下部分主观心境指标改善。",
+      "status": "draft",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Yamakoshi, T.",
+          "Sakamoto, R.",
+          "Fukuda, T.",
+          "Kanatome, A.",
+          "Koyama, A.",
+          "Ano, Y."
+        ],
+        "year": 2025,
+        "title": "Effects of laughter on focus and stress in middle-aged adults: a single-blind, randomized controlled trial",
+        "venue": "BMC Complementary Medicine and Therapies",
+        "volume": 25,
+        "issue": 1,
+        "pages": "123",
+        "doi": "10.1186/s12906-025-04863-5",
+        "url": "https://link.springer.com/article/10.1186/s12906-025-04863-5"
+      },
+      "caveats": [
+        "标题称 randomized；Methods — Procedure 实际写按报名次序交替分配观看顺序，因此不把它当作分配隐藏充分的高质量随机试验。",
+        "对照同样是喜剧视频，只是预试评分较不好笑；并非视频对文字、喜剧对不干预的比较。",
+        "样本小、单一语言文化，未检验重复使用和持续效果；唤醒、嗜睡及唾液皮质醇等指标没有显著条件差异。",
+        "预选喜剧演员片段不能直接证明 AI 生成冷笑话、突发播放或更短片段有效。"
+      ]
+    },
+    "source.zillmann-1988": {
+      "id": "source.zillmann-1988",
+      "type": "source",
+      "name": {
+        "zh": "情绪管理理论",
+        "en": "Mood management through communication choices"
+      },
+      "summary": "提出情绪管理理论：人们会选择能缓解不良情绪、维持良好情绪的媒介内容；与当前坏情绪语义相近的内容不利于打断它。",
+      "status": "reviewed",
+      "citation": {
+        "kind": "journal-article",
+        "authors": [
+          "Zillmann, D."
+        ],
+        "year": 1988,
+        "title": "Mood management through communication choices",
+        "venue": "American Behavioral Scientist",
+        "volume": 31,
+        "issue": 3,
+        "pages": "327-340",
+        "doi": "10.1177/000276488031003005"
+      }
+    },
+    "strategy.attentional-deployment": {
+      "id": "strategy.attentional-deployment",
+      "type": "strategy",
+      "name": {
+        "zh": "注意部署",
+        "en": "Attentional deployment"
+      },
+      "summary": "把注意力引向或引离情境的某些方面，从而影响情绪。包括分心和专注等子策略。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.emotion-regulation",
+          "evidence": [
+            {
+              "source": "source.gross-1998",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "statement": "作为一个整体，注意部署对情绪结果的平均效应接近零，因为其下的分心与专注效应方向相反。",
+          "evidence": [
+            {
+              "source": "source.webb-2012",
+              "stance": "supports",
+              "level": "meta-analysis",
+              "note": "具体效应量以原文表格为准。"
+            }
+          ]
+        }
+      ]
+    },
+    "strategy.cognitive-change": {
+      "id": "strategy.cognitive-change",
+      "type": "strategy",
+      "name": {
+        "zh": "认知改变",
+        "en": "Cognitive change"
+      },
+      "summary": "改变对情境或自身应对能力的评价，从而改变情绪意义。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.emotion-regulation",
+          "evidence": [
+            {
+              "source": "source.gross-1998",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "statement": "认知改变族策略对情绪结果的平均效应在过程模型各族中最大，为小到中等。",
+          "evidence": [
+            {
+              "source": "source.webb-2012",
+              "stance": "supports",
+              "level": "meta-analysis",
+              "note": "具体效应量以原文表格为准。"
+            }
+          ]
+        }
+      ]
+    },
+    "strategy.distraction": {
+      "id": "strategy.distraction",
+      "type": "strategy",
+      "name": {
+        "zh": "分心",
+        "en": "Distraction"
+      },
+      "summary": "把注意力从引发情绪的事物转移到无关的事物上。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "strategy.attentional-deployment"
+        },
+        {
+          "type": "targets",
+          "target": "construct.core-affect",
+          "evidence": [
+            {
+              "source": "source.webb-2012",
+              "stance": "supports",
+              "level": "meta-analysis",
+              "note": "分心对情绪结果有小的正向效应。"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "statement": "面对高强度负面刺激时，人们更倾向选择分心而不是重评。",
+          "evidence": [
+            {
+              "source": "source.sheppes-2011",
+              "stance": "supports",
+              "level": "single-study"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "实验室中的分心任务通常只有几秒到几分钟，与产品中的 5 到 20 分钟叙事体验差距很大。"
+      ]
+    },
+    "strategy.expressive-suppression": {
+      "id": "strategy.expressive-suppression",
+      "type": "strategy",
+      "name": {
+        "zh": "表达抑制",
+        "en": "Expressive suppression"
+      },
+      "summary": "压住正在进行中的情绪表达，例如不让别人看出自己生气。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "strategy.response-modulation"
+        },
+        {
+          "type": "targets",
+          "target": "construct.core-affect",
+          "evidence": [
+            {
+              "source": "source.webb-2012",
+              "stance": "mixed",
+              "level": "meta-analysis",
+              "note": "抑制表达能减少外显表达，但对主观情绪体验的影响很小。"
+            }
+          ]
+        }
+      ],
+      "product_use": {
+        "never_as_mechanic": "产品不应设计鼓励用户压住情绪的机制。"
+      }
+    },
+    "strategy.humorous-reappraisal": {
+      "id": "strategy.humorous-reappraisal",
+      "type": "strategy",
+      "name": {
+        "zh": "幽默重评",
+        "en": "Humorous reappraisal"
+      },
+      "summary": "用幽默的角度重新看待令人不快的情境。分为善意幽默（对处境的善意调侃）和刻薄幽默（嘲讽、贬低）。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "strategy.cognitive-change"
+        },
+        {
+          "type": "targets",
+          "target": "construct.core-affect",
+          "evidence": [
+            {
+              "source": "source.samson-gross-2012",
+              "stance": "supports",
+              "level": "single-study"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "statement": "面对负面刺激时，善意幽默比刻薄幽默更能降低负面情绪、提升正面情绪。",
+          "evidence": [
+            {
+              "source": "source.samson-gross-2012",
+              "stance": "supports",
+              "level": "single-study",
+              "note": "实验室研究，刺激为负面图片。"
+            }
+          ]
+        }
+      ]
+    },
+    "strategy.reappraisal": {
+      "id": "strategy.reappraisal",
+      "type": "strategy",
+      "name": {
+        "zh": "认知重评",
+        "en": "Reappraisal"
+      },
+      "summary": "换一种方式理解当前情境，例如把挫折看作信息或成长机会。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "strategy.cognitive-change"
+        },
+        {
+          "type": "targets",
+          "target": "construct.core-affect",
+          "evidence": [
+            {
+              "source": "source.webb-2012",
+              "stance": "supports",
+              "level": "meta-analysis"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "statement": "面对低强度负面刺激时，人们更倾向选择重评；高强度时更倾向分心。",
+          "evidence": [
+            {
+              "source": "source.sheppes-2011",
+              "stance": "supports",
+              "level": "single-study"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "研究中的重评由被试本人进行。让用户“看着角色重评”是替代性重评，效果尚无直接证据。"
+      ]
+    },
+    "strategy.response-modulation": {
+      "id": "strategy.response-modulation",
+      "type": "strategy",
+      "name": {
+        "zh": "反应调节",
+        "en": "Response modulation"
+      },
+      "summary": "情绪已经产生后，直接影响其生理、体验或行为反应，例如抑制表情、呼吸放松。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.emotion-regulation",
+          "evidence": [
+            {
+              "source": "source.gross-1998",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        }
+      ]
+    },
+    "strategy.situation-modification": {
+      "id": "strategy.situation-modification",
+      "type": "strategy",
+      "name": {
+        "zh": "情境修改",
+        "en": "Situation modification"
+      },
+      "summary": "改变所处情境的外部特征，从而改变其情绪影响。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.emotion-regulation",
+          "evidence": [
+            {
+              "source": "source.gross-1998",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "在虚构故事里“改变情境”并不改变用户的真实情境。叙事机制借用它时只能算类比。"
+      ]
+    },
+    "strategy.situation-selection": {
+      "id": "strategy.situation-selection",
+      "type": "strategy",
+      "name": {
+        "zh": "情境选择",
+        "en": "Situation selection"
+      },
+      "summary": "主动选择接近或回避某些情境，从而影响将要产生的情绪。用户选择“我现在想要什么体验”本身就是一种情境选择。",
+      "status": "reviewed",
+      "relations": [
+        {
+          "type": "part_of",
+          "target": "construct.emotion-regulation",
+          "evidence": [
+            {
+              "source": "source.gross-1998",
+              "stance": "supports",
+              "level": "theory"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

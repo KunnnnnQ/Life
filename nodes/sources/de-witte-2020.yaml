@@ -1,0 +1,19 @@
+id: source.de-witte-2020
+type: source
+name: { zh: 音乐干预与压力结果的元分析, en: Effects of music interventions on stress-related outcomes }
+summary: 汇总 104 项随机试验、9617 名参与者的两项元分析，发现音乐干预对心理与生理压力结果有总体改善，但干预形式和研究情境不同。
+status: draft
+citation:
+  kind: journal-article
+  authors: ["de Witte, M.", "Spruit, A.", "van Hooren, S.", "Moonen, X.", "Stams, G. J."]
+  year: 2020
+  title: "Effects of music interventions on stress-related outcomes: a systematic review and two meta-analyses"
+  venue: Health Psychology Review
+  volume: 14
+  issue: 2
+  pages: 294-324
+  doi: 10.1080/17437199.2019.1627897
+  url: https://pure.uva.nl/ws/files/58927620/Effects_of_music_interventions_on_stress_related_outcomes_a_systematic_review_and_two_meta_analyses.pdf
+caveats:
+  - 汇总包括不同情境下的音乐聆听和音乐治疗，不能把所有效果归给自动推荐播放列表。
+  - 没有确立普适的最佳时长、年龄权重或曲目选择算法；本项目具体时长与音乐适配需另行检验。

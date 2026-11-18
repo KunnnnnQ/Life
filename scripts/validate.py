@@ -51,10 +51,17 @@ def check_dois(nodes: dict[str, dict], report: Report) -> None:
         )
         if ratio < 0.85:
             report.err(where, f"title mismatch with Crossref ({ratio:.2f}): '{remote_title}'")
-        dated = meta.get("published-print") or meta.get("published-online") or meta.get("issued")
-        year = dated["date-parts"][0][0] if dated else None
-        if year and year != cit["year"]:
-            report.err(where, f"year {cit['year']} but Crossref says {year}")
+        # Online-first and print issue years often differ; accept any year Crossref records.
+        years = set()
+        for key in ("published-print", "published-online", "issued", "published"):
+            parts = (meta.get(key) or {}).get("date-parts") or [[None]]
+            if parts[0] and parts[0][0]:
+                years.add(parts[0][0])
+        issue_parts = ((meta.get("journal-issue") or {}).get("published-print") or {}).get("date-parts") or [[None]]
+        if issue_parts[0] and issue_parts[0][0]:
+            years.add(issue_parts[0][0])
+        if years and cit["year"] not in years:
+            report.err(where, f"year {cit['year']} but Crossref says {sorted(years)}")
         first = (meta.get("author") or [{}])[0].get("family", "")
         if first and _norm(first) not in _norm(cit["authors"][0]):
             report.err(where, f"first author '{cit['authors'][0]}' but Crossref says '{first}'")

@@ -1,0 +1,21 @@
+id: source.mauss-2011
+type: source
+name:
+  zh: 追求快乐可能使人不快乐
+  en: Can seeking happiness make people unhappy? Paradoxical effects of valuing happiness
+summary: 相关研究与实验发现，越看重快乐的人在积极情境下反而越失望、越不快乐。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Mauss, I. B.
+  - Tamir, M.
+  - Anderson, C. L.
+  - Savino, N. S.
+  year: 2011
+  title: Can seeking happiness make people unhappy? Paradoxical effects of valuing happiness
+  venue: Emotion
+  volume: '11'
+  issue: '4'
+  pages: 807-815
+  doi: 10.1037/a0022010

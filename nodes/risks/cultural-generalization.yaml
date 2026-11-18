@@ -1,0 +1,18 @@
+id: risk.cultural-generalization
+type: risk
+name: { zh: 跨文化外推, en: Cross-cultural generalization }
+summary: 知识库大部分证据来自欧美大学生样本，直接套用到中文用户可能不成立，表达抑制就是一个例子。
+status: draft
+relations:
+  - { type: threatens, target: construct.habitual-suppression }
+  - { type: threatens, target: instrument.erq }
+claims:
+  - statement: 抑制情绪的负面社交后果在持西方价值观的人中较明显，在持亚洲价值观的人中较弱。
+    evidence:
+      - { source: source.butler-2007, stance: supports, level: single-study, note: 样本为美国大学女生，按价值观而非国籍分组。 }
+risk:
+  severity: medium
+  status: mitigated-in-design
+  mitigation:
+    - 不把 ERQ 抑制得分解读为“不好的习惯”，只用于偏好排序
+    - 优先使用有中文验证的量表版本，并在节点中标明样本来源

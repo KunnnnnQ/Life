@@ -1,0 +1,18 @@
+id: source.lucas-2007
+type: source
+name:
+  zh: 适应与幸福感设定点
+  en: Adaptation and the Set-Point Model of Subjective Well-Being
+summary: 综述纵向研究，指出人对重大生活事件的适应并非总是完全的，如失业、残疾、丧偶后幸福感可能长期不回到原水平，且个体差异很大。
+status: reviewed
+citation:
+  kind: journal-article
+  authors:
+  - Lucas, R. E.
+  year: 2007
+  title: Adaptation and the Set-Point Model of Subjective Well-Being
+  venue: Current Directions in Psychological Science
+  volume: '16'
+  issue: '2'
+  pages: 75-79
+  doi: 10.1111/j.1467-8721.2007.00479.x

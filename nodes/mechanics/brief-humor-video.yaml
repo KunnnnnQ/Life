@@ -1,0 +1,29 @@
+id: mechanic.brief-humor-video
+type: mechanic
+name: { zh: 有结尾的短幽默视频, en: Bounded humorous video }
+summary: 系统选择一段有铺垫、包袱和收尾的短幽默内容，可采用冷幽默；不让用户在无尽片段中连续切换。
+status: draft
+relations:
+  - type: implements
+    target: strategy.distraction
+    evidence:
+      - { source: source.webb-2012, stance: supports, level: hypothesis, note: 由实验室分心外推至观看幽默视频；不是本产品的直接效果证据。 }
+  - type: serves
+    target: goal.mood-shift
+    evidence:
+      - { source: source.yamakoshi-2025, stance: supports, level: hypothesis, locator: Methods — Intervention; Results — Subjective mood, note: 原研究是约四分钟预选喜剧视频，本项目的生成式冷幽默与更短时长仍需检验。 }
+      - { source: source.tam-inzlicht-2024, stance: mixed, level: hypothesis, locator: Studies 3–5; General Discussion, note: 支持限制连续切换的设计考虑，不等于证明本产品的单片方案一定有效。 }
+product_use:
+  medium: video
+  content_family: humorous-distraction
+  beats: [温和进入, 铺垫, 意外包袱, 留白, 收尾]
+  minutes: { min: 0.5, max: 4 }
+  duration_note: 该时长范围是产品假设；最接近的新研究使用约四分钟片段。
+  choices: 0；用户始终可以停止或反馈不合适。
+  pace: 根据本次刺激耐受度与个人反馈调整；不因习惯刷短视频就默认快剪辑。
+  reading_load: low
+  interaction_load: low
+  candidate_signals: [本次希望换心情, 阅读负担高, 过往幽默体验接受度好]
+  personalization: 以题材和幽默风格适配为主；不把真实痛苦经历直接编成笑料。
+  constraints: [无无限滚动, 不突发高音量或惊吓, 不调侃用户本人, 不把完播率当作情绪改善]
+  avoid_when: [用户不接受幽默, 当前明确不愿被打断, 设备或环境不能播放视频]

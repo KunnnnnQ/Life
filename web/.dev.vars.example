@@ -1,0 +1,6 @@
+# Copy to .dev.vars for local runs with real providers (ignored by git). Leave empty to stay in demo mode.
+CONTENT_MODE=live
+LLM_PROVIDER=deepseek
+LLM_API_KEY=
+# DASHSCOPE_API_KEY=
+# IMAGES_PER_SESSION=1

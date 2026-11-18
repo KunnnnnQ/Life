@@ -1,0 +1,21 @@
+id: instrument.ios-scale
+type: instrument
+name: { zh: 他人融入自我量表（IOS）, en: Inclusion of Other in the Self Scale }
+summary: 一道图示题：从 7 对重叠程度不同的圆中选出最能代表“我和对方”关系的一对。几秒即可完成。
+status: draft
+relations:
+  - { type: measures, target: construct.interpersonal-closeness, evidence: [{ source: source.aron-1992, stance: supports, level: validation-study }] }
+instrument:
+  items: 1
+  response_format: 7 个图示选项，两个圆从完全分离到几乎重合
+  administration_minutes: 0.2
+  languages:
+    - { lang: 无文字, validated: "yes", note: 图示为主，只需翻译“我”和“对方”。 }
+  license:
+    status: unknown
+    commercial_use: unknown
+  items_in_repo: false
+product_use:
+  role: per-session-optional
+  when: 陌生人对话结束后
+  note: 只适合测“和这次聊天对象”的亲近感，不测整体孤独感。

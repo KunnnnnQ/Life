@@ -1,0 +1,23 @@
+id: risk.positive-statement-backfire
+type: risk
+name: { zh: 鼓励适得其反, en: Encouragement backfire }
+summary: 对自我评价低的人直接说“你很棒”“一切都会好”，可能让他们感觉更差。
+status: draft
+relations:
+  - { type: threatens, target: goal.encouragement }
+  - { type: threatens, target: mechanic.reframe-arc }
+  - { type: threatens, target: mechanic.spoken-reframe }
+  - { type: threatens, target: mechanic.humor-pep-talk }
+claims:
+  - statement: 低自尊者重复积极自我陈述后心境反而变差，高自尊者略有获益。
+    evidence:
+      - { source: source.wood-2009, stance: supports, level: single-study, note: 论文含多项实验，但为单一研究团队。 }
+risk:
+  severity: high
+  status: mitigated-in-code
+  mitigation:
+    - 生成提示词禁止对用户本人下积极断言；生成后再检查“你一定能行”“你很棒”“一切都会好起来”等说法，命中则不展示、需重新安排
+    - 先确认感受，再推进；结尾开放，不强行圆满
+    - 反馈里有“有点像在被说教”选项；选了之后这次体验的学习分数最多 0.25，该机制在此用户上的排序随之降低
+    - 已知局限：检查基于固定说法，换个措辞的说教会漏过；角色之间的鼓励不受限制
+  components: [web/core/safety.ts#findAffirmation, web/core/generation.ts, web/core/engine.ts#outcome, web/app/page.tsx]

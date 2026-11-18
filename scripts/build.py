@@ -10,7 +10,7 @@ import json
 import sys
 from collections import defaultdict
 
-from kblib import ROOT, Report, check_graph, load_meta, load_nodes
+from kblib import ROOT, Report, check_graph, iter_evidence, load_meta, load_nodes
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -61,9 +61,15 @@ def build_index(nodes: dict, meta: dict, incoming: dict) -> str:
                 chain = [imp["target"], *parents_chain(imp["target"])]
                 path = " → ".join(nodes[c]["name"]["zh"] for c in chain)
                 w(f"    - 实现策略：{path} ── 证据：{evidence_summary(imp)}")
+            for r_id, _ in sorted(incoming[m_id]["threatens"]):
+                rk = nodes[r_id]
+                w(f"    - ⚠ 风险：{rk['name']['zh']}（{rk['risk']['severity']}，{rk['risk']['status']}）")
         dm = g.get("product_use", {}).get("default_measure")
         if dm:
             w(f"  - 默认测量：{label(nodes[dm])}")
+        rm = g.get("product_use", {}).get("research_measure")
+        if rm:
+            w(f"  - 研究测量：{label(nodes[rm])}")
     w("")
 
     # 2. theory tree via part_of
@@ -113,15 +119,29 @@ def build_index(nodes: dict, meta: dict, incoming: dict) -> str:
           f"{lic['status']} | {lic.get('commercial_use', 'unknown')} |")
     w("")
 
-    # 5. sources
-    w("## 五、文献\n")
+    # 5. risks
+    w("## 五、风险清单\n")
+    w("`mitigated-in-design` 表示对策只写进了节点规则；`mitigated-in-code` 表示已在产品代码中实现并有测试。\n")
+    w("| 风险 | 严重度 | 状态 | 影响对象 | 依据 | 主要对策 |\n|---|---|---|---|---|---|")
+    order = {"high": 0, "medium": 1, "low": 2}
+    for rk in sorted(by_type["risk"], key=lambda n: (order[n["risk"]["severity"]], n["id"])):
+        targets = [r["target"].split(".", 1)[1] for r in rels(rk, "threatens")]
+        targets += [c.split("#")[-1] for c in rk["risk"].get("components", [])]
+        srcs = sorted({e["source"].removeprefix("source.") for e, _ in iter_evidence(rk)})
+        w(f"| {label(rk)} | {rk['risk']['severity']} | {rk['risk']['status']} | {'、'.join(targets)} | "
+          f"{'、'.join(srcs)} | {rk['risk']['mitigation'][0]} |")
+    w("")
+
+    # 6. sources
+    w("## 六、文献\n")
     for s in sorted(by_type["source"], key=lambda n: (n["citation"]["authors"][0], n["citation"]["year"])):
         c = s["citation"]
         authors = c["authors"][0] + (" et al." if len(c["authors"]) > 2 else
                                      f" & {c['authors'][1]}" if len(c["authors"]) == 2 else "")
-        doi = f" https://doi.org/{c['doi']}" if c.get("doi") else ""
+        source_url = f"https://doi.org/{c['doi']}" if c.get("doi") else c.get("url", "")
+        link = f" {source_url}" if source_url else ""
         used_by = len(incoming[s["id"]]["cited_by"])
-        w(f"- {authors} ({c['year']}). {c['title']}. *{c['venue']}*.{doi} ── 被 {used_by} 个节点引用")
+        w(f"- {authors} ({c['year']}). {c['title']}. *{c['venue']}*.{link} ── 被 {used_by} 个节点引用")
     w("")
     return "\n".join(out)
 

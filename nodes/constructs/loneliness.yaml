@@ -1,0 +1,9 @@
+id: construct.loneliness
+type: construct
+name: { zh: 孤独感, en: Loneliness }
+summary: 主观上感到缺少陪伴、被冷落或与他人隔绝的程度。是较稳定的状态，适合作背景或长期随访，不适合测一次聊天的即时效果。
+status: reviewed
+relations:
+  - type: contrasts_with
+    target: construct.interpersonal-closeness
+    note: 一次聊天后的亲近感上升，不等于长期孤独感下降。

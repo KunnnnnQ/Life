@@ -1,0 +1,21 @@
+id: source.yamakoshi-2025
+type: source
+name: { zh: 四分钟喜剧视频与即时心境, en: Effects of laughter on focus and stress in middle-aged adults }
+summary: 25 名 40–65 岁健康日语成人交叉观看约四分钟较好笑和较不好笑的喜剧视频；较好笑条件下部分主观心境指标改善。
+status: draft
+citation:
+  kind: journal-article
+  authors: ["Yamakoshi, T.", "Sakamoto, R.", "Fukuda, T.", "Kanatome, A.", "Koyama, A.", "Ano, Y."]
+  year: 2025
+  title: "Effects of laughter on focus and stress in middle-aged adults: a single-blind, randomized controlled trial"
+  venue: BMC Complementary Medicine and Therapies
+  volume: 25
+  issue: 1
+  pages: "123"
+  doi: 10.1186/s12906-025-04863-5
+  url: https://link.springer.com/article/10.1186/s12906-025-04863-5
+caveats:
+  - 标题称 randomized；Methods — Procedure 实际写按报名次序交替分配观看顺序，因此不把它当作分配隐藏充分的高质量随机试验。
+  - 对照同样是喜剧视频，只是预试评分较不好笑；并非视频对文字、喜剧对不干预的比较。
+  - 样本小、单一语言文化，未检验重复使用和持续效果；唤醒、嗜睡及唾液皮质醇等指标没有显著条件差异。
+  - 预选喜剧演员片段不能直接证明 AI 生成冷笑话、突发播放或更短片段有效。
