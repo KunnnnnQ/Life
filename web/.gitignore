@@ -48,5 +48,6 @@ yarn-error.log*
 # Deploy settings (may contain account-specific names)
 deploy.env
 
-# Raw third-party downloads (Poly Haven CC0); optimized copies live in public/assets
+
+# Raw downloads from the removed 3D store (local only)
 /assets-src/

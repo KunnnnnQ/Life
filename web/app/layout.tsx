@@ -1,14 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import "./immersive.css";
 
 export const metadata: Metadata = {
-  title: "深夜情绪便利店 · Late Night Store",
-  description: "一家只在夜里营业的三维小店：说一句此刻的状态，系统挑一段几分钟的故事、声音或小练习。",
+  title: "Mood Capsule",
+  description: "说一句现在的状态，换一段几分钟的内容：故事、声音、小练习或小游戏，由系统挑选。",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#1d2b53",
 };
 
 export default function RootLayout({
@@ -17,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
-      <body className="antialiased">{children}</body>
+    <html lang="zh-CN" data-theme="dark" suppressHydrationWarning>
+      <body>{children}</body>
     </html>
   );
 }

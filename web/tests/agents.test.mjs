@@ -36,6 +36,15 @@ test('a failed review triggers exactly one revision with the issues attached',as
   assert.ok(JSON.parse(calls[3].user).issues[0].problem.includes('说教'));
   assert.deepEqual(a.trace.map(t=>t.outcome),['ok','ok','revise','ok','ok']);
 });
+test('an ending copied from the director\'s note is sent back for one revision, then dropped if it persists',async()=>{
+  const leaked={...CONTENT,ending:'结尾不宣布“已经平静”，只留下一个安静画面。'};
+  const fixed=agentMock({writer:[leaked,CONTENT]});
+  const a=await generate(p,[],story,decisionFor(story),LIVE,[],'j',fixed.fetcher);
+  assert.deepEqual(fixed.calls.map(c=>c.role),['planner','writer','reviewer','writer','reviewer']);
+  assert.equal(a.content.ending,'钟又走起来了。');
+  const stubborn=await generate(p,[],story,decisionFor(story),LIVE,[],'j',agentMock({writer:[leaked]}).fetcher);
+  assert.equal(stubborn.content.ending,'（完）');
+});
 test('two failed reviews reject the content instead of showing it',async()=>{
   const fail={pass:false,issues:[{scene:0,problem:'出现禁止话题的同义说法',fix:''}]};
   await assert.rejects(generate(p,[],story,decisionFor(story),LIVE,[],'j',agentMock({reviewer:[fail]}).fetcher),/两次未通过审核/);
